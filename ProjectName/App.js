@@ -1,29 +1,33 @@
-import React, {useState} from 'react'
-import { View, Text, StyleSheet, FlatList, SafeAreaView } from 'react-native'
-import Header from './components/Header'
-import ListItem from './components/ListItem'
-const App = () => {
-  const [items, setItems] = useState([
-    {id: Math.random(), text:'Milk'},
-    {id: Math.random(), text:'Beef'},
-    {id: Math.random(), text:'Coffe'},
-    {id: Math.random(), text:'Candy'}
-  ])
-  console.log('title')
+// In App.js in a new project
+
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Home } from './screens'
+
+function HomeScreen() {
   return (
-    <SafeAreaView style= {styles.container}>
-     <Header title = 'Home' />
-     <></>
-      {/* <FlatList data = {items} renderItem = {({item}) => <ListItem item = {item}/> }/> */}
-    </SafeAreaView>
-  )
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+    </View>
+  );
 }
-const styles = StyleSheet.create({
 
-  container:{
-    flex:1,
-   
-  }
-})
+const Stack = createNativeStackNavigator();
 
-export default App
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator 
+      screenOptions={{
+        headerShown: false
+      }}
+      initialRouteName={"Home"}>
+        <Stack.Screen name="Home" component={Home}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
