@@ -1,12 +1,14 @@
 import React from 'react'
 import { View,Text,StyleSheet } from 'react-native'
 import UserAvatar from 'react-native-user-avatar'
+import AvatarGenerator from './AvatarGenerator'
 
 const ListAccounts = ({item}) => {
 
   return (
     <View style={styles.avatarWrap} >
-        <UserAvatar size={52} name={item.name} bgColor= 'purple' borderRadius={52} style={styles.avatar}/>
+      <AvatarGenerator name={item.name} />
+        {/* <UserAvatar size={52} name={item.name} bgColor= 'purple' borderRadius={52} style={styles.avatar}/> */}
         <Text  numberOfLines={1}  style= {styles.avatarName}>{item.name} </Text>
     </View>
   )

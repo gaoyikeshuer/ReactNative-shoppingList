@@ -4,10 +4,12 @@ import { IconFavouriteFill } from '../assets/icons'
 
 const StarAccount = () => {
   return (
-   <SafeAreaView style={styles.starContainer}>
+    <SafeAreaView style={styles.accountCardContainer}>
+ 
+ <SafeAreaView style={styles.starContainer}>
     <View style={styles.starTitle}>
         <Text style={styles.textTitle}>Office Supplies / Expenses</Text>
-        <IconFavouriteFill width={18}/>
+        <IconFavouriteFill width={18} color={'purple'}/>
     </View>
     <Text style={styles.bankNum}>
         IE67AIBK93132200031333
@@ -26,16 +28,29 @@ const StarAccount = () => {
     </View>
 
    </SafeAreaView>
+   <View style={{width: 5, backgroundColor:'green', height:'100%',}}>
+
+</View>
+    </SafeAreaView>
+  
   )
 }
 const styles = StyleSheet.create({
-  starContainer:{
-height:137,
-marginHorizontal:12,
+  accountCardContainer:{
+    height:137,
+    marginHorizontal:12,
 backgroundColor:'white',
 marginVertical:12,
+borderRadius:4,
+flexDirection:'row',
+justifyContent:'space-between',
+overflow:'hidden'
+  },
+  starContainer:{
+flexDirection:'column',
 paddingHorizontal:16,
-borderRadius:4
+flex:1
+
   },
   starTitle:{
     flexDirection: 'row',

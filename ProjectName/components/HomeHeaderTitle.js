@@ -26,8 +26,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontFamily:'Aspira',
         fontWeight:'500'
-
-       
         
     },
     alert:{

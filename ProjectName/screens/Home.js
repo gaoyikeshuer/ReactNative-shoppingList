@@ -17,9 +17,6 @@ import { ScrollView } from 'react-native-gesture-handler'
 
 const Home = () => {
 
-
-
-console.log(transactionsData)
   const [messages, setMessages] = useState([
     {id: 1, text:"We are continuing to improve your new iBB service, and it will be unavailable on Friday 7th September from 17:00 until 19:00."},
     {id: 2, text:"There has been a recent rise in text messages asking users for their login details. At AIB, we will never ask you for your password or PIN code."}
@@ -52,7 +49,7 @@ console.log(transactionsData)
     <SafeAreaView style = {styles.container}>
    <View style={ modalOpen?{ backgroundColor:'rgba(0,0,0,0.5)',height:'100%',width:'100%', position:'absolute',zIndex:100}:''}></View>
         <HomeHeaderTitle title= 'Home' toggleModal={toggleModal} messages={messages}/>
-      <ScrollView>
+      <SafeAreaView>
     
     <Modal    animationType="slide" transparent ={true} visible= {modalOpen}>
    <ServiceMessage toggleModal={toggleModal} messages={messages} deleteMessage = {deleteMessage}/>
@@ -63,7 +60,7 @@ console.log(transactionsData)
   <StarAccount/>
   
   <TransactionList transactionsData={transactionsData} />
-      </ScrollView>
+      </SafeAreaView>
 
     </SafeAreaView>
  

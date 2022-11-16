@@ -22,7 +22,7 @@ const TransactionList = ({transactionsData}) => {
         <Text style={{color:'#7F2B7B', fontFamily:'Aspira', fontWeight:'500'}}>Show all {`>`}</Text>
     </View>
   <SectionList sections={DATA}
-   scrollEnabled={false}
+   scrollEnabled={true}
   keyExtractor={(item, index)=> item +index} 
   renderItem ={
     ({item}) => {return(<View style={styles.listContainer}>
