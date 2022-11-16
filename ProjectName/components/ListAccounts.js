@@ -6,7 +6,7 @@ const ListAccounts = ({item}) => {
 
   return (
     <View style={styles.avatarWrap} >
-        <UserAvatar size={52}  name={item.name} bgColor= 'purple' borderRadius={52} style={styles.avatar}/>
+        <UserAvatar size={52} name={item.name} bgColor= 'purple' borderRadius={52} style={styles.avatar}/>
         <Text  numberOfLines={1}  style= {styles.avatarName}>{item.name} </Text>
     </View>
   )
@@ -20,11 +20,14 @@ const styles = StyleSheet.create({
   avatar:{
     width:52,
 
+
   
   },
   avatarName:{
     fontSize:11,
-    marginTop:5
+    marginTop:5,
+    fontFamily:'aspira',
+    fontWeight:'500'
   }
 })
 

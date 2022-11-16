@@ -17,11 +17,13 @@ const styles = StyleSheet.create({
    flex:1,
   alignItems:'center',
   marginTop:45,
-  paddingTop:29
+  paddingTop:29,
+
  },
  NoneMessageTitle :{
  marginVertical:3,
- fontSize:16
+ fontSize:16,
+ fontFamily:'Aspira'
  }
 })
 

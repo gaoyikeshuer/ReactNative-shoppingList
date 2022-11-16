@@ -17,19 +17,36 @@ const TransactionList = ({transactionsData}) => {
   }, {}))
   return (
    <SafeAreaView>
+    <View style={{flexDirection:'row', marginHorizontal:12, justifyContent:'space-between', marginBottom:10}}>
+        <Text style={{color:'#6E6E6E', fontFamily:'Aspira', fontWeight:'500'}}>RECENT INCOMING TRANSACTIONS</Text>
+        <Text style={{color:'#7F2B7B', fontFamily:'Aspira', fontWeight:'500'}}>Show all {`>`}</Text>
+    </View>
   <SectionList sections={DATA}
+   scrollEnabled={false}
   keyExtractor={(item, index)=> item +index} 
   renderItem ={
     ({item}) => {return(<View style={styles.listContainer}>
-        <View>
-            <Text>{item.name}</Text>
-            <Text>{item.currency}</Text>
+        <View style={styles.textContainer}>
+        <View style={styles.nameContainer}>
+            <Text style={{fontSize:16, width:224, marginBottom:3, fontFamily:'Aspira', fontWeight:'500'}}>{item.name}</Text>
+            <Text style={{color:'#6E6E6E'}}>{item.type}</Text>
         </View>
-       <View>
-        <Text>{item.type}</Text>
-        <Text>{item.number}</Text>
+       <View style={{alignItems:'flex-end'}}>
+       <Text style={{color:'#6E6E6E', fontFamily:'Aspira'}}>{item.currency}</Text>
+    
+        <Text style={{fontSize:16, fontFamily:'Aspira'}}>{item.number}</Text>
+
        </View>
+
+        </View>
+   
         </View>)}
+  }
+  ItemSeparatorComponent ={
+  () =>{
+    
+  return <View style={{ borderBottomWidth:1, marginHorizontal:12, borderColor:'#C3C3C3'}}></View>;
+  }
   }
   renderSectionHeader ={
     ({section}) =>{
@@ -54,7 +71,23 @@ titleDate:{
     marginVertical:4
 },
 listContainer:{
-    
+   backgroundColor:'white',
+ 
+
+},
+textContainer:{
+    marginHorizontal:12,
+    flexDirection:'row',
+    justifyContent:'space-between',
+    marginTop:11,
+    marginBottom:17
+ 
+
+},
+nameContainer:{
+
+  width:224,
+   
 }
 })
 

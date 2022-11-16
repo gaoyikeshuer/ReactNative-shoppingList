@@ -21,9 +21,13 @@ const styles = StyleSheet.create({
       paddingBottom:14
     },
     text:{
-        color:'purple',
+        color:'#7F2B7B',
         fontSize: 18,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily:'Aspira',
+        fontWeight:'500'
+
+       
         
     },
     alert:{
@@ -40,7 +44,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#E00885',
       zIndex:10,
       borderRadius:12,
-      borderColor: 'white',
+      borderColor: '#efefef',
       borderWidth: 2
     },
     messagesNum:{

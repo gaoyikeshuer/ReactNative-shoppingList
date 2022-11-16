@@ -17,19 +17,21 @@ const QuickPay = ({payAccounts}) => {
   return (
     <SafeAreaView>
       <View style={styles.QuickPayTitle}>
-        <Text>Quick Pay</Text>
+        <Text style={{fontFamily:'Aspira', color:'#6E6E6E', fontWeight:'500'}}>Quick Pay</Text>
         <Pressable>
-          <Text>Show all {`>`} </Text>
+          <Text style={{fontFamily:'Aspira', color:'#6E6E6E', fontWeight:'500'}}>Show all {`>`} </Text>
         </Pressable>
       </View>
 
       <FlatList
+       
         numColumns={5}
         columnWrapperStyle={{
           alignItems: 'flex-start',
           flexDirection: 'row',
           flex: 0.2,
         }}
+      
         style={styles.avatarContainer}
         data={[...payAccounts.slice(0, 9), {plusImgae: true}]}
         renderItem={({item}) => {

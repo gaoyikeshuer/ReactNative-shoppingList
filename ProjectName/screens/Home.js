@@ -7,6 +7,7 @@ import QuickPay from '../components/QuickPay'
 import StarAccount from '../components/StarAccount'
 import TransactionList from '../components/TransactionList'
 import transactionsData from '../assets/apis/transactions.json'
+import { ScrollView } from 'react-native-gesture-handler'
 
 
 
@@ -29,7 +30,7 @@ console.log(transactionsData)
     {id:3, name: "Yike Gao"},
     {id:4, name: "Tianyi Wang"},
     {id:5, name: "Linghan Jing"},
-    {id:6, name: "gary Veal"},
+    {id:6, name: "Ryan Veale"},
     {id:7, name:'Chetanya Kandhari'},
     {id:8, name:'Yoeri Percy'},
     {id:9, name: 'Harry Potter'},
@@ -48,8 +49,11 @@ console.log(transactionsData)
   }
 
   return (
-    <SafeAreaView style = {modalOpen?styles.darkContainer  : styles.container}>
-      <HomeHeaderTitle title= 'Home' toggleModal={toggleModal} messages={messages}/>
+    <SafeAreaView style = {styles.container}>
+   <View style={ modalOpen?{ backgroundColor:'rgba(0,0,0,0.5)',height:'100%',width:'100%', position:'absolute',zIndex:100}:''}></View>
+        <HomeHeaderTitle title= 'Home' toggleModal={toggleModal} messages={messages}/>
+      <ScrollView>
+    
     <Modal    animationType="slide" transparent ={true} visible= {modalOpen}>
    <ServiceMessage toggleModal={toggleModal} messages={messages} deleteMessage = {deleteMessage}/>
     </Modal>
@@ -59,6 +63,8 @@ console.log(transactionsData)
   <StarAccount/>
   
   <TransactionList transactionsData={transactionsData} />
+      </ScrollView>
+
     </SafeAreaView>
  
   )
@@ -74,7 +80,7 @@ const styles = StyleSheet.create ({
 
   },
   darkContainer:{
-    backgroundColor: 'gray',
+    backgroundColor: 'rgba(0,0,0,0.5)',
     flex:1
   },
   message :{

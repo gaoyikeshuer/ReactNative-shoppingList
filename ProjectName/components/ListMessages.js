@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
   paddingLeft:14,
   flex:1,
   paddingBottom:18,
-  paddingTop:12
+  paddingTop:12,
+  fontFamily:'Aspira'
   
   }
 })

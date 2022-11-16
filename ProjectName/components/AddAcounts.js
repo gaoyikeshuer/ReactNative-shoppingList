@@ -33,7 +33,9 @@ const styles = StyleSheet.create({
     },
     addText:{
         fontSize:11,
-        marginTop:5
+        marginTop:4,
+        fontFamily:'Aspira',
+        fontWeight:'500'
     }
 })
 

@@ -16,7 +16,7 @@ const ServiceMessage = ({toggleModal, messages , deleteMessage}) => {
          
         </View>
         {messages.length ==0 &&<NoneMessages/>}
-     <FlatList data={messages} renderItem = {({item}) =><ListMessage item ={item} deleteMessage={deleteMessage}/>} />
+     <FlatList  scrollEnabled={false} data={messages} renderItem = {({item}) =><ListMessage item ={item} deleteMessage={deleteMessage}/>} />
 
     </SafeAreaView>
   )
@@ -38,7 +38,9 @@ const styles = StyleSheet.create ({
       
             color:'purple',
             fontSize: 18,
-            textAlign: 'center'
+            textAlign: 'center',
+            fontFamily:'Aspira',
+            fontWeight:'500'
             
        
     },

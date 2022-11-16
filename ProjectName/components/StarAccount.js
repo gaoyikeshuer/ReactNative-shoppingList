@@ -7,7 +7,7 @@ const StarAccount = () => {
    <SafeAreaView style={styles.starContainer}>
     <View style={styles.starTitle}>
         <Text style={styles.textTitle}>Office Supplies / Expenses</Text>
-        <IconFavouriteFill/>
+        <IconFavouriteFill width={18}/>
     </View>
     <Text style={styles.bankNum}>
         IE67AIBK93132200031333
@@ -15,8 +15,8 @@ const StarAccount = () => {
     <Text style={styles.bankInfo}>Current Account | EUR</Text>
     <View style={styles.bankContainer}>
       <View style={styles.bankTitle}>
-        <Text>Balance</Text>
-        <Text>Avaliable funds</Text>
+        <Text style={{color:'#6E6E6E', fontFamily:'Aspira'}}>Balance</Text>
+        <Text style={{color:'#6E6E6E', fontFamily:'Aspira'}}>Avaliable funds</Text>
       </View>
       <View style={styles.money}>
       
@@ -34,7 +34,8 @@ height:137,
 marginHorizontal:12,
 backgroundColor:'white',
 marginVertical:12,
-paddingHorizontal:16
+paddingHorizontal:16,
+borderRadius:4
   },
   starTitle:{
     flexDirection: 'row',
@@ -46,11 +47,13 @@ paddingHorizontal:16
   bankNum:{
   marginTop:4,
   color:'#6E6E6E',
-  fontSize:14
+  fontSize:14,
+  fontFamily:'Aspira'
   },
   bankInfo:{
  color:'#6E6E6E',
- fontSize:14
+ fontSize:14,
+ fontFamily:'Aspira'
   },
   bankContainer:{
 
@@ -58,7 +61,9 @@ paddingHorizontal:16
     marginTop:6
   },
   textTitle:{
-    fontSize:18
+    fontSize:18,
+    fontFamily:'Aspira',
+    fontWeight:'500'
   },
 
   bankTitle:{
@@ -71,7 +76,10 @@ paddingHorizontal:16
     
   },
   moneyText:{
-    fontSize:20
+    fontSize:20,
+    fontFamily:'Aspira',
+    fontWeight:'500',
+    lineHeight:24
   }
 })
 
