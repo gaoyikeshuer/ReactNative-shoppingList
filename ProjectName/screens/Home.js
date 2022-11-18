@@ -15,7 +15,7 @@ import {useDispatch, useSelector} from 'react-redux'
 
 
 
-const Home = () => {
+const Home = ({navigation}) => {
 
 
   const[payAccounts, setPayAccounts] = useState([
@@ -45,15 +45,16 @@ const Home = () => {
 
   return (
     <SafeAreaView style = {styles.container}>
-{/* <View style={ toggleActive.active?{ backgroundColor:'rgba(0,0,0,0.5)',height:'100%',width:'100%', position:'absolute'}:{backgroundColor:'red'}}></View> */}
-        {/* <HomeHeaderTitle title= 'Home' toggleModal={toggleModal} /> */}
 
+   <View style={ modalOpen?{ backgroundColor:'rgba(0,0,0,0.5)',height:'100%',width:'100%', position:'absolute',zIndex:100}:''}></View>
+        <HomeHeaderTitle title= 'Home' toggleModal={toggleModal} messages={messages}/>
+      <SafeAreaView>
     
-    {/* <Modal    animationType="slide" transparent ={true} visible= {toggleActive.active}>
+    <Modal    animationType="slide" transparent ={true} visible= {toggleActive.active}>
    <ServiceMessage  />
-    </Modal> */}
+    </Modal>
 
-    <ScrollView>
+
   <QuickPay payAccounts = {payAccounts}/>
   <StarAccount/>
   
