@@ -3,20 +3,29 @@ import {Text, StyleSheet, SafeAreaView, View, Pressable, FlatList } from 'react-
 import { IconX } from '../assets/icons'
 import ListMessage from './ListMessages'
 import NoneMessages from './NoneMessages'
+import {useDispatch, useSelector} from 'react-redux'
+import { toggleActive } from '../store/modalToggleSlice'
+import { useNavigation } from '@react-navigation/native';
 
-const ServiceMessage = ({toggleModal, messages , deleteMessage}) => {
+const ServiceMessage = () => {
+  const messages = useSelector(state => state.mes)
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+
   return (
     <SafeAreaView style = {styles.modalContainer}>
         <View style ={styles.modalHeader}>
             <Text style ={styles.modalText}>Service Message</Text>
-            <Pressable style = {styles.modalClose} onPress = {toggleModal}>
+            <Pressable style = {styles.modalClose} onPress = {()=> {dispatch(toggleActive())
+            navigation.goBack()
+            }}>
              
               <IconX/>
             </Pressable>
          
         </View>
         {messages.length ==0 &&<NoneMessages/>}
-     <FlatList  scrollEnabled={false} data={messages} renderItem = {({item}) =><ListMessage item ={item} deleteMessage={deleteMessage}/>} />
+     <FlatList  scrollEnabled={false} data={messages} renderItem = {({item}) =><ListMessage item ={item} />} />
 
     </SafeAreaView>
   )
