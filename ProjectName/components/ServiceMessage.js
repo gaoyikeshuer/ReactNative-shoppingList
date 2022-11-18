@@ -5,18 +5,23 @@ import ListMessage from './ListMessages'
 import NoneMessages from './NoneMessages'
 import {useDispatch, useSelector} from 'react-redux'
 import { toggleActive } from '../store/modalToggleSlice'
+
 import { useNavigation } from '@react-navigation/native';
+
 
 const ServiceMessage = () => {
   const messages = useSelector(state => state.mes)
   const dispatch = useDispatch();
   const navigation = useNavigation();
 
+
   return (
     <SafeAreaView style = {styles.modalContainer}>
         <View style ={styles.modalHeader}>
             <Text style ={styles.modalText}>Service Message</Text>
+
             <Pressable style = {styles.modalClose} onPress = {()=> dispatch(toggleActive())}>
+
              
               <IconX/>
             </Pressable>

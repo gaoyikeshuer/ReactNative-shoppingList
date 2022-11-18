@@ -45,9 +45,10 @@ const Home = ({navigation}) => {
 
   return (
     <SafeAreaView style = {styles.container}>
-{/* <View style={ toggleActive.active?{ backgroundColor:'rgba(0,0,0,0.5)',height:'100%',width:'100%', position:'absolute'}:{backgroundColor:'red'}}></View> */}
-        {/* <HomeHeaderTitle title= 'Home' toggleModal={toggleModal} /> */}
 
+   <View style={ modalOpen?{ backgroundColor:'rgba(0,0,0,0.5)',height:'100%',width:'100%', position:'absolute',zIndex:100}:''}></View>
+        <HomeHeaderTitle title= 'Home' toggleModal={toggleModal} messages={messages}/>
+      <SafeAreaView>
     
     {/* <Modal    animationType="slide" transparent ={true} visible= {toggleActive.active}>
    <ServiceMessage  />
@@ -58,12 +59,14 @@ const Home = ({navigation}) => {
    <ServiceMessage  />
     </Modal>
 
+
   <QuickPay payAccounts = {payAccounts}/>
   <StarAccount/>
   
   <TransactionList transactionsData={transactionsData} />
       </ScrollView>
 
+    </SafeAreaView>
     </SafeAreaView>
  
   )

@@ -11,7 +11,9 @@ import { LogBox } from 'react-native';
 import { useEffect } from 'react';
 import { store } from './store/store';
 import { Provider } from 'react-redux';
+
 import ServiceMessage from './components/ServiceMessage';
+
 
 const Stack = createNativeStackNavigator();
 
