@@ -15,7 +15,7 @@ import {useDispatch, useSelector} from 'react-redux'
 
 
 
-const Home = () => {
+const Home = ({navigation}) => {
 
 
   const[payAccounts, setPayAccounts] = useState([
@@ -54,6 +54,10 @@ const Home = () => {
     </Modal> */}
 
     <ScrollView>
+    <Modal    animationType="slide" transparent ={true} visible= {toggleActive.active}>
+   <ServiceMessage  />
+    </Modal>
+
   <QuickPay payAccounts = {payAccounts}/>
   <StarAccount/>
   

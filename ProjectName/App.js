@@ -5,6 +5,8 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Tabs from './navigation/Tabs'
+
+
 import { LogBox } from 'react-native';
 import { useEffect } from 'react';
 import { store } from './store/store';

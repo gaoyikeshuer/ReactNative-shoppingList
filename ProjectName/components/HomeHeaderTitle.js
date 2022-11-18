@@ -12,7 +12,7 @@ const HomeHeaderTitle = () => {
   return (
     <View style={styles.header}> 
       {/* <Text style={styles.text}>{title}</Text> */}
-      <Pressable style= {styles.alert} onPress= {()=>{navigation.navigate('ServiceMessage')}}>
+      <Pressable style= {styles.alert} onPress= {()=>{dispatch(toggleActive())}}>
       
         { messages.length !=0 && <View style={styles.alertNum}>
           <Text style = {styles.messagesNum}>{messages.length}</Text>

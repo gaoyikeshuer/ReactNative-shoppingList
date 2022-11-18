@@ -16,9 +16,7 @@ const ServiceMessage = () => {
     <SafeAreaView style = {styles.modalContainer}>
         <View style ={styles.modalHeader}>
             <Text style ={styles.modalText}>Service Message</Text>
-            <Pressable style = {styles.modalClose} onPress = {()=> {dispatch(toggleActive())
-            navigation.goBack()
-            }}>
+            <Pressable style = {styles.modalClose} onPress = {()=> dispatch(toggleActive())}>
              
               <IconX/>
             </Pressable>
@@ -59,4 +57,4 @@ const styles = StyleSheet.create ({
     }
   })
 
-export default ServiceMessage
+export default ServiceMessage;
