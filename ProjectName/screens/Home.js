@@ -51,16 +51,9 @@ const Home = ({navigation}) => {
         <HomeHeaderTitle title= 'Home' toggleModal={toggleModal} messages={messages}/>
       <SafeAreaView>
     
-<<<<<<< Updated upstream
-    <Modal    animationType="slide" transparent ={true} visible= {modalOpen}>
-   <ServiceMessage toggleModal={toggleModal} messages={messages} deleteMessage = {deleteMessage}/>
-    </Modal>
-
-=======
     <Modal    animationType="slide" transparent ={true} visible= {toggleActive.active}>
    <ServiceMessage  />
     </Modal>
->>>>>>> Stashed changes
 
   <QuickPay payAccounts = {payAccounts}/>
   <StarAccount/>
