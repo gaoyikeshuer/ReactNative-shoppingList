@@ -9,6 +9,8 @@ import Tabs from './navigation/Tabs'
 
 
 =======
+import { LogBox } from 'react-native';
+import { useEffect } from 'react';
 import { store } from './store/store';
 import { Provider } from 'react-redux';
 >>>>>>> Stashed changes
