@@ -15,7 +15,7 @@ import { ScrollView } from 'react-native-gesture-handler'
 
 
 
-const Home = () => {
+const Home = ({navigation}) => {
 
   const [messages, setMessages] = useState([
     {id: 1, text:"We are continuing to improve your new iBB service, and it will be unavailable on Friday 7th September from 17:00 until 19:00."},
@@ -51,10 +51,16 @@ const Home = () => {
         <HomeHeaderTitle title= 'Home' toggleModal={toggleModal} messages={messages}/>
       <SafeAreaView>
     
+<<<<<<< Updated upstream
     <Modal    animationType="slide" transparent ={true} visible= {modalOpen}>
    <ServiceMessage toggleModal={toggleModal} messages={messages} deleteMessage = {deleteMessage}/>
     </Modal>
 
+=======
+    <Modal    animationType="slide" transparent ={true} visible= {toggleActive.active}>
+   <ServiceMessage  />
+    </Modal>
+>>>>>>> Stashed changes
 
   <QuickPay payAccounts = {payAccounts}/>
   <StarAccount/>

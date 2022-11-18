@@ -3,13 +3,26 @@ import {Text, StyleSheet, SafeAreaView, View, Pressable, FlatList } from 'react-
 import { IconX } from '../assets/icons'
 import ListMessage from './ListMessages'
 import NoneMessages from './NoneMessages'
+<<<<<<< Updated upstream
+=======
+import {useDispatch, useSelector} from 'react-redux'
+import { toggleActive } from '../store/modalToggleSlice'
+
+const ServiceMessage = () => {
+  const messages = useSelector(state => state.mes)
+  const dispatch = useDispatch();
+>>>>>>> Stashed changes
 
 const ServiceMessage = ({toggleModal, messages , deleteMessage}) => {
   return (
     <SafeAreaView style = {styles.modalContainer}>
         <View style ={styles.modalHeader}>
             <Text style ={styles.modalText}>Service Message</Text>
+<<<<<<< Updated upstream
             <Pressable style = {styles.modalClose} onPress = {toggleModal}>
+=======
+            <Pressable style = {styles.modalClose} onPress = {()=> dispatch(toggleActive())}>
+>>>>>>> Stashed changes
              
               <IconX/>
             </Pressable>

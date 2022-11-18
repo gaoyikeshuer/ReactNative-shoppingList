@@ -1,12 +1,19 @@
 import React from 'react'
 import { View,Text, StyleSheet,Pressable ,SafeAreaView } from 'react-native'
 import { IconAlert } from '../assets/icons'
+import {useDispatch, useSelector} from 'react-redux'
+import { toggleActive } from '../store/modalToggleSlice'
+import { useNavigation } from '@react-navigation/native';
 
-const HomeHeaderTitle = ({title, toggleModal, messages}) => {
+const HomeHeaderTitle = () => {
+  const messages = useSelector(state => state.mes)
+ const dispatch = useDispatch()
+ const navigation = useNavigation();
   return (
     <View style={styles.header}> 
-      <Text style={styles.text}>{title}</Text>
-      <Pressable style= {styles.alert} onPress= {toggleModal}>
+      {/* <Text style={styles.text}>{title}</Text> */}
+      <Pressable style= {styles.alert} onPress= {()=>{dispatch(toggleActive())}}>
+      
         { messages.length !=0 && <View style={styles.alertNum}>
           <Text style = {styles.messagesNum}>{messages.length}</Text>
         </View>}
@@ -17,9 +24,8 @@ const HomeHeaderTitle = ({title, toggleModal, messages}) => {
   )
 }
 const styles = StyleSheet.create({
-    header:{
-      paddingBottom:14
-    },
+ 
+ 
     text:{
         color:'#7F2B7B',
         fontSize: 18,
@@ -29,8 +35,7 @@ const styles = StyleSheet.create({
         
     },
     alert:{
-      position:'absolute',
-      right:20
+  
     },
     alertNum:{
       position:'absolute',
