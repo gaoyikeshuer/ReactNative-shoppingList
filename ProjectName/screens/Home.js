@@ -1,26 +1,23 @@
 import React, {useState, useEffect} from 'react'
-import { View, Text, StyleSheet, FlatList, SafeAreaView, Modal } from 'react-native'
+import { View, Text, StyleSheet, FlatList, SafeAreaView, Modal, Pressable } from 'react-native'
 import { IconHome, IconAlert } from '../assets/icons'
 import HomeHeaderTitle from '../components/HomeHeaderTitle'
-import ServiceMessage from '../components/ServiceMessage'
 import QuickPay from '../components/QuickPay'
 import StarAccount from '../components/StarAccount'
 import TransactionList from '../components/TransactionList'
 import transactionsData from '../assets/apis/transactions.json'
 import { ScrollView } from 'react-native-gesture-handler'
-
+import {useDispatch, useSelector} from 'react-redux'
+import ServiceMessages from '../components/ServiceMessages'
 
 
  
 
 
 
-const Home = ({navigation}) => {
+const Home = () => {
 
-  const [messages, setMessages] = useState([
-    {id: 1, text:"We are continuing to improve your new iBB service, and it will be unavailable on Friday 7th September from 17:00 until 19:00."},
-    {id: 2, text:"There has been a recent rise in text messages asking users for their login details. At AIB, we will never ask you for your password or PIN code."}
-  ])
+
   const[payAccounts, setPayAccounts] = useState([
     {id:1, name:"Alloment Weal"},
     {id:2, name:"Cian Byrne"},
@@ -35,25 +32,20 @@ const Home = ({navigation}) => {
     {id:11, name: 'nyan tsabjnx'}
   ])
  
-  const [modalOpen, setModalOpen] = useState(false)
-  const toggleModal= () =>{
-    setModalOpen(!modalOpen)
-  }
-  const deleteMessage = (id) =>{
-    setMessages(prevMessages => {
-      return prevMessages.filter(item => item.id != id)
-    })
-  }
+
+  const modalToggle = useSelector((state) => state.modalToggle)
+  console.log(modalToggle.active)
 
   return (
     <SafeAreaView style = {styles.container}>
-   <View style={ modalOpen?{ backgroundColor:'rgba(0,0,0,0.5)',height:'100%',width:'100%', position:'absolute',zIndex:100}:''}></View>
-        <HomeHeaderTitle title= 'Home' toggleModal={toggleModal} messages={messages}/>
+   <View style={ modalToggle.active?{ backgroundColor:'rgba(0,0,0,0.5)',height:'100%',width:'100%', position:'absolute',zIndex:100}:''}></View>
+
       <SafeAreaView>
     
-    <Modal    animationType="slide" transparent ={true} visible= {toggleActive.active}>
-   <ServiceMessage  />
+    <Modal    animationType="slide"  visible= {modalToggle.active}>
+   <ServiceMessages  />
     </Modal>
+    
 
   <QuickPay payAccounts = {payAccounts}/>
   <StarAccount/>

@@ -9,10 +9,13 @@ const HomeHeaderTitle = () => {
   const messages = useSelector(state => state.mes)
  const dispatch = useDispatch()
  const navigation = useNavigation();
+ const modalToggle = useSelector((state) => state.modalToggle)
   return (
     <View style={styles.header}> 
       {/* <Text style={styles.text}>{title}</Text> */}
-      <Pressable style= {styles.alert} onPress= {()=>{dispatch(toggleActive())}}>
+      <Pressable style= {styles.alert} onPress= {()=>{dispatch(toggleActive())
+ 
+      }}>
       
         { messages.length !=0 && <View style={styles.alertNum}>
           <Text style = {styles.messagesNum}>{messages.length}</Text>

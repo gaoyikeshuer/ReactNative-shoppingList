@@ -1,11 +1,12 @@
 import * as React from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 import {IconHome, IconArrowRight, IconList, IconSettings} from '../assets/icons';
 import {Home} from '../screens';
 import {
   createBottomTabNavigator,
   BottomTabBar,
 } from '@react-navigation/bottom-tabs';
+import HomeHeaderTitle from '../components/HomeHeaderTitle';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,20 +17,27 @@ const Tabs = () => {
         tabBarStyle: { paddingLeft : 20, paddingRight :20},
         tabBarActiveTintColor: 'purple',
         tabBarInactiveTintColor: 'gray',
-        headerShown: false
+         headerShown:true,
+         headerMode:'screen'
     }}>
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => <IconHome width={18} height={18} color={focused? 'purple' :'gray'} />
+          tabBarIcon: ({focused}) => <IconHome width={18} height={18} color={focused? 'purple' :'gray'} />,
+          headerTitle: () => (<Text>Home</Text>),
+          headerRight: () => <HomeHeaderTitle />,
+          headerStyle:{
+            backgroundColor:'transparent'
+          }
         }}
       />
         <Tab.Screen
         name="Accounts"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => <IconList width={18} height={18} color={focused? 'purple' :'gray'} />
+          tabBarIcon: ({focused}) => <IconList width={18} height={18} color={focused? 'purple' :'gray'} />,
+        
         }}
       />
         <Tab.Screen

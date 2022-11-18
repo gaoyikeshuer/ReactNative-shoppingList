@@ -6,10 +6,11 @@ import NoneMessages from './NoneMessages'
 import {useDispatch, useSelector} from 'react-redux'
 import { toggleActive } from '../store/modalToggleSlice'
 
-const ServiceMessage = () => {
+const ServiceMessages = () => {
+    console.log("show")
   const messages = useSelector(state => state.mes)
   const dispatch = useDispatch();
-  const navigation = useNavigation();
+
   return (
     <SafeAreaView style = {styles.modalContainer}>
         <View style ={styles.modalHeader}>
@@ -56,4 +57,4 @@ const styles = StyleSheet.create ({
     }
   })
 
-export default ServiceMessage
+export default ServiceMessages
