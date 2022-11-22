@@ -1,6 +1,6 @@
 import React from 'react'
 import { View,Text,StyleSheet } from 'react-native'
-import UserAvatar from 'react-native-user-avatar'
+
 import AvatarGenerator from './AvatarGenerator'
 
 const ListAccounts = ({item}) => {

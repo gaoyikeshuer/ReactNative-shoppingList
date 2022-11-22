@@ -11,10 +11,15 @@ import { useEffect } from 'react';
 
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import Header from './components/Header';
+import { useSelector } from 'react-redux';
+
 
 const Stack = createNativeStackNavigator();
 
+
 function App() {
+
   return (
     <NavigationContainer>
       <Provider store={store}>
@@ -25,6 +30,7 @@ function App() {
       initialRouteName={"Home"}>
         <Stack.Screen name="Home" component={Tabs}/>
       </Stack.Navigator>
+   
       </Provider>
  
     </NavigationContainer>

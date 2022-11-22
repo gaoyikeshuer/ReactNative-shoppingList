@@ -4,7 +4,7 @@ import { View, StyleSheet, Text } from 'react-native'
 const AvatarGenerator = ({name}) => {
    
     const initials = name.split(' ')[0].charAt(0).toUpperCase() + name.split(' ').pop().charAt(0).toUpperCase()
-    console.log(initials)
+   
   return (
     <View style={styles.avatarCircle} >
       <Text style={styles.avatarText}>{initials}</Text>

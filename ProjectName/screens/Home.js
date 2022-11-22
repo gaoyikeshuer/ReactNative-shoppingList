@@ -10,13 +10,62 @@ import { ScrollView } from 'react-native-gesture-handler'
 import {useDispatch, useSelector} from 'react-redux'
 import ServiceMessages from '../components/ServiceMessages'
 
+// import { firestore } from '../config'
 
- 
+
+import { db } from '../firebase'
 
 
+// import { collection, getDocs } from "firebase/firestore"; 
+
+import { doc, getDoc } from "firebase/firestore";
 
 const Home = () => {
 
+ const GetData = async() =>{
+
+  const docRef = doc(db, "TransactionList",'YcfAz6kY0y5XHv1H5DO3');
+  const docSnap = await getDoc(docRef);
+  
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document")
+  }
+  // const citiesCol = collection(db, 'TransactionList');
+  // const citySnapshot = await getDocs(citiesCol);
+  // const cityList = citySnapshot.docs.map(doc => doc.data());
+  // console.log(citySnapshot)
+ }
+ GetData();
+
+
+  
+  
+  // const [list, setList] = useState([])
+  // // const transRef = firestore.collection('TransactionList')
+  // const transRef = db.collection('TransactionList')
+  // useEffect( async () =>{
+  //   transRef
+  //   .onSnapshot(
+  //     querySnapshot =>{
+  //      const lists = []
+  //      querySnapshot.forEach((doc)=>{
+  //       const{date,currency,name,number,type}= doc.data()
+  //       lists.push({
+  //         id: doc.id,
+  //         date,
+  //         currency,
+  //         name,
+  //         number,
+  //         type
+
+  //       })  
+  //     })
+  //     setList(lists)
+  // })
+  // },[])
 
   const[payAccounts, setPayAccounts] = useState([
     {id:1, name:"Alloment Weal"},
@@ -34,13 +83,13 @@ const Home = () => {
  
 
   const modalToggle = useSelector((state) => state.modalToggle)
-  console.log(modalToggle.active)
+ 
 
   return (
     <SafeAreaView style = {styles.container}>
-   <View style={ modalToggle.active?{ backgroundColor:'rgba(0,0,0,0.5)',height:'100%',width:'100%', position:'absolute',zIndex:100}:''}></View>
+ {/* <View style={ modalToggle.active?{ backgroundColor:'rgba(0,0,0,0.5)',height:'100%',width:'100%', position:'absolute',zIndex:100}:''}></View> */}
 
-      <SafeAreaView>
+      <ScrollView>
     
     <Modal    animationType="slide"  visible= {modalToggle.active}>
    <ServiceMessages  />
@@ -51,7 +100,7 @@ const Home = () => {
   <StarAccount/>
   
   <TransactionList transactionsData={transactionsData} />
-      </SafeAreaView>
+      </ScrollView>
 
     </SafeAreaView>
  

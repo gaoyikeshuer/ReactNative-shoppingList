@@ -1,26 +1,64 @@
-import React from 'react'
-import { View,Text, StyleSheet,Pressable ,SafeAreaView } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { View,Text, StyleSheet,Pressable ,Animated } from 'react-native'
 import { IconAlert } from '../assets/icons'
 import {useDispatch, useSelector} from 'react-redux'
 import { toggleActive } from '../store/modalToggleSlice'
-import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler'
+
+
 
 const HomeHeaderTitle = () => {
   const messages = useSelector(state => state.mes)
  const dispatch = useDispatch()
- const navigation = useNavigation();
- const modalToggle = useSelector((state) => state.modalToggle)
+ const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
+
+const spinValue = useState(new Animated.Value(0))[0]
+
+
+
+const spinBell = () =>{
+
+  Animated.sequence([
+    Animated.timing(spinValue,{toValue:1,duration:70,useNativeDriver:true}),
+    Animated.timing(spinValue,{toValue:-1,duration:70,useNativeDriver:true}),
+    Animated.timing(spinValue,{toValue:1,duration:70,useNativeDriver:true}),
+    Animated.timing(spinValue,{toValue:0,duration:70,useNativeDriver:true}),
+  ])
+ .start()
+}
+const spin = spinValue.interpolate({
+  inputRange:[-1,1],
+  outputRange:['-10deg','10deg']
+})
+
+
+
+
   return (
+    
     <View style={styles.header}> 
-      {/* <Text style={styles.text}>{title}</Text> */}
+
+
       <Pressable style= {styles.alert} onPress= {()=>{dispatch(toggleActive())
- 
+     
       }}>
       
         { messages.length !=0 && <View style={styles.alertNum}>
           <Text style = {styles.messagesNum}>{messages.length}</Text>
         </View>}
-      <IconAlert width={22} height={22} color='purple'/>
+     
+        <Animated.View style={{transform:[{rotate:spin}]}} >
+ 
+    <AnimatedTouchable onPress={
+      
+    spinBell
+  
+    }>
+    <IconAlert width={22} height={22} color='purple'/>
+    </AnimatedTouchable>
+ 
+        </Animated.View>
+
       </Pressable>
  
     </View>
@@ -48,7 +86,7 @@ const styles = StyleSheet.create({
       width:21,
       height: 16,
       backgroundColor: '#E00885',
-      zIndex:10,
+      zIndex:13,
       borderRadius:12,
       borderColor: '#efefef',
       borderWidth: 2
