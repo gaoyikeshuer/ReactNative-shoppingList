@@ -1,11 +1,48 @@
-import React from 'react'
+import React ,{useState, useEffect} from 'react'
 import { SafeAreaView, SectionList, View, Text, StyleSheet } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import TransactionItem from './TransactionItem'
 
+import { db } from '../firebase'
+import { collection, getDocs, query, orderBy } from "firebase/firestore"; 
 const TransactionList = ({transactionsData}) => {
+  
+  
+  const [listData, setListData] = useState([])
 
- const DATA = Object.values(transactionsData.reduce((acc, currentVal) => {
+const myFunction = async () => {
+  const listRef = collection(db,"TransactionList")
+  const q = query(listRef , orderBy("date","desc"))
+  const querySnapshot = await getDocs(q)
+
+  const data = []
+  const dateFormat = new Intl.DateTimeFormat('en-US')
+  querySnapshot.forEach((doc) => {
+    const{date, currency, name, number, type} = doc.data()
+    const dateObj = new Date(doc.data().date.seconds * 1000)
+    data.push({
+      key: doc.id,
+      date:  dateFormat.format(dateObj),
+      currency,
+      name,
+      number, 
+      type
+      
+    })
+  
+  })
+  setListData(data)
+  
+};
+  useEffect(() =>myFunction() ,[])
+console.log(listData)
+
+
+
+
+
+
+ const DATA = Object.values(listData.reduce((acc, currentVal) => {
 
     if (!acc[currentVal.date]) acc[currentVal.date] = {
       title: currentVal.date,
@@ -15,14 +52,20 @@ const TransactionList = ({transactionsData}) => {
     return acc;
   
   }, {}))
+
+  console.log(DATA)
   return (
    <SafeAreaView>
     <View style={{flexDirection:'row', marginHorizontal:12, justifyContent:'space-between', marginBottom:10}}>
         <Text style={{color:'#6E6E6E', fontFamily:'Aspira', fontWeight:'500'}}>RECENT INCOMING TRANSACTIONS</Text>
         <Text style={{color:'#7F2B7B', fontFamily:'Aspira', fontWeight:'500'}}>Show all {`>`}</Text>
     </View>
+    <FlatList></FlatList>
+
+
   <SectionList sections={DATA}
    scrollEnabled={true}
+   stickySectionHeadersEnabled ={false}
   keyExtractor={(item, index)=> item +index} 
   renderItem ={
     ({item}) => {return(<View style={styles.listContainer}>

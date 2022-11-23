@@ -19,7 +19,9 @@ const Stack = createNativeStackNavigator();
 
 
 function App() {
-
+  useEffect(() => {
+    LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
+}, [])
   return (
     <NavigationContainer>
       <Provider store={store}>
