@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
   },
   avatarContainer: {
     marginHorizontal: 12,
+ 
   },
 });
 

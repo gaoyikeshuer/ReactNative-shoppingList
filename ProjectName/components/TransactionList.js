@@ -15,7 +15,7 @@ import {collection, getDocs, query, orderBy} from 'firebase/firestore';
 const TransactionList = ({transactionsData}) => {
   const [listData, setListData] = useState([]);
 
-  const [tabData, setTabData] = useState([]);
+  const [tabData, setTabData] = useState(0);
 
   
 
@@ -59,16 +59,40 @@ const TransactionList = ({transactionsData}) => {
       return acc;
     }, {}),
   );
+  const monthData = Object.values(
+    listData.reduce((acc, currentVal) =>{
+      if(!acc[currentVal.month])
+      acc[currentVal.month] ={
+        month: currentVal.month,
+        data :[],
+        monthName : toMonthName(currentVal.month)
+      };
+      acc[currentVal.month].data.push(currentVal)
+     return acc
+    },{})
+  )
+
  const index = DATA.findIndex(object =>{
-  return object.month == 8;
+  return object.month == tabData;
  })
 
- console.log(index)
+
 
 
 
 
   const Ref = useRef(null);
+
+  function toMonthName(monthNumber) {
+    const date = new Date();
+    date.setMonth(monthNumber - 1);
+  
+    return date.toLocaleString('en-US', {
+      month: 'long',
+    });
+  }
+
+  console.log(tabData)
 
   return (
     <SafeAreaView>
@@ -88,7 +112,19 @@ const TransactionList = ({transactionsData}) => {
           Show all {`>`}
         </Text>
       </View>
-      <FlatList></FlatList>
+      <FlatList data={monthData}
+      horizontal ={true}
+      renderItem={
+        ({item}) =>{
+          return (
+           <Pressable onPress={()=>setTabData(item.month)}>
+ <Text>{item.monthName}</Text>
+           </Pressable>
+          )
+        }
+      }/>
+
+      
 
       <Pressable
         onPress={() => {
