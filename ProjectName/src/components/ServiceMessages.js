@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { toggleActive } from '../store/modalToggleSlice'
 
 const ServiceMessages = () => {
-    console.log("show")
+   
   const messages = useSelector(state => state.mes)
   const dispatch = useDispatch();
 

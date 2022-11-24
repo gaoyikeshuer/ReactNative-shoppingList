@@ -1,6 +1,6 @@
 import React from 'react'
 import {Text, StyleSheet, SafeAreaView, View, Pressable, FlatList } from 'react-native'
-import { IconInbox } from '../assets/icons'
+import { IconInbox } from '../src/assets/icons'
 
 
 const NoneMessages = () => {

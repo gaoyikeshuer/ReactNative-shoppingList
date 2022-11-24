@@ -1,8 +1,8 @@
 import React from 'react'
 import {Text, StyleSheet, TouchableOpacity, SafeAreaView, Pressable } from 'react-native'
 import { useDispatch } from 'react-redux'
-import { IconXCircle } from '../assets/icons'
-import { deleteMes } from '../store/messagesSlice'
+import { IconXCircle } from '../src/assets/icons'
+import { deleteMes } from '../src/store/messagesSlice'
 
 
 const ListMessage = ({item, deleteMessage}) => {

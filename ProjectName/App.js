@@ -1,24 +1,31 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Appearance } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Tabs from './navigation/tabs';
+import Tabs from './src/navigation/tabs';
 
 import { LogBox } from 'react-native';
 import { useEffect } from 'react';
 
 import { Provider } from 'react-redux';
-import { store } from './store/store';
-import Header from './components/Header';
+import { store } from './src/store/store';
+import Header from './src/components/Header';
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 
 const Stack = createNativeStackNavigator();
 
 
 function App() {
+  const[theme, setTheme]  = useState( Appearance.getColorScheme())
+  Appearance.addChangeListener((scheme) =>{
+    console.log(scheme.colorScheme);
+  })
+
+
   useEffect(() => {
     LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
 }, [])

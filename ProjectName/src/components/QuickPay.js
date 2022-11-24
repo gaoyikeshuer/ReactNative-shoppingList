@@ -8,8 +8,8 @@ import {
   FlatList,
 } from 'react-native';
 import ListAccounts from './ListAccounts';
-import {IconX} from '../assets/icons';
-import {IconPlus} from '../assets/icons';
+import {IconX} from '../src/assets/icons';
+import {IconPlus} from '../src/assets/icons';
 import AddAcounts from './AddAcounts';
 
 const QuickPay = ({payAccounts}) => {

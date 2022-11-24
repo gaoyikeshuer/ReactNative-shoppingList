@@ -8,15 +8,20 @@ import {
   Modal,
   Pressable,
 } from 'react-native';
-import {IconHome, IconAlert} from '../assets/icons';
-import HomeHeaderTitle from '../components/HomeHeaderTitle';
+
+
+import { IconHome, IconAlert } from '../assets/icons';
+
 import QuickPay from '../components/QuickPay';
+
 import StarAccount from '../components/StarAccount';
-import TransactionList from '../components/TransactionList';
-import transactionsData from '../assets/apis/transactions.json';
+
+import TransactionList from '../../components/TransactionList';
+
 import {ScrollView} from 'react-native-gesture-handler';
 import {useDispatch, useSelector} from 'react-redux';
 import ServiceMessages from '../components/ServiceMessages';
+import HomeHeaderTitle from '../components/HomeHeaderTitle';
 
 // import { firestore } from '../config'
 

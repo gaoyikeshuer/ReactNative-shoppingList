@@ -9,7 +9,7 @@ import {
   Animated
 } from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
-import TransactionListTab from './TransactionListTab';
+import TransactionTab from './TransactionTab.js';
 import { useSelector } from 'react-redux';
 
 import {db} from '../firebase';
@@ -115,7 +115,7 @@ const TransactionList = () => {
           Show all {`>`}
         </Text>
       </View>
-      <TransactionListTab monthData = {monthData} Ref= {Ref} DATA={DATA} scrollA ={scrollA}/>
+      <TransactionTab monthData = {monthData} Ref= {Ref} DATA={DATA} scrollA ={scrollA}/>
     
       <SectionList
       onScroll={

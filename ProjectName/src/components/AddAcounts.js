@@ -1,6 +1,6 @@
 import React from 'react'
 import { View ,StyleSheet,Text } from 'react-native'
-import { IconPlus } from '../assets/icons'
+import { IconPlus } from '../src/assets/icons'
 
 const AddAcounts = () => {
   return (

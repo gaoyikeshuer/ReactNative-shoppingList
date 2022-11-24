@@ -8,6 +8,7 @@ export const messageSlice = createSlice({
 ],
     reducers:{
         deleteMes:(state, action) =>{
+            
             return state.filter((item) => item.id !== action.payload.id)
         }
     }
