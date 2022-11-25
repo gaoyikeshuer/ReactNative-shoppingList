@@ -1,10 +1,11 @@
 import{ createSlice} from '@reduxjs/toolkit';
 export const monthTabSlice = createSlice({
     name: 'monthTab',
-    initialState:{month:0},
+    initialState:{item: null},
     reducers:{
         changeMonth:(state, action) =>{
-            state.month = action.payload.month
+     
+            state.item = action.payload.item
         }
     }
 })

@@ -11,9 +11,10 @@ import { useEffect } from 'react';
 
 import { Provider } from 'react-redux';
 import { store } from './src/store/store';
-import Header from './src/components/Header';
-import { useSelector } from 'react-redux';
+import Header from './src/components/dimBackground/DimBackground';
+
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 const Stack = createNativeStackNavigator();
@@ -21,9 +22,7 @@ const Stack = createNativeStackNavigator();
 
 function App() {
   const[theme, setTheme]  = useState( Appearance.getColorScheme())
-  Appearance.addChangeListener((scheme) =>{
-    console.log(scheme.colorScheme);
-  })
+ 
 
 
   useEffect(() => {
@@ -34,7 +33,7 @@ function App() {
       <Provider store={store}>
       <Stack.Navigator 
       screenOptions={{
-        headerShown: false
+        headerShown:false
       }}
       initialRouteName={"Home"}>
         <Stack.Screen name="Home" component={Tabs}/>

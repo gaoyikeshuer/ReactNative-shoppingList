@@ -3,7 +3,7 @@ import { View,Text, StyleSheet,Pressable ,Animated } from 'react-native'
 import { Dimensions } from 'react-native'
 import { useSelector } from 'react-redux'
 
-const Header = () => {
+const DimBackground = () => {
     const windowWidth = Dimensions.get('window').width;
     const windowHeight = Dimensions.get('window').height;
 
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
  
 })
 
-export default Header
+export default DimBackground

@@ -9,16 +9,21 @@ import {
   Animated
 } from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
-import TransactionTab from './TransactionTab.js';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-import {db} from '../firebase';
+import {db} from '../../../firebase';
 import {collection, getDocs, query, orderBy} from 'firebase/firestore';
 
 
-const TransactionList = () => {
-  const [listData, setListData] = useState([]);
+import Tab from './components/Tab';
+import TransactionListStyle from './TransactionListStyle';
+import { changeMonth } from '../../store/monthTabSlice';
 
+
+const TransactionList = () => {
+  const monthTab = useSelector(state => state.monthTab);
+  const [listData, setListData] = useState([]);
+ const dispatch = useDispatch()
   
 
 
@@ -96,7 +101,16 @@ const TransactionList = () => {
   
   const scrollA = useRef(new Animated.Value(0)).current
 
-  
+  const _onViewableItemsChanged = React.useCallback(({ viewableItems, changed }) => {
+    // console.log("Visible items are", viewableItems);
+
+   dispatch(changeMonth({item: viewableItems[1]?.item}))
+    // console.log("Changed in this iteration, ", changed);
+  }, []);
+
+  const _viewabilityConfig = {
+    itemVisiblePercentThreshold: 80
+  }
   return (
     <SafeAreaView>
       <View
@@ -107,7 +121,7 @@ const TransactionList = () => {
           marginBottom: 10,
         }}>
         <Text
-          style={{color: '#6E6E6E', fontFamily: 'Aspira', fontWeight: '500'}}>
+          style={{color: '#6E6E6E', fontFamily: 'Aspira', fontWeight: '500', letterSpacing: 1.5, fontSize:12}}>
           RECENT INCOMING TRANSACTIONS
         </Text>
         <Text
@@ -115,11 +129,16 @@ const TransactionList = () => {
           Show all {`>`}
         </Text>
       </View>
-      <TransactionTab monthData = {monthData} Ref= {Ref} DATA={DATA} scrollA ={scrollA}/>
+      <Tab monthData = {monthData} Ref= {Ref} DATA={DATA} scrollA ={scrollA}/>
     
       <SectionList
+       onViewableItemsChanged={_onViewableItemsChanged}
+       viewabilityConfig={_viewabilityConfig}
       onScroll={
-        Animated.event([{nativeEvent:{contentOffset:{y: scrollA}}}])
+        Animated.event([{nativeEvent:{contentOffset:{y: scrollA}}}],{useNativeDriver: false}
+   
+          )
+      
       }
         ref={Ref}
         sections={DATA}
@@ -127,29 +146,24 @@ const TransactionList = () => {
         stickySectionHeadersEnabled={false}
         keyExtractor={(item, index) => item + index}
         renderItem={({item}) => {
+        
           return (
-            <View style={styles.listContainer}>
-              <View style={styles.textContainer}>
-                <View style={styles.nameContainer}>
+            <View style={TransactionListStyle.listContainer}>
+              <View style={TransactionListStyle.textContainer}>
+                <View style={TransactionListStyle.nameContainer}>
                   <Text
-                    style={{
-                      fontSize: 16,
-                      width: 224,
-                      marginBottom: 3,
-                      fontFamily: 'Aspira',
-                      fontWeight: '500',
-                    }}>
+                    style={TransactionListStyle.textName}>
                     {item.name}
                   </Text>
-                  <Text style={{color: '#6E6E6E'}}>{item.type}</Text>
+                  <Text style={{color: '#6E6E6E', fontFamily:'Aspira'}}>{item.type}</Text>
                 </View>
                 <View style={{alignItems: 'flex-end'}}>
-                  <Text style={{color: '#6E6E6E', fontFamily: 'Aspira'}}>
+                  <Text style={TransactionListStyle.textCurrency}>
                     {item.currency}
                   </Text>
 
-                  <Text style={{fontSize: 16, fontFamily: 'Aspira'}}>
-                    {item.number}
+                  <Text style={TransactionListStyle.textNumber}>
+                    {item.number>0?'+'+item.number.toFixed(2).toLocaleString():item.number.toFixed(2).toLocaleString()}
                   </Text>
                  
                 </View>
@@ -169,8 +183,8 @@ const TransactionList = () => {
         }}
         renderSectionHeader={({section}) => {
           return (
-            <View style={styles.transactionTitle}>
-              <Text style={styles.titleDate}>{section.title}</Text>
+            <View style={TransactionListStyle.transactionTitle}>
+              <Text style={TransactionListStyle.titleDate}>{section.title}</Text>
             </View>
           );
         }}
@@ -178,30 +192,6 @@ const TransactionList = () => {
     </SafeAreaView>
   );
 };
-const styles = StyleSheet.create({
-  transactionTitle: {
-    paddingHorizontal: 12,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: '#C3C3C3',
-  },
-  titleDate: {
-    color: '#7F2B7B',
-    marginVertical: 4,
-  },
-  listContainer: {
-    backgroundColor: 'white',
-  },
-  textContainer: {
-    marginHorizontal: 12,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 11,
-    marginBottom: 17,
-  },
-  nameContainer: {
-    width: 224,
-  },
-});
+
 
 export default TransactionList;

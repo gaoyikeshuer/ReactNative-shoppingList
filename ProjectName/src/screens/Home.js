@@ -7,27 +7,40 @@ import {
   SafeAreaView,
   Modal,
   Pressable,
+  Appearance
 } from 'react-native';
 
 
 import { IconHome, IconAlert } from '../assets/icons';
 
-import QuickPay from '../components/QuickPay';
+import QuickPay from '../features/quickPay/QuickPay';
 
-import StarAccount from '../components/StarAccount';
+import StarAccount from '../features/accountCard/StarAccount';
 
-import TransactionList from '../../components/TransactionList';
+import TransactionList from '../features/transactionList/TransactionList';
 
 import {ScrollView} from 'react-native-gesture-handler';
 import {useDispatch, useSelector} from 'react-redux';
-import ServiceMessages from '../components/ServiceMessages';
-import HomeHeaderTitle from '../components/HomeHeaderTitle';
+import ServiceMessages from '../features/serviceMessages/ServiceMessages';
+import HomeHeaderTitle from '../components/ServiceBell/HomeHeaderTitle';
 
 // import { firestore } from '../config'
-
+import { isDarkMode } from '../store/themeToggleSlice';
+import DarkModeStyle from '../theme/DarkModeStyle';
 
 
 const Home = () => {
+  const dispatch = useDispatch()
+  const darkmode= useSelector(state => state.themeToggle)
+  Appearance.addChangeListener((scheme) =>{
+    dispatch(isDarkMode({scheme : scheme.colorScheme}))
+
+  })
+
+ 
+
+
+
   const [payAccounts, setPayAccounts] = useState([
     {id: 1, name: 'Alloment Weal'},
     {id: 2, name: 'Cian Byrne'},
@@ -45,7 +58,7 @@ const Home = () => {
   const modalToggle = useSelector(state => state.modalToggle);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={darkmode.scheme == 'dark'? DarkModeStyle.container: styles.container}>
       {/* <View style={ modalToggle.active?{ backgroundColor:'rgba(0,0,0,0.5)',height:'100%',width:'100%', position:'absolute',zIndex:100}:''}></View> */}
 
 

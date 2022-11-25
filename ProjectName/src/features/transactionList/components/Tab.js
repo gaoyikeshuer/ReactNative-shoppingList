@@ -3,14 +3,14 @@ import React, {useEffect, useRef} from 'react';
 
 import {useSelector, useDispatch} from 'react-redux';
 
-import {changeMonth} from '../src/store/monthTabSlice';
+import {changeMonth} from '../../../store/monthTabSlice';
 import {useState} from 'react';
 import {StyleSheet} from 'react-native';
 
-const TransactionTab = ({monthData, Ref, DATA, scrollA}) => {
+const Tab = ({monthData, Ref, DATA, scrollA}) => {
   // const fadeAnim = useRef(new Animated.Value(0)).current;
-  // const dispatch = useDispatch();
-  // const monthTab = useSelector(state => state.monthTab);
+  const dispatch = useDispatch();
+  const monthTab = useSelector(state => state.monthTab);
   // const value = useState(new Animated.Value(0))[0];
 
   const scrollValue = scrollA.interpolate({
@@ -26,7 +26,7 @@ const TransactionTab = ({monthData, Ref, DATA, scrollA}) => {
         position: 'absolute',
         top: 24,
         zIndex: 15,
-        backgroundColor: 'white',
+        backgroundColor: '#efefef',
 
         width: '100%',
       }}>
@@ -37,8 +37,11 @@ const TransactionTab = ({monthData, Ref, DATA, scrollA}) => {
           return (
             <Pressable
               onPress={() => {
-                dispatch(changeMonth({month: item.month}));
+               
+                dispatch(changeMonth({item: item}));
+              
                  setSelectedTab(item)
+           
                 Ref.current.scrollToLocation({
                   sectionIndex: DATA.findIndex(object => {
                     return object.month == item.month;
@@ -47,7 +50,7 @@ const TransactionTab = ({monthData, Ref, DATA, scrollA}) => {
                 });
               }}>
               <Text
-                style={item === selectedTab?  styles.selectedTabText: styles.tabText }>
+                style={item?.month == monthTab.item?.month  ?  styles.selectedTabText: styles.tabText }>
                 {item.monthName}
               </Text>
             </Pressable>
@@ -72,8 +75,8 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         fontFamily: 'Aspira',
         fontWeight: '500',
-        color: 'red',
+        color: 'purple',
     }
 })
 
-export default TransactionTab;
+export default Tab;

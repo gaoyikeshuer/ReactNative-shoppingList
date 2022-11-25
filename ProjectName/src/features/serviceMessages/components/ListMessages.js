@@ -1,13 +1,14 @@
 import React from 'react'
 import {Text, StyleSheet, TouchableOpacity, SafeAreaView, Pressable } from 'react-native'
 import { useDispatch } from 'react-redux'
-import { IconXCircle } from '../src/assets/icons'
-import { deleteMes } from '../src/store/messagesSlice'
+
+import {deleteMes} from '../../../store/messagesSlice'
+import { IconXCircle } from '../../../assets/icons'
 
 
 const ListMessage = ({item, deleteMessage}) => {
   const dispatch= useDispatch()
-  console.log(item)
+
   return (
 
     <SafeAreaView style={styles.messageList}>

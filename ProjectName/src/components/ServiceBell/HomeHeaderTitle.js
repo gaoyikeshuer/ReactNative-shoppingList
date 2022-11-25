@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { View,Text, StyleSheet,Pressable ,Animated } from 'react-native'
-import { IconAlert } from '../assets/icons'
+import { IconAlert } from '../../assets/icons'
 import {useDispatch, useSelector} from 'react-redux'
-import { toggleActive } from  '../store/modalToggleSlice'
+import { toggleActive } from  '../../store/modalToggleSlice'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
 

@@ -7,19 +7,18 @@ import {
   Pressable,
   FlatList,
 } from 'react-native';
-import ListAccounts from './ListAccounts';
-import {IconX} from '../src/assets/icons';
-import {IconPlus} from '../src/assets/icons';
-import AddAcounts from './AddAcounts';
+import ListAccounts from './components/ListAccounts';
 
+import AddAcounts from './components/AddAcounts';
+import QuickPayStyle from './QuickPayStyle';
 const QuickPay = ({payAccounts}) => {
 
   return (
     <SafeAreaView>
-      <View style={styles.QuickPayTitle}>
-        <Text style={{fontFamily:'Aspira', color:'#6E6E6E', fontWeight:'500'}}>Quick Pay</Text>
+      <View style={QuickPayStyle.QuickPayTitle}>
+        <Text style={QuickPayStyle.QuickPayText}>QUICK PAY</Text>
         <Pressable>
-          <Text style={{fontFamily:'Aspira', color:'#6E6E6E', fontWeight:'500'}}>Show all {`>`} </Text>
+          <Text style={QuickPayStyle.ShowAllText}>Show all {`>`} </Text>
         </Pressable>
       </View>
 
@@ -32,7 +31,7 @@ const QuickPay = ({payAccounts}) => {
           flex: 0.2,
         }}
       
-        style={styles.avatarContainer}
+        style={QuickPayStyle.avatarContainer}
         data={[...payAccounts.slice(0, 9), {plusImgae: true}]}
         renderItem={({item}) => {
         if(item.plusImgae){
@@ -46,17 +45,6 @@ const QuickPay = ({payAccounts}) => {
     </SafeAreaView>
   );
 };
-const styles = StyleSheet.create({
-  QuickPayTitle: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginHorizontal: 12,
- 
-  },
-  avatarContainer: {
-    marginHorizontal: 12,
- 
-  },
-});
+
 
 export default QuickPay;
