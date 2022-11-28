@@ -1,14 +1,16 @@
 import React from 'react'
 import { View ,StyleSheet,Text } from 'react-native'
 import { IconPlus } from '../../../assets/icons'
+import { useSelector } from 'react-redux'
 
 const AddAcounts = () => {
+  const darkMode = useSelector(state => state.themeToggle)
   return (
     <View style={styles.addContainer}>
-        <View style={styles.addCircle}>
+        <View style={[styles.addCircle,{backgroundColor: darkMode.scheme== 'dark'?'#5A6168':'white'}]}>
         <IconPlus color='green'/>
         </View>
-        <Text style={styles.addText}>Add new</Text>
+        <Text style={[styles.addText,{color: darkMode.scheme== 'dark'?'#6E6E6E':'black'}]}>Add new</Text>
       
 
     </View>

@@ -17,7 +17,7 @@ const Tab = ({monthData, Ref, DATA, scrollA}) => {
     inputRange: [0, 50],
     outputRange: [0, 1],
   });
-  const [selectedTab, setSelectedTab] = useState(null);
+ const darkMode = useSelector(state => state.themeToggle)
 
   return (
     <Animated.View
@@ -26,7 +26,7 @@ const Tab = ({monthData, Ref, DATA, scrollA}) => {
         position: 'absolute',
         top: 24,
         zIndex: 15,
-        backgroundColor: '#efefef',
+        backgroundColor: darkMode.scheme == 'dark'?'#212529': '#efefef',
 
         width: '100%',
       }}>
@@ -40,7 +40,7 @@ const Tab = ({monthData, Ref, DATA, scrollA}) => {
                
                 dispatch(changeMonth({item: item}));
               
-                 setSelectedTab(item)
+                //  setSelectedTab(item)
            
                 Ref.current.scrollToLocation({
                   sectionIndex: DATA.findIndex(object => {
@@ -50,7 +50,7 @@ const Tab = ({monthData, Ref, DATA, scrollA}) => {
                 });
               }}>
               <Text
-                style={item?.month == monthTab.item?.month  ?  styles.selectedTabText: styles.tabText }>
+                style={item?.month == monthTab.item?.month  ?  styles.selectedTabText: [styles.tabText,{color: darkMode.scheme=='dark'?'#efefef':'black'}] }>
                 {item.monthName}
               </Text>
             </Pressable>
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         fontFamily: 'Aspira',
         fontWeight: '500',
-        color: 'black',
+        color:  'black',
     },
 
     selectedTabText:{

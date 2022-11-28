@@ -8,7 +8,7 @@ import {
   Pressable,
   Animated
 } from 'react-native';
-import {FlatList} from 'react-native-gesture-handler';
+
 import { useSelector, useDispatch } from 'react-redux';
 
 import {db} from '../../../firebase';
@@ -21,7 +21,7 @@ import { changeMonth } from '../../store/monthTabSlice';
 
 
 const TransactionList = () => {
-  const monthTab = useSelector(state => state.monthTab);
+  const darkMode = useSelector(state => state.themeToggle);
   const [listData, setListData] = useState([]);
  const dispatch = useDispatch()
   
@@ -148,17 +148,17 @@ const TransactionList = () => {
         renderItem={({item}) => {
         
           return (
-            <View style={TransactionListStyle.listContainer}>
+            <View style={[TransactionListStyle.listContainer,{backgroundColor: darkMode.scheme == 'dark'? '#5A6168':'white'}]}>
               <View style={TransactionListStyle.textContainer}>
                 <View style={TransactionListStyle.nameContainer}>
                   <Text
                     style={TransactionListStyle.textName}>
                     {item.name}
                   </Text>
-                  <Text style={{color: '#6E6E6E', fontFamily:'Aspira'}}>{item.type}</Text>
+                  <Text style={{color: darkMode.scheme == 'dark'?'black':'#6E6E6E', fontFamily:'Aspira'}}>{item.type}</Text>
                 </View>
                 <View style={{alignItems: 'flex-end'}}>
-                  <Text style={TransactionListStyle.textCurrency}>
+                  <Text style={[TransactionListStyle.textCurrency,{color: darkMode.scheme == 'dark'? 'black':'#6E6E6E'}]}>
                     {item.currency}
                   </Text>
 

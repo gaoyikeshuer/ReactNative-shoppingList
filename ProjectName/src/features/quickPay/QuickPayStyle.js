@@ -15,7 +15,8 @@ const QuickPayStyle = StyleSheet.create({
         fontFamily:'Aspira', 
         color:'#6E6E6E',
         fontWeight:'500',
-        letterSpacing:1.5
+        letterSpacing:1.5,
+        fontSize:12
       },
       ShowAllText:{
         fontFamily:'Aspira', 

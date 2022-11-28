@@ -7,7 +7,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 
 
 
-const HomeHeaderTitle = () => {
+const ServiceBell = () => {
   const messages = useSelector(state => state.mes)
  const dispatch = useDispatch()
  const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
@@ -98,4 +98,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default HomeHeaderTitle
+export default ServiceBell

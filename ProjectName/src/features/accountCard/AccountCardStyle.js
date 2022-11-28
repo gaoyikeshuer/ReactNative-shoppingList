@@ -1,11 +1,12 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 
+
 const AccountCardStyle = StyleSheet.create({
     accountCardContainer:{
         height:137,
         marginHorizontal:12,
-    backgroundColor:'white',
+    backgroundColor: 'white',
     marginVertical:12,
     borderRadius:4,
     flexDirection:'row',

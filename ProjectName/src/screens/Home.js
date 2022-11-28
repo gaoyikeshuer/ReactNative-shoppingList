@@ -22,7 +22,7 @@ import TransactionList from '../features/transactionList/TransactionList';
 import {ScrollView} from 'react-native-gesture-handler';
 import {useDispatch, useSelector} from 'react-redux';
 import ServiceMessages from '../features/serviceMessages/ServiceMessages';
-import HomeHeaderTitle from '../components/ServiceBell/HomeHeaderTitle';
+import HomeHeaderTitle from '../components/ServiceBell/ServiceBell';
 
 // import { firestore } from '../config'
 import { isDarkMode } from '../store/themeToggleSlice';
@@ -62,7 +62,7 @@ const Home = () => {
       {/* <View style={ modalToggle.active?{ backgroundColor:'rgba(0,0,0,0.5)',height:'100%',width:'100%', position:'absolute',zIndex:100}:''}></View> */}
 
 
-        <Modal animationType="slide" visible={modalToggle.active}>
+        <Modal animationType="slide" visible={modalToggle.active} presentationStyle="overFullScreen" transparent={true}>
           <ServiceMessages />
         </Modal>
 

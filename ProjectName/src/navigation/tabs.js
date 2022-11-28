@@ -11,10 +11,11 @@ import {
   createBottomTabNavigator,
   BottomTabBar,
 } from '@react-navigation/bottom-tabs';
-import HomeHeaderTitle from '../components/ServiceBell/HomeHeaderTitle';
 import DimBackground from '../components/dimBackground/DimBackground';
 import { useDispatch, useSelector } from 'react-redux';
 import { isDarkMode } from '../store/themeToggleSlice';
+
+import ServiceBell from '../components/ServiceBell/ServiceBell';
 
 
 const Tab = createBottomTabNavigator();
@@ -31,12 +32,14 @@ const Tabs = () => {
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {paddingHorizontal:0, height:70, 
+          backgroundColor:darkmode.scheme == 'dark'?'#212529':'#efefef'
         
         },
         tabBarActiveTintColor: 'purple',
         tabBarInactiveTintColor: 'gray',
         headerShown: true,
         headerMode: 'screen',
+        
       
       }}>
       <Tab.Screen
@@ -51,22 +54,22 @@ const Tabs = () => {
             />
           ),
           headerTitle: () => <Text style={{fontSize:18, fontFamily:'Aspira', fontWeight:'500', color:'#7F2B7B'}}>Home</Text>,
-          headerRight: () => <HomeHeaderTitle />,
+          headerRight: () => <View style={{paddingRight:12}}><ServiceBell /></View>,
           headerStyle: {
             backgroundColor: darkmode.scheme=='dark'?'#212529':'transparent',
           },
 
-          headerRightContainerStyle: {
-            paddingRight: 12,
-          },
+       
           headerLeft: () => <DimBackground />,
           headerLeftContainerStyle: {
             zIndex: 1000,
+   
           },
           headerTitleContainerStyle: {
             position: 'relative',
             flex: 1,
             alignItems: 'center',
+    
           }
         }}
       />
