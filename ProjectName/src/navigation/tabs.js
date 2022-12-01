@@ -32,7 +32,7 @@ const Tabs = () => {
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {paddingHorizontal:0, height:70, 
-          backgroundColor:darkmode.scheme == 'dark'?'#212529':'#efefef'
+          backgroundColor:darkmode.scheme == 'dark'?'#212529':'white'
         
         },
         tabBarActiveTintColor: 'purple',

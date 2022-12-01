@@ -1,11 +1,11 @@
 import{ createSlice} from'@reduxjs/toolkit';
 export const themeToggle = createSlice({
     name:'themeToggle',
-    initialState: {scheme: 'dark'},
+    initialState: {scheme: 'light'},
     reducers:{
         isDarkMode:(state, action) => 
         {
-            console.log(action.payload.scheme)
+           
             state.scheme = action.payload.scheme}
     }
 })

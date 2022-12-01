@@ -13,7 +13,8 @@ const AccountCardStyle = StyleSheet.create({
     justifyContent:'space-between',
     overflow:'hidden',
     marginTop:31,
-    marginBottom:17
+    marginBottom:17,
+    
 
       },
       starContainer:{

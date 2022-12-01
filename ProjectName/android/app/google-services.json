@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "23561557984",
+    "project_id": "aib-home",
+    "storage_bucket": "aib-home.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23561557984:android:8c2340dd5134011a2d3d85",
+        "android_client_info": {
+          "package_name": "com.projectname"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23561557984-edn7lnhiladkcj26lo88agku285u9bdr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgSTSe2t6WVhNNFpowefXdIe6zfiGR-SQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23561557984-edn7lnhiladkcj26lo88agku285u9bdr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "23561557984-krmu96tsckpdat0c22mbujtipa93av7r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.ProjectName"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -21,7 +21,7 @@ const Stack = createNativeStackNavigator();
 
 
 function App() {
-  const[theme, setTheme]  = useState( Appearance.getColorScheme())
+
  
 
 

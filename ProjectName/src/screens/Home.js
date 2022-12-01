@@ -33,6 +33,7 @@ const Home = () => {
   const dispatch = useDispatch()
   const darkmode= useSelector(state => state.themeToggle)
   Appearance.addChangeListener((scheme) =>{
+ 
     dispatch(isDarkMode({scheme : scheme.colorScheme}))
 
   })

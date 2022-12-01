@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     fontFamily:'Aspira',
     fontWeight:'500',
     textAlign:'center',
-    lineHeight:28
+    paddingTop:4
   }
 })
 
