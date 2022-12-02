@@ -30,10 +30,11 @@ const TransactionList = () => {
 
   useEffect(() => {
     async function myFunction() {
+      
       const listRef = collection(db, 'TransactionList');
       const q = query(listRef, orderBy('date', 'desc'));
+      
       const querySnapshot = await getDocs(q);
-
       const data = [];
       const dateFormat = new Intl.DateTimeFormat('en-US');
       querySnapshot.forEach(doc => {

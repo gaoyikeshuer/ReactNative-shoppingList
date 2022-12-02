@@ -16,6 +16,8 @@ import Header from './src/components/dimBackground/DimBackground';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import 'intl';
+import 'intl/locale-data/jsonp/en'; 
 
 const Stack = createNativeStackNavigator();
 
