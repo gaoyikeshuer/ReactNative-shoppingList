@@ -2,28 +2,28 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "assets/fonts/Aspira-Bold.otf",
-      "sha1": "164b407eab066051f915984946cd61ea70a52c62"
+      "path": "src/assets/fonts/Aspira-Bold.ttf",
+      "sha1": "d8bdb9789e12a3b019e6295032b04bbc47e8e495"
     },
     {
-      "path": "assets/fonts/Aspira-Demi.otf",
-      "sha1": "29dc127adcc76d991ed5b759b5e1816784249a60"
+      "path": "src/assets/fonts/Aspira-Demi.ttf",
+      "sha1": "2e6c694eecf7d1ef553d09a29d44e9b562746732"
     },
     {
-      "path": "assets/fonts/Aspira-Heavy.otf",
-      "sha1": "a30119a931592cba6d54c879dbb3247a2cd1a0b7"
+      "path": "src/assets/fonts/Aspira-Heavy.ttf",
+      "sha1": "f9b6b864d5546bcbbc6ac5777cfa506fb31e7772"
     },
     {
-      "path": "assets/fonts/Aspira-Light.otf",
-      "sha1": "569790b680b989f9d1a7691313e73d25776eb3a5"
+      "path": "src/assets/fonts/Aspira-Light.ttf",
+      "sha1": "5c2b5836905fc0bbccbf742ed57bc9dce1f02f82"
     },
     {
-      "path": "assets/fonts/Aspira-Medium.otf",
-      "sha1": "8f00d5e0a07df89089835776f8bb2a07fad1011c"
+      "path": "src/assets/fonts/Aspira-Medium.ttf",
+      "sha1": "97659428a9312c27c88f2e4888b2624703329fda"
     },
     {
-      "path": "assets/fonts/Aspira-Regular.otf",
-      "sha1": "ea1ba5c45d47cd962268228958e7a3b2b13d7482"
+      "path": "src/assets/fonts/Aspira.ttf",
+      "sha1": "04771ac451c18ff740900a323cdb226a1156790e"
     }
   ]
 }

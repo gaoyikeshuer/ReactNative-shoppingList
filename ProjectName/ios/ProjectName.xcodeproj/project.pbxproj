@@ -8,12 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* ProjectNameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ProjectNameTests.m */; };
-		0416CDF9291D12F70032AD24 /* Aspira-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0416CDF8291D12F70032AD24 /* Aspira-Light.otf */; };
-		0416CDFB291D13BD0032AD24 /* Aspira-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0416CDFA291D13BD0032AD24 /* Aspira-Regular.otf */; };
-		0416CDFD291D13DC0032AD24 /* Aspira-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0416CDFC291D13DC0032AD24 /* Aspira-Medium.otf */; };
-		0416CDFF291D13F20032AD24 /* Aspira-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0416CDFE291D13F10032AD24 /* Aspira-Demi.otf */; };
 		0416CE01291D14030032AD24 /* Aspira-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0416CE00291D14020032AD24 /* Aspira-Bold.ttf */; };
-		0416CE03291D141F0032AD24 /* Aspira-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0416CE02291D141E0032AD24 /* Aspira-Heavy.otf */; };
 		04457CF1292D399A00AB3672 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04457CF0292D399A00AB3672 /* GoogleService-Info.plist */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -21,6 +16,12 @@
 		4B1C697B7BE34954DFEC6963 /* Pods_ProjectName_ProjectNameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B99B344F5D7DEDD547B64EB /* Pods_ProjectName_ProjectNameTests.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		CB438FC59B108B79EF2A6474 /* Pods_ProjectName.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83822F1B47496BD15073D944 /* Pods_ProjectName.framework */; };
+		5E37E77775DB4C24A9792C78 /* Aspira-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87D7101E887E43348264319E /* Aspira-Bold.ttf */; };
+		11E63997D1954EE1ACFF86CA /* Aspira-Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19D1D4B0D8BF4A4F9F7CF0E9 /* Aspira-Demi.ttf */; };
+		D020D4A38D4E4A4AB68FD877 /* Aspira-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D6475D88FBB47C5BC5B71A1 /* Aspira-Heavy.ttf */; };
+		0A8263EBE4E54ACBA8CCDD39 /* Aspira-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1EBDF5EC96B4D7E88181A5E /* Aspira-Light.ttf */; };
+		A22F44DE6182459CB7EB5F6F /* Aspira-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52527EE94B424582ADFF16DC /* Aspira-Medium.ttf */; };
+		A70E53773DFD4DDAAE12283F /* Aspira.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6350CF8A0F644870AB3FBA83 /* Aspira.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,12 +38,7 @@
 		00E356EE1AD99517003FC87E /* ProjectNameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectNameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ProjectNameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectNameTests.m; sourceTree = "<group>"; };
-		0416CDF8291D12F70032AD24 /* Aspira-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Aspira-Light.otf"; path = "../../../../../Downloads/Aspira/300_Light/Aspira-Light.otf"; sourceTree = "<group>"; };
-		0416CDFA291D13BD0032AD24 /* Aspira-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Aspira-Regular.otf"; path = "../../../../../Downloads/Aspira/400_Regular/Aspira-Regular.otf"; sourceTree = "<group>"; };
-		0416CDFC291D13DC0032AD24 /* Aspira-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Aspira-Medium.otf"; path = "../../../../../Downloads/Aspira/500_Medium/Aspira-Medium.otf"; sourceTree = "<group>"; };
-		0416CDFE291D13F10032AD24 /* Aspira-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Aspira-Demi.otf"; path = "../../../../../Downloads/Aspira/600_Demi/Aspira-Demi.otf"; sourceTree = "<group>"; };
 		0416CE00291D14020032AD24 /* Aspira-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Aspira-Bold.ttf"; path = "../../../../../Downloads/Aspira/700_Bold/Aspira-Bold.ttf"; sourceTree = "<group>"; };
-		0416CE02291D141E0032AD24 /* Aspira-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Aspira-Heavy.otf"; path = "../../../../../Downloads/Aspira/800_Heavy/Aspira-Heavy.otf"; sourceTree = "<group>"; };
 		04457CF0292D399A00AB3672 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ProjectName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ProjectName/AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +54,12 @@
 		C1AFCB7637D6E100A24A306B /* Pods-ProjectName-ProjectNameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName-ProjectNameTests.release.xcconfig"; path = "Target Support Files/Pods-ProjectName-ProjectNameTests/Pods-ProjectName-ProjectNameTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FEA768EAF829403EE6CD8065 /* Pods-ProjectName.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName.release.xcconfig"; path = "Target Support Files/Pods-ProjectName/Pods-ProjectName.release.xcconfig"; sourceTree = "<group>"; };
+		87D7101E887E43348264319E /* Aspira-Bold.ttf */ = {isa = PBXFileReference; name = "Aspira-Bold.ttf"; path = "../src/assets/fonts/Aspira-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		19D1D4B0D8BF4A4F9F7CF0E9 /* Aspira-Demi.ttf */ = {isa = PBXFileReference; name = "Aspira-Demi.ttf"; path = "../src/assets/fonts/Aspira-Demi.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3D6475D88FBB47C5BC5B71A1 /* Aspira-Heavy.ttf */ = {isa = PBXFileReference; name = "Aspira-Heavy.ttf"; path = "../src/assets/fonts/Aspira-Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E1EBDF5EC96B4D7E88181A5E /* Aspira-Light.ttf */ = {isa = PBXFileReference; name = "Aspira-Light.ttf"; path = "../src/assets/fonts/Aspira-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		52527EE94B424582ADFF16DC /* Aspira-Medium.ttf */ = {isa = PBXFileReference; name = "Aspira-Medium.ttf"; path = "../src/assets/fonts/Aspira-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6350CF8A0F644870AB3FBA83 /* Aspira.ttf */ = {isa = PBXFileReference; name = "Aspira.ttf"; path = "../src/assets/fonts/Aspira.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +102,13 @@
 		0416CDF7291D129C0032AD24 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0416CE02291D141E0032AD24 /* Aspira-Heavy.otf */,
 				0416CE00291D14020032AD24 /* Aspira-Bold.ttf */,
-				0416CDFE291D13F10032AD24 /* Aspira-Demi.otf */,
-				0416CDFC291D13DC0032AD24 /* Aspira-Medium.otf */,
-				0416CDFA291D13BD0032AD24 /* Aspira-Regular.otf */,
-				0416CDF8291D12F70032AD24 /* Aspira-Light.otf */,
+				87D7101E887E43348264319E /* Aspira-Bold.ttf */,
+				19D1D4B0D8BF4A4F9F7CF0E9 /* Aspira-Demi.ttf */,
+				3D6475D88FBB47C5BC5B71A1 /* Aspira-Heavy.ttf */,
+				E1EBDF5EC96B4D7E88181A5E /* Aspira-Light.ttf */,
+				52527EE94B424582ADFF16DC /* Aspira-Medium.ttf */,
+				6350CF8A0F644870AB3FBA83 /* Aspira.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -279,14 +282,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0416CE01291D14030032AD24 /* Aspira-Bold.ttf in Resources */,
-				0416CE03291D141F0032AD24 /* Aspira-Heavy.otf in Resources */,
 				04457CF1292D399A00AB3672 /* GoogleService-Info.plist in Resources */,
-				0416CDFF291D13F20032AD24 /* Aspira-Demi.otf in Resources */,
-				0416CDFB291D13BD0032AD24 /* Aspira-Regular.otf in Resources */,
-				0416CDFD291D13DC0032AD24 /* Aspira-Medium.otf in Resources */,
-				0416CDF9291D12F70032AD24 /* Aspira-Light.otf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				5E37E77775DB4C24A9792C78 /* Aspira-Bold.ttf in Resources */,
+				11E63997D1954EE1ACFF86CA /* Aspira-Demi.ttf in Resources */,
+				D020D4A38D4E4A4AB68FD877 /* Aspira-Heavy.ttf in Resources */,
+				0A8263EBE4E54ACBA8CCDD39 /* Aspira-Light.ttf in Resources */,
+				A22F44DE6182459CB7EB5F6F /* Aspira-Medium.ttf in Resources */,
+				A70E53773DFD4DDAAE12283F /* Aspira.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

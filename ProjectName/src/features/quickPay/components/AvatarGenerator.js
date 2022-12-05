@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
     fontFamily:'Aspira',
     fontWeight:'500',
     textAlign:'center',
-    paddingTop:4
+    paddingTop:2,
+    fontFamily:'Aspira-Medium'
   }
 })
 

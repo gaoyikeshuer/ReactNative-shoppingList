@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 
 const AccountCardStyle = StyleSheet.create({
     accountCardContainer:{
-        height:137,
+      
         marginHorizontal:12,
     backgroundColor: 'white',
     marginVertical:12,
@@ -50,8 +50,12 @@ const AccountCardStyle = StyleSheet.create({
       },
       textTitle:{
         fontSize:18,
+       
         fontFamily:'Aspira',
-        fontWeight:'500'
+        fontWeight:'500',
+        color:'black',
+        fontFamily:'Aspira-Medium',
+      
       },
     
       bankTitle:{
@@ -67,7 +71,12 @@ const AccountCardStyle = StyleSheet.create({
         fontSize:20,
         fontFamily:'Aspira',
         fontWeight:'500',
-        lineHeight:24
+        lineHeight:24,
+        fontFamily:'Aspira-Medium',
+        color:'black',
+        marginBottom:14
+       
+
       }
 })
 

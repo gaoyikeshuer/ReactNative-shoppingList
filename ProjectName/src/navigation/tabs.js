@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, Text, AppRegistry, Appearance} from 'react-native';
+import {View, Text, AppRegistry, Appearance, Platform} from 'react-native';
 import {
   IconHome,
   IconArrowRight,
@@ -31,7 +31,7 @@ const Tabs = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: {paddingHorizontal:0, height:70, 
+        tabBarStyle: {paddingHorizontal:0, 
           backgroundColor:darkmode.scheme == 'dark'?'#212529':'white'
         
         },
@@ -39,6 +39,7 @@ const Tabs = () => {
         tabBarInactiveTintColor: 'gray',
         headerShown: true,
         headerMode: 'screen',
+        
         
       
       }}>
@@ -53,16 +54,17 @@ const Tabs = () => {
               color={focused ? 'purple' : 'gray'}
             />
           ),
-          headerTitle: () => <Text style={{fontSize:18, fontFamily:'Aspira', fontWeight:'500', color:'#7F2B7B'}}>Home</Text>,
+          headerTitle: () => <Text style={{fontSize:18, fontFamily:'Aspira', fontWeight:'500', color:'#7F2B7B',}}>Home</Text>,
           headerRight: () => <View style={{paddingRight:12}}><ServiceBell /></View>,
           headerStyle: {
             backgroundColor: darkmode.scheme=='dark'?'#212529':'transparent',
           },
 
        
-          headerLeft: () => <DimBackground />,
+          headerLeft: () => <DimBackground/>,
           headerLeftContainerStyle: {
             zIndex: 1000,
+          
    
           },
           headerTitleContainerStyle: {
@@ -70,7 +72,9 @@ const Tabs = () => {
             flex: 1,
             alignItems: 'center',
     
-          }
+          },
+        headerTitleAlign:'center' // ios defalt center but android deflaut left
+         
         }}
       />
 
