@@ -8,20 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* ProjectNameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ProjectNameTests.m */; };
-		0416CE01291D14030032AD24 /* Aspira-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0416CE00291D14020032AD24 /* Aspira-Bold.ttf */; };
 		04457CF1292D399A00AB3672 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04457CF0292D399A00AB3672 /* GoogleService-Info.plist */; };
+		0A8263EBE4E54ACBA8CCDD39 /* Aspira-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1EBDF5EC96B4D7E88181A5E /* Aspira-Light.ttf */; };
+		11E63997D1954EE1ACFF86CA /* Aspira-Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19D1D4B0D8BF4A4F9F7CF0E9 /* Aspira-Demi.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		4B1C697B7BE34954DFEC6963 /* Pods_ProjectName_ProjectNameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B99B344F5D7DEDD547B64EB /* Pods_ProjectName_ProjectNameTests.framework */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		CB438FC59B108B79EF2A6474 /* Pods_ProjectName.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83822F1B47496BD15073D944 /* Pods_ProjectName.framework */; };
 		5E37E77775DB4C24A9792C78 /* Aspira-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87D7101E887E43348264319E /* Aspira-Bold.ttf */; };
-		11E63997D1954EE1ACFF86CA /* Aspira-Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19D1D4B0D8BF4A4F9F7CF0E9 /* Aspira-Demi.ttf */; };
-		D020D4A38D4E4A4AB68FD877 /* Aspira-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D6475D88FBB47C5BC5B71A1 /* Aspira-Heavy.ttf */; };
-		0A8263EBE4E54ACBA8CCDD39 /* Aspira-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1EBDF5EC96B4D7E88181A5E /* Aspira-Light.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A22F44DE6182459CB7EB5F6F /* Aspira-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52527EE94B424582ADFF16DC /* Aspira-Medium.ttf */; };
 		A70E53773DFD4DDAAE12283F /* Aspira.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6350CF8A0F644870AB3FBA83 /* Aspira.ttf */; };
+		CB438FC59B108B79EF2A6474 /* Pods_ProjectName.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83822F1B47496BD15073D944 /* Pods_ProjectName.framework */; };
+		D020D4A38D4E4A4AB68FD877 /* Aspira-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D6475D88FBB47C5BC5B71A1 /* Aspira-Heavy.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,20 +45,20 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ProjectName/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ProjectName/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ProjectName/main.m; sourceTree = "<group>"; };
+		19D1D4B0D8BF4A4F9F7CF0E9 /* Aspira-Demi.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Aspira-Demi.ttf"; path = "../src/assets/fonts/Aspira-Demi.ttf"; sourceTree = "<group>"; };
+		3D6475D88FBB47C5BC5B71A1 /* Aspira-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Aspira-Heavy.ttf"; path = "../src/assets/fonts/Aspira-Heavy.ttf"; sourceTree = "<group>"; };
+		52527EE94B424582ADFF16DC /* Aspira-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Aspira-Medium.ttf"; path = "../src/assets/fonts/Aspira-Medium.ttf"; sourceTree = "<group>"; };
+		6350CF8A0F644870AB3FBA83 /* Aspira.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Aspira.ttf; path = ../src/assets/fonts/Aspira.ttf; sourceTree = "<group>"; };
 		64D5265926363A3882975424 /* Pods-ProjectName-ProjectNameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName-ProjectNameTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectName-ProjectNameTests/Pods-ProjectName-ProjectNameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D6C19C6A01180CAD9132EDD /* Pods-ProjectName.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName.debug.xcconfig"; path = "Target Support Files/Pods-ProjectName/Pods-ProjectName.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ProjectName/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83822F1B47496BD15073D944 /* Pods_ProjectName.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectName.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87D7101E887E43348264319E /* Aspira-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Aspira-Bold.ttf"; path = "../src/assets/fonts/Aspira-Bold.ttf"; sourceTree = "<group>"; };
 		9B99B344F5D7DEDD547B64EB /* Pods_ProjectName_ProjectNameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectName_ProjectNameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1AFCB7637D6E100A24A306B /* Pods-ProjectName-ProjectNameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName-ProjectNameTests.release.xcconfig"; path = "Target Support Files/Pods-ProjectName-ProjectNameTests/Pods-ProjectName-ProjectNameTests.release.xcconfig"; sourceTree = "<group>"; };
+		E1EBDF5EC96B4D7E88181A5E /* Aspira-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Aspira-Light.ttf"; path = "../src/assets/fonts/Aspira-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FEA768EAF829403EE6CD8065 /* Pods-ProjectName.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName.release.xcconfig"; path = "Target Support Files/Pods-ProjectName/Pods-ProjectName.release.xcconfig"; sourceTree = "<group>"; };
-		87D7101E887E43348264319E /* Aspira-Bold.ttf */ = {isa = PBXFileReference; name = "Aspira-Bold.ttf"; path = "../src/assets/fonts/Aspira-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		19D1D4B0D8BF4A4F9F7CF0E9 /* Aspira-Demi.ttf */ = {isa = PBXFileReference; name = "Aspira-Demi.ttf"; path = "../src/assets/fonts/Aspira-Demi.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3D6475D88FBB47C5BC5B71A1 /* Aspira-Heavy.ttf */ = {isa = PBXFileReference; name = "Aspira-Heavy.ttf"; path = "../src/assets/fonts/Aspira-Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E1EBDF5EC96B4D7E88181A5E /* Aspira-Light.ttf */ = {isa = PBXFileReference; name = "Aspira-Light.ttf"; path = "../src/assets/fonts/Aspira-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		52527EE94B424582ADFF16DC /* Aspira-Medium.ttf */ = {isa = PBXFileReference; name = "Aspira-Medium.ttf"; path = "../src/assets/fonts/Aspira-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6350CF8A0F644870AB3FBA83 /* Aspira.ttf */ = {isa = PBXFileReference; name = "Aspira.ttf"; path = "../src/assets/fonts/Aspira.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,7 +280,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0416CE01291D14030032AD24 /* Aspira-Bold.ttf in Resources */,
 				04457CF1292D399A00AB3672 /* GoogleService-Info.plist in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
@@ -509,7 +507,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35R9PS48NU;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ProjectName/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -521,10 +522,12 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.ProjectName.19961007;
 				PRODUCT_NAME = ProjectName;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -535,7 +538,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35R9PS48NU;
 				INFOPLIST_FILE = ProjectName/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -546,9 +552,11 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.ProjectName.19961007;
 				PRODUCT_NAME = ProjectName;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

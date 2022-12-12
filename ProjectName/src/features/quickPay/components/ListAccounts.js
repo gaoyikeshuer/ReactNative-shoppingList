@@ -29,8 +29,9 @@ const styles = StyleSheet.create({
   avatarName:{
     fontSize:11,
     marginTop:5,
-    fontFamily:'aspira',
-    fontWeight:'500'
+    fontFamily:'Aspira',
+    fontWeight:'500',
+    fontFamily:'Aspira-Medium'
   }
 })
 

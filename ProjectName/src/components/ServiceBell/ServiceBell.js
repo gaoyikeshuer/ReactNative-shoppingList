@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View,Text, StyleSheet,Pressable ,Animated } from 'react-native'
+import { View,Text, StyleSheet,Pressable ,Animated, Platform } from 'react-native'
 import { IconAlert } from '../../assets/icons'
 import {useDispatch, useSelector} from 'react-redux'
 import { toggleActive } from  '../../store/modalToggleSlice'
@@ -33,29 +33,27 @@ const spin = spinValue.interpolate({
 
 
 
-
   return (
     
     <View style={styles.header}> 
 
 
-      <Pressable style= {styles.alert} onPress= {()=>{dispatch(toggleActive())
-     
-      }}>
+      <Pressable style= {styles.alert} 
+      onPressIn ={spinBell
+      }
+      
+      onPress= {()=>{dispatch(toggleActive())}}
+      >
       
         { messages.length !=0 && <View style={styles.alertNum}>
-          <Text style = {styles.messagesNum}>{messages.length}</Text>
+          <Text style = {[styles.messagesNum]}  >{messages.length}</Text>
         </View>}
      
-        <Animated.View style={{transform:[{rotate:spin}]}} >
+        <Animated.View style={{transform:[{rotate:spin}]}}>
  
-    <AnimatedTouchable onPress={
-      
-    spinBell
-  
-    }>
+   
     <IconAlert width={22} height={22} color='purple'/>
-    </AnimatedTouchable>
+    
  
         </Animated.View>
 
@@ -66,34 +64,31 @@ const spin = spinValue.interpolate({
 }
 const styles = StyleSheet.create({
  
- 
-    text:{
-        color:'#7F2B7B',
-        fontSize: 18,
-        textAlign: 'center',
-        fontFamily:'Aspira',
-        fontWeight:'500'
-        
-    },
-    alert:{
-  
-    },
     alertNum:{
       position:'absolute',
-      alignItems:"center",
+      alignItems:'center',
       left:-13,
       top:5,
       width:21,
-      height: 16,
+     
       backgroundColor: '#E00885',
       zIndex:13,
       borderRadius:12,
       borderColor: '#efefef',
-      borderWidth: 2
+      borderWidth: 2,
+      
+  
+    
+
+      
+    
     },
     messagesNum:{
       color: 'white',
       fontSize:11,
+      fontFamily:'Aspira-Regular'
+      
+     
 
     }
 })

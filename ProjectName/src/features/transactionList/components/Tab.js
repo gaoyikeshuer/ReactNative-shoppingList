@@ -18,6 +18,7 @@ const Tab = ({monthData, Ref, DATA, scrollA}) => {
     outputRange: [0, 1],
   });
  const darkMode = useSelector(state => state.themeToggle)
+ 
 
   return (
     <Animated.View

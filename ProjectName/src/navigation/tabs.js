@@ -14,7 +14,7 @@ import {
 import DimBackground from '../components/dimBackground/DimBackground';
 import { useDispatch, useSelector } from 'react-redux';
 import { isDarkMode } from '../store/themeToggleSlice';
-
+import { useEffect } from 'react';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
 
 
@@ -27,6 +27,9 @@ const Tabs = () => {
     dispatch(isDarkMode({scheme : scheme.colorScheme}))
 
   })
+  
+
+  
 
   return (
     <Tab.Navigator
@@ -43,6 +46,7 @@ const Tabs = () => {
         
       
       }}>
+        
       <Tab.Screen
         name="Home"
         component={Home}
@@ -77,6 +81,7 @@ const Tabs = () => {
          
         }}
       />
+    
 
       <Tab.Screen
         name="Accounts"

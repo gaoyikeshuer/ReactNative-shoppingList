@@ -156,7 +156,7 @@ const TransactionList = () => {
                     style={TransactionListStyle.textName}>
                     {item.name}
                   </Text>
-                  <Text style={{color: darkMode.scheme == 'dark'?'black':'#6E6E6E', fontFamily:'Aspira'}}>{item.type}</Text>
+                  <Text style={{color: darkMode.scheme == 'dark'?'black':'#6E6E6E', fontFamily:'Aspira', fontFamily:'Aspira-Regular'}}>{item.type}</Text>
                 </View>
                 <View style={{alignItems: 'flex-end'}}>
                   <Text style={[TransactionListStyle.textCurrency,{color: darkMode.scheme == 'dark'? 'black':'#6E6E6E'}]}>
@@ -190,6 +190,7 @@ const TransactionList = () => {
           );
         }}
       />
+      
     </SafeAreaView>
   );
 };

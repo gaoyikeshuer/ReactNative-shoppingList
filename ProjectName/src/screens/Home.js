@@ -27,9 +27,13 @@ import HomeHeaderTitle from '../components/ServiceBell/ServiceBell';
 // import { firestore } from '../config'
 import { isDarkMode } from '../store/themeToggleSlice';
 import DarkModeStyle from '../theme/DarkModeStyle';
+import { AppState } from 'react-native';
+import { BlurView } from '@react-native-community/blur';
+
 
 
 const Home = () => {
+
   const dispatch = useDispatch()
   const darkmode= useSelector(state => state.themeToggle)
   Appearance.addChangeListener((scheme) =>{
@@ -60,21 +64,25 @@ const Home = () => {
 
   return (
     <SafeAreaView style={darkmode.scheme == 'dark'? DarkModeStyle.container: styles.container}>
-      {/* <View style={ modalToggle.active?{ backgroundColor:'rgba(0,0,0,0.5)',height:'100%',width:'100%', position:'absolute',zIndex:100}:''}></View> */}
 
 
         <Modal animationType="slide" visible={modalToggle.active} presentationStyle="overFullScreen" transparent={true}>
           <ServiceMessages />
         </Modal>
 
-        <QuickPay payAccounts={payAccounts} />
+
+<QuickPay payAccounts={payAccounts} />
         <StarAccount />
+       
      <View style ={{flex:1}}>
      <TransactionList />
      </View>
+    
    
+
   
     </SafeAreaView>
+    
   );
 };
 
@@ -90,7 +98,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.5)',
     flex: 1,
   },
-  message: {},
+  absolute: {
+    position:'absolute',
+    top:0
+  },
 });
 
 export default Home;
