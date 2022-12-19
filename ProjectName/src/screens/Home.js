@@ -29,6 +29,7 @@ import { isDarkMode } from '../store/themeToggleSlice';
 import DarkModeStyle from '../theme/DarkModeStyle';
 import { AppState } from 'react-native';
 import { BlurView } from '@react-native-community/blur';
+import BlurScreen from '../components/BlurScreen/BlurScreen';
 
 
 
@@ -42,7 +43,21 @@ const Home = () => {
 
   })
 
- 
+   useEffect(() => {
+    const appStateListener = AppState.addEventListener(
+      'change',
+      nextAppState => {
+        // console.log('Next AppState is: ', nextAppState);
+        setAppState(nextAppState);
+       
+      },
+    );
+    return () => {
+      appStateListener?.remove();
+    };
+  }, []);
+const  [appState, setAppState] = useState(AppState.currentState)
+console.log(appState)
 
 
 
@@ -80,6 +95,7 @@ const Home = () => {
     
    
 
+  {appState != 'active'?<BlurScreen/>: null}
   
     </SafeAreaView>
     

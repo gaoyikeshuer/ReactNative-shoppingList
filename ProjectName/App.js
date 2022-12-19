@@ -26,27 +26,26 @@ const Stack = createNativeStackNavigator();
 
 function App() {
 
- function openModal(){
-
- }
+ 
   
-  useEffect(() => {
-    const appStateListener = AppState.addEventListener(
-      'change',
-      nextAppState => {
-        console.log('Next AppState is: ', nextAppState);
-        setAppState(nextAppState);
+//   useEffect(() => {
+//     const appStateListener = AppState.addEventListener(
+//       'change',
+//       nextAppState => {
+//         // console.log('Next AppState is: ', nextAppState);
+//         setAppState(nextAppState);
        
-      },
-    );
-    return () => {
-      appStateListener?.remove();
-    };
-  }, []);
-const  [appState, setAppState] = useState(AppState.currentState)
+//       },
+//     );
+//     return () => {
+//       appStateListener?.remove();
+//     };
+//   }, []);
+// const  [appState, setAppState] = useState(AppState.currentState)
   useEffect(() => {
     LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
 }, [])
+
 
 
 
@@ -61,9 +60,9 @@ const  [appState, setAppState] = useState(AppState.currentState)
         <Stack.Group>
         <Stack.Screen name="Home" component={Tabs}/>
         </Stack.Group>
-        <Stack.Group screenOptions={{presentation: 'modal' }}>
+        {/* <Stack.Group screenOptions={{presentation: 'modal' }}>
          <Stack.Screen name='BlurScreen' component={BlurScreen} />
-        </Stack.Group>
+        </Stack.Group> */}
     
       </Stack.Navigator>
    

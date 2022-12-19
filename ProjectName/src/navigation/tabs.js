@@ -16,6 +16,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { isDarkMode } from '../store/themeToggleSlice';
 import { useEffect } from 'react';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
+import { useNavigation } from '@react-navigation/native';
 
 
 const Tab = createBottomTabNavigator();
@@ -27,6 +28,7 @@ const Tabs = () => {
     dispatch(isDarkMode({scheme : scheme.colorScheme}))
 
   })
+ 
   
 
   

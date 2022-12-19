@@ -5,6 +5,7 @@ import { StyleSheet } from 'react-native'
 
 const BlurScreen = () => {
   return (
+
     
    <BlurView
     style={styles.absolute}
