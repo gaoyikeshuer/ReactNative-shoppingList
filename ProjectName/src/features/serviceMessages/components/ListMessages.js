@@ -6,7 +6,7 @@ import {deleteMes} from '../../../store/messagesSlice'
 import { IconXCircle } from '../../../assets/icons'
 
 
-const ListMessage = ({item, deleteMessage}) => {
+const ListMessage = ({item}) => {
   const dispatch= useDispatch()
 
   return (
