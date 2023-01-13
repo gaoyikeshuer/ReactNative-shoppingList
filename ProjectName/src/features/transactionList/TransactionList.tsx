@@ -34,7 +34,7 @@ const TransactionList = () => {
 
 
   useEffect(() => {
-    async function myFunction() {
+    async function getData() {
       
       const listRef = collection(db, 'TransactionList');
       const q = query(listRef, orderBy('date', 'desc'));
@@ -60,7 +60,7 @@ const TransactionList = () => {
       
     }
 
-    myFunction();
+    getData();
   }, []);
 
 

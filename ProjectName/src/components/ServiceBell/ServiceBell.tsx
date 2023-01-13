@@ -4,12 +4,12 @@ import { IconAlert } from '../../assets/icons'
 import {useDispatch, useSelector} from 'react-redux'
 import { toggleActive } from  '../../store/modalToggleSlice'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-
+import { useAppSelector, useAppDispatch } from '../../store/hooks'
 
 
 const ServiceBell = () => {
-  const messages = useSelector(state => state.mes)
- const dispatch = useDispatch()
+  const messages = useAppSelector(state => state.mes)
+ const dispatch = useAppDispatch()
  const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
 const spinValue = useState(new Animated.Value(0))[0]
@@ -35,10 +35,10 @@ const spin = spinValue.interpolate({
 
   return (
     
-    <View style={styles.header}> 
+    <View> 
 
 
-      <Pressable style= {styles.alert} 
+      <Pressable 
       onPressIn ={spinBell
       }
       

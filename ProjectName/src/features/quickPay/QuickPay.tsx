@@ -11,7 +11,7 @@ import ListAccounts from './components/ListAccounts';
 
 import AddAcounts from './components/AddAcounts';
 import QuickPayStyle from './QuickPayStyle';
-const QuickPay = ({payAccounts}) => {
+const QuickPay = ({payAccounts}:{payAccounts:any}) => {
 
   return (
     <SafeAreaView>

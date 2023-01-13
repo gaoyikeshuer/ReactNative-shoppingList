@@ -13,7 +13,7 @@ export const monthTabSlice = createSlice({
     reducers:{
         changeMonth:(state, action) =>{
      
-            state.item = action.payload?.item.month
+            state.item = action.payload.item?.month
         }
     }
 })

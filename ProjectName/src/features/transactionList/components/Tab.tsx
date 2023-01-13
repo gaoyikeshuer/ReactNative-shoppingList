@@ -1,8 +1,6 @@
 import {Text, View, FlatList, Pressable, Animated} from 'react-native';
 import React, {useEffect, useRef} from 'react';
 
-import {useSelector, useDispatch} from 'react-redux';
-
 import {changeMonth} from '../../../store/monthTabSlice';
 import {useState} from 'react';
 import {StyleSheet} from 'react-native';

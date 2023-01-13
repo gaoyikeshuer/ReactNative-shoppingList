@@ -17,3 +17,7 @@ export interface MonthData{
   data:Data[];
   monthName:string
 }
+export interface Message{
+    id:number,
+    text:string
+}
