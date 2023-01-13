@@ -21,3 +21,7 @@ export interface Message{
     id:number,
     text:string
 }
+export interface avatar{
+    id:number,
+    name:string
+  }
