@@ -18,13 +18,23 @@ import {collection, getDocs, query, orderBy} from 'firebase/firestore';
 import Tab from './components/Tab';
 import TransactionListStyle from './TransactionListStyle';
 import { changeMonth } from '../../store/monthTabSlice';
-
+import { useAppSelector, useAppDispatch } from '../../store/hooks';
 
 const TransactionList = () => {
-  const darkMode = useSelector(state => state.themeToggle);
-  const [listData, setListData] = useState([]);
- const dispatch = useDispatch()
+ interface Data{
+    key: string;
+    date:string;
+    currency:string;
+    name:string;
+    number:number;
+    type:string;
+    month:number
+   }
+  const darkMode = useAppSelector(state => state.themeToggle);
+  const [listData, setListData] = useState<Data[]>([]);
+ const dispatch = useAppDispatch()
   
+
 
 
 
@@ -35,7 +45,7 @@ const TransactionList = () => {
       const q = query(listRef, orderBy('date', 'desc'));
       
       const querySnapshot = await getDocs(q);
-      const data = [];
+      const data:Array<Data> = [];
       const dateFormat = new Intl.DateTimeFormat('en-US');
       querySnapshot.forEach(doc => {
         const {date, currency, name, number, type} = doc.data();
@@ -91,7 +101,7 @@ const TransactionList = () => {
 
   const Ref = useRef(null);
 
-  function toMonthName(monthNumber) {
+  function toMonthName(monthNumber:number) {
     const date = new Date();
     date.setMonth(monthNumber - 1);
   

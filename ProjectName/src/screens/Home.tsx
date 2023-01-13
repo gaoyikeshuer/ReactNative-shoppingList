@@ -30,13 +30,13 @@ import DarkModeStyle from '../theme/DarkModeStyle';
 import { AppState } from 'react-native';
 import { BlurView } from '@react-native-community/blur';
 import BlurScreen from '../components/BlurScreen/BlurScreen';
-
+import { useAppSelector, useAppDispatch } from '../store/hooks';
 
 
 const Home = () => {
 
-  const dispatch = useDispatch()
-  const darkmode= useSelector(state => state.themeToggle)
+  const dispatch = useAppDispatch()
+  const darkmode= useAppSelector(state => state.themeToggle)
   Appearance.addChangeListener((scheme) =>{
  
     dispatch(isDarkMode({scheme : scheme.colorScheme}))
@@ -57,7 +57,7 @@ const Home = () => {
     };
   }, []);
 const  [appState, setAppState] = useState(AppState.currentState)
-console.log(appState)
+// console.log(appState)
 
 
 
@@ -75,7 +75,7 @@ console.log(appState)
     {id: 11, name: 'nyan tsabjnx'},
   ]);
 
-  const modalToggle = useSelector(state => state.modalToggle);
+  const modalToggle = useAppSelector((state) => state.modalToggle);
 
   return (
     <SafeAreaView style={darkmode.scheme == 'dark'? DarkModeStyle.container: styles.container}>
