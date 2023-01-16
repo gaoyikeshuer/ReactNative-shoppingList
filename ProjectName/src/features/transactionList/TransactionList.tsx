@@ -6,41 +6,30 @@ import {
   Text,
   StyleSheet,
   Pressable,
-  Animated
+  Animated,
 } from 'react-native';
-
-import { useSelector, useDispatch } from 'react-redux';
 
 import {db} from '../../../firebase';
 import {collection, getDocs, query, orderBy} from 'firebase/firestore';
 
-
 import Tab from './components/Tab';
 import TransactionListStyle from './TransactionListStyle';
-import { changeMonth } from '../../store/monthTabSlice';
-import { useAppSelector, useAppDispatch } from '../../store/hooks';
-import { Data, DATAtype, MonthData } from '../../../types';
+import {changeMonth} from '../../store/monthTabSlice';
+import {useAppSelector, useAppDispatch} from '../../store/hooks';
+import {TransactionData, MonthData, GroupData} from '../../types/Data';
 
 const TransactionList = () => {
- 
-
- 
   const darkMode = useAppSelector(state => state.themeToggle);
-  const [listData, setListData] = useState<Data[]>([]);
- const dispatch = useAppDispatch()
-  
-
-
-
+  const [listData, setListData] = useState<TransactionData[]>([]);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     async function getData() {
-      
       const listRef = collection(db, 'TransactionList');
       const q = query(listRef, orderBy('date', 'desc'));
-      
+
       const querySnapshot = await getDocs(q);
-      const data:Array<Data> = [];
+      const data: Array<TransactionData> = [];
       const dateFormat = new Intl.DateTimeFormat('en-US');
       querySnapshot.forEach(doc => {
         const {date, currency, name, number, type} = doc.data();
@@ -52,76 +41,69 @@ const TransactionList = () => {
           name,
           number,
           type,
-          month: dateObj.getMonth()+1
+          month: dateObj.getMonth() + 1,
         });
       });
 
       setListData(data);
-      
     }
 
     getData();
   }, []);
 
-
-  const DATA:DATAtype[] = Object.values(
-    listData.reduce((acc:any, currentVal:Data) => {
+  const DATA: GroupData[] = Object.values(
+    listData.reduce((acc: any, currentVal: TransactionData) => {
       if (!acc[currentVal.date])
         acc[currentVal.date] = {
           title: currentVal.date,
           data: [],
-          month: currentVal.month
+          month: currentVal.month,
         };
       acc[currentVal.date].data.push(currentVal);
       return acc;
     }, {}),
   );
 
-  const monthData:MonthData[] = Object.values(
-    listData.reduce((acc:any, currentVal:Data) =>{
-      if(!acc[currentVal.month])
-      acc[currentVal.month] ={
-        month: currentVal.month,
-        data :[],
-        monthName : toMonthName(currentVal.month)
-      };
-      acc[currentVal.month].data.push(currentVal)
-     return acc
-    },{})
-  )
-
- 
-
-
-
-
-
+  const monthData: MonthData[] = Object.values(
+    listData.reduce((acc: any, currentVal: TransactionData) => {
+      if (!acc[currentVal.month])
+        acc[currentVal.month] = {
+          month: currentVal.month,
+          data: [],
+          monthName: toMonthName(currentVal.month),
+        };
+      acc[currentVal.month].data.push(currentVal);
+      return acc;
+    }, {}),
+  );
 
   const Ref = useRef(null);
 
-  function toMonthName(monthNumber:number) {
+  function toMonthName(monthNumber: number) {
     const date = new Date();
     date.setMonth(monthNumber - 1);
-  
+
     return date.toLocaleString('en-US', {
       month: 'long',
     });
   }
-  
-  const scrollA = useRef(new Animated.Value(0)).current
 
+  const scrollA = useRef(new Animated.Value(0)).current;
 
-  const _onViewableItemsChanged = React.useCallback(({ viewableItems, changed }:{viewableItems:any, changed:any}) => {
-    // console.log("Visible items are", viewableItems);
-    //have question of the types here
+  const _onViewableItemsChanged = React.useCallback(
+    ({viewableItems, changed}: {viewableItems: any; changed: any}) => {
+      // console.log("Visible items are", viewableItems);
+      //have question of the types here
 
-   dispatch(changeMonth({item: viewableItems[1]?.item}))
-    // console.log("Changed in this iteration, ", changed);
-  }, []);
+      dispatch(changeMonth({item: viewableItems[1]?.item}));
+      // console.log("Changed in this iteration, ", changed);
+    },
+    [],
+  );
 
   const _viewabilityConfig = {
-    itemVisiblePercentThreshold: 80
-  }
+    itemVisiblePercentThreshold: 80,
+  };
   return (
     <SafeAreaView>
       <View
@@ -132,7 +114,13 @@ const TransactionList = () => {
           marginBottom: 10,
         }}>
         <Text
-          style={{color: '#6E6E6E', fontFamily: 'Aspira', fontWeight: '500', letterSpacing: 1.5, fontSize:12}}>
+          style={{
+            color: '#6E6E6E',
+            fontFamily: 'Aspira',
+            fontWeight: '500',
+            letterSpacing: 1.5,
+            fontSize: 12,
+          }}>
           RECENT INCOMING TRANSACTIONS
         </Text>
         <Text
@@ -140,43 +128,55 @@ const TransactionList = () => {
           Show all {`>`}
         </Text>
       </View>
-      <Tab monthData = {monthData} Ref= {Ref} DATA={DATA} scrollA ={scrollA}/>
-    
+      <Tab monthData={monthData} Ref={Ref} DATA={DATA} scrollA={scrollA} />
+
       <SectionList
-       onViewableItemsChanged={_onViewableItemsChanged}
-       viewabilityConfig={_viewabilityConfig}
-      onScroll={
-        Animated.event([{nativeEvent:{contentOffset:{y: scrollA}}}],{useNativeDriver: false}
-   
-          )
-      
-      }
+        onViewableItemsChanged={_onViewableItemsChanged}
+        viewabilityConfig={_viewabilityConfig}
+        onScroll={Animated.event(
+          [{nativeEvent: {contentOffset: {y: scrollA}}}],
+          {useNativeDriver: false},
+        )}
         ref={Ref}
-        sections={DATA}//must be {title:string, data:array}
+        sections={DATA} //must be {title:string, data:array}
         scrollEnabled={true}
         stickySectionHeadersEnabled={false}
         keyExtractor={(item, index) => item.key + index}
         renderItem={({item}) => {
-        
           return (
-            <View style={[TransactionListStyle.listContainer,{backgroundColor: darkMode.scheme == 'dark'? '#5A6168':'white'}]}>
+            <View
+              style={[
+                TransactionListStyle.listContainer,
+                {
+                  backgroundColor:
+                    darkMode.scheme == 'dark' ? '#5A6168' : 'white',
+                },
+              ]}>
               <View style={TransactionListStyle.textContainer}>
                 <View style={TransactionListStyle.nameContainer}>
+                  <Text style={TransactionListStyle.textName}>{item.name}</Text>
                   <Text
-                    style={TransactionListStyle.textName}>
-                    {item.name}
+                    style={{
+                      color: darkMode.scheme == 'dark' ? 'black' : '#6E6E6E',
+                      fontFamily: 'Aspira',
+                    }}>
+                    {item.type}
                   </Text>
-                  <Text style={{color: darkMode.scheme == 'dark'?'black':'#6E6E6E', fontFamily:'Aspira'}}>{item.type}</Text>
                 </View>
                 <View style={{alignItems: 'flex-end'}}>
-                  <Text style={[TransactionListStyle.textCurrency,{color: darkMode.scheme == 'dark'? 'black':'#6E6E6E'}]}>
+                  <Text
+                    style={[
+                      TransactionListStyle.textCurrency,
+                      {color: darkMode.scheme == 'dark' ? 'black' : '#6E6E6E'},
+                    ]}>
                     {item.currency}
                   </Text>
 
                   <Text style={TransactionListStyle.textNumber}>
-                    {item.number>0?'+'+item.number.toFixed(2).toLocaleString():item.number.toFixed(2).toLocaleString()}
+                    {item.number > 0
+                      ? '+' + item.number.toFixed(2).toLocaleString()
+                      : item.number.toFixed(2).toLocaleString()}
                   </Text>
-                 
                 </View>
               </View>
             </View>
@@ -195,15 +195,15 @@ const TransactionList = () => {
         renderSectionHeader={({section}) => {
           return (
             <View style={TransactionListStyle.transactionTitle}>
-              <Text style={TransactionListStyle.titleDate}>{section.title}</Text>
+              <Text style={TransactionListStyle.titleDate}>
+                {section.title}
+              </Text>
             </View>
           );
         }}
       />
-      
     </SafeAreaView>
   );
 };
-
 
 export default TransactionList;

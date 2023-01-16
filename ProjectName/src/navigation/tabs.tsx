@@ -12,43 +12,34 @@ import {
   BottomTabBar,
 } from '@react-navigation/bottom-tabs';
 import DimBackground from '../components/dimBackground/DimBackground';
-import { useDispatch, useSelector } from 'react-redux';
-import { isDarkMode } from '../store/themeToggleSlice';
-import { useEffect } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {isDarkMode} from '../store/themeToggleSlice';
+import {useEffect} from 'react';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
-import { useNavigation } from '@react-navigation/native';
-import { useAppSelector, useAppDispatch } from '../store/hooks';
+import {useNavigation} from '@react-navigation/native';
+import {useAppSelector, useAppDispatch} from '../store/hooks';
 
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
-  const dispatch = useAppDispatch()
-  const darkmode= useAppSelector(state => state.themeToggle)
-  Appearance.addChangeListener((scheme) =>{
-    dispatch(isDarkMode({scheme : scheme.colorScheme}))
-
-  })
- 
-  
-
-  
+  const dispatch = useAppDispatch();
+  const darkmode = useAppSelector(state => state.themeToggle);
+  Appearance.addChangeListener(scheme => {
+    dispatch(isDarkMode({scheme: scheme.colorScheme}));
+  });
 
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: {paddingHorizontal:0, 
-          backgroundColor:darkmode.scheme == 'dark'?'#212529':'white'
-        
+        tabBarStyle: {
+          paddingHorizontal: 0,
+          backgroundColor: darkmode.scheme == 'dark' ? '#212529' : 'white',
         },
         tabBarActiveTintColor: 'purple',
         tabBarInactiveTintColor: 'gray',
         headerShown: true,
         // headerMode: 'screen',
-        
-        
-      
       }}>
-        
       <Tab.Screen
         name="Home"
         component={Home}
@@ -60,30 +51,39 @@ const Tabs = () => {
               color={focused ? 'purple' : 'gray'}
             />
           ),
-          headerTitle: () => <Text style={{fontSize:18, fontFamily:'Aspira', fontWeight:'500', color:'#7F2B7B',}}>Home</Text>,
-          headerRight: () => <View style={{paddingRight:12}}><ServiceBell /></View>,
+          headerTitle: () => (
+            <Text
+              style={{
+                fontSize: 18,
+                fontFamily: 'Aspira',
+                fontWeight: '500',
+                color: '#7F2B7B',
+              }}>
+              Home
+            </Text>
+          ),
+          headerRight: () => (
+            <View style={{paddingRight: 12}}>
+              <ServiceBell />
+            </View>
+          ),
           headerStyle: {
-            backgroundColor: darkmode.scheme=='dark'?'#212529':'transparent',
+            backgroundColor:
+              darkmode.scheme == 'dark' ? '#212529' : 'transparent',
           },
 
-       
-          headerLeft: () => <DimBackground/>,
+          headerLeft: () => <DimBackground />,
           headerLeftContainerStyle: {
             zIndex: 1000,
-          
-   
           },
           headerTitleContainerStyle: {
             position: 'relative',
             flex: 1,
             alignItems: 'center',
-    
           },
-        headerTitleAlign:'center' // ios defalt center but android deflaut left
-         
+          headerTitleAlign: 'center', // ios defalt center but android deflaut left
         }}
       />
-    
 
       <Tab.Screen
         name="Accounts"

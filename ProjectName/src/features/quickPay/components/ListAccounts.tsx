@@ -3,10 +3,11 @@ import { View,Text,StyleSheet } from 'react-native'
 
 import AvatarGenerator from './AvatarGenerator'
 import { useSelector } from 'react-redux'
+import { Avatar } from '../../../types/Avatar'
+import { useAppSelector } from '../../../store/hooks'
 
-const ListAccounts = ({item}) => {
- 
-  const darkMode = useSelector(state => state.themeToggle)
+const ListAccounts = ({item}:{item: Avatar}) => {
+  const darkMode = useAppSelector(state => state.themeToggle)
   return (
     <View style={styles.avatarWrap} >
       <AvatarGenerator name={item.name} />
@@ -22,14 +23,10 @@ const styles = StyleSheet.create({
  },
   avatar:{
     width:52,
-
-
-  
   },
   avatarName:{
     fontSize:11,
     marginTop:5,
-    fontFamily:'Aspira',
     fontWeight:'500',
     fontFamily:'Aspira-Medium'
   }

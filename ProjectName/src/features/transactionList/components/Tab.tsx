@@ -4,22 +4,31 @@ import React, {useEffect, useRef} from 'react';
 import {changeMonth} from '../../../store/monthTabSlice';
 import {useState} from 'react';
 import {StyleSheet} from 'react-native';
-import { useAppSelector, useAppDispatch } from '../../../store/hooks';
-import { MonthData,DATAtype } from '../../../../types';
+import {useAppSelector, useAppDispatch} from '../../../store/hooks';
+import {MonthData, GroupData} from '../../../types/Data';
 
-const Tab = ({monthData, Ref, DATA, scrollA}:{monthData:MonthData[],Ref:any,DATA:DATAtype[],scrollA:any}) => {
+const Tab = ({
+  monthData,
+  Ref,
+  DATA,
+  scrollA,
+}: {
+  monthData: MonthData[];
+  Ref: any;
+  DATA: GroupData[];
+  scrollA: any;
+}) => {
   // const fadeAnim = useRef(new Animated.Value(0)).current;
   const dispatch = useAppDispatch();
   const monthTab = useAppSelector(state => state.monthTab);
- 
+
   // const value = useState(new Animated.Value(0))[0];
 
   const scrollValue = scrollA.interpolate({
     inputRange: [0, 50],
     outputRange: [0, 1],
   });
- const darkMode = useAppSelector(state => state.themeToggle)
- 
+  const darkMode = useAppSelector(state => state.themeToggle);
 
   return (
     <Animated.View
@@ -28,7 +37,7 @@ const Tab = ({monthData, Ref, DATA, scrollA}:{monthData:MonthData[],Ref:any,DATA
         position: 'absolute',
         top: 24,
         zIndex: 15,
-        backgroundColor: darkMode.scheme == 'dark'?'#212529': '#efefef',
+        backgroundColor: darkMode.scheme == 'dark' ? '#212529' : '#efefef',
 
         width: '100%',
       }}>
@@ -39,11 +48,10 @@ const Tab = ({monthData, Ref, DATA, scrollA}:{monthData:MonthData[],Ref:any,DATA
           return (
             <Pressable
               onPress={() => {
-               
                 dispatch(changeMonth({item: item.month}));
-              
+
                 //  setSelectedTab(item)
-           
+
                 Ref.current.scrollToLocation({
                   sectionIndex: DATA.findIndex(object => {
                     return object.month == item.month;
@@ -52,7 +60,17 @@ const Tab = ({monthData, Ref, DATA, scrollA}:{monthData:MonthData[],Ref:any,DATA
                 });
               }}>
               <Text
-                style={item?.month == monthTab.item  ?  styles.selectedTabText: [styles.tabText,{color: darkMode.scheme=='dark'?'#efefef':'black'}] }>
+                style={
+                  item?.month == monthTab.item
+                    ? styles.selectedTabText
+                    : [
+                        styles.tabText,
+                        {
+                          color:
+                            darkMode.scheme == 'dark' ? '#efefef' : 'black',
+                        },
+                      ]
+                }>
                 {item.monthName}
               </Text>
             </Pressable>
@@ -64,21 +82,21 @@ const Tab = ({monthData, Ref, DATA, scrollA}:{monthData:MonthData[],Ref:any,DATA
 };
 
 const styles = StyleSheet.create({
-    tabText :{
-        marginHorizontal: 12,
-        paddingVertical: 10,
-        fontFamily: 'Aspira',
-        fontWeight: '500',
-        color:  'black',
-    },
+  tabText: {
+    marginHorizontal: 12,
+    paddingVertical: 10,
+    fontFamily: 'Aspira',
+    fontWeight: '500',
+    color: 'black',
+  },
 
-    selectedTabText:{
-        marginHorizontal: 12,
-        paddingVertical: 10,
-        fontFamily: 'Aspira',
-        fontWeight: '500',
-        color: 'purple',
-    }
-})
+  selectedTabText: {
+    marginHorizontal: 12,
+    paddingVertical: 10,
+    fontFamily: 'Aspira',
+    fontWeight: '500',
+    color: 'purple',
+  },
+});
 
 export default Tab;
