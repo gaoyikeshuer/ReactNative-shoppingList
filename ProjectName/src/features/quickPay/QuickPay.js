@@ -11,8 +11,7 @@ import ListAccounts from './components/ListAccounts';
 
 import AddAcounts from './components/AddAcounts';
 import QuickPayStyle from './QuickPayStyle';
-import { avatar } from '../../../types';
-const QuickPay = ({payAccounts}:{payAccounts:avatar[]}) => {
+const QuickPay = ({payAccounts}) => {
 
   return (
     <SafeAreaView>
@@ -33,14 +32,14 @@ const QuickPay = ({payAccounts}:{payAccounts:avatar[]}) => {
         }}
       
         style={QuickPayStyle.avatarContainer}
-        data={[...payAccounts.slice(0, 9), {plusImage: true}]}
-        renderItem={({item}:{item:any}) => {
-        if(item.plusImage){
+        data={[...payAccounts.slice(0, 9), {plusImgae: true}]}
+        renderItem={({item}) => {
+        if(item.plusImgae){
         return(
         <AddAcounts/>)
         }
         return <ListAccounts item={item} />}}
-      
+        keyExtractor={item => item.id}
       />
     
     </SafeAreaView>

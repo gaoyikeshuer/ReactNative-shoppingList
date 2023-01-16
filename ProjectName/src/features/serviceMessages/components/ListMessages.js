@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux'
 
 import {deleteMes} from '../../../store/messagesSlice'
 import { IconXCircle } from '../../../assets/icons'
-import { Message } from '../../../../types'
 
-const ListMessage = ({item}:{item:Message}) => {
+
+const ListMessage = ({item, deleteMessage}) => {
   const dispatch= useDispatch()
 
   return (

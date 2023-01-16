@@ -3,11 +3,10 @@ import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 import { useSelector } from 'react-redux'
 import { IconFavouriteFill } from '../../assets/icons'
 import AccountCardStyle from './AccountCardStyle'
-import { useAppSelector } from '../../store/hooks'
 
 
 const StarAccount = () => {
-  const darkMode = useAppSelector(state => state.themeToggle)
+  const darkMode = useSelector(state => state.themeToggle)
   return (
     <SafeAreaView style={AccountCardStyle.accountCardContainer}>
  

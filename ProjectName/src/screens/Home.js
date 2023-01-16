@@ -30,14 +30,13 @@ import DarkModeStyle from '../theme/DarkModeStyle';
 import { AppState } from 'react-native';
 import { BlurView } from '@react-native-community/blur';
 import BlurScreen from '../components/BlurScreen/BlurScreen';
-import { useAppSelector, useAppDispatch } from '../store/hooks';
-import { avatar } from '../../types';
+
 
 
 const Home = () => {
 
-  const dispatch = useAppDispatch()
-  const darkmode= useAppSelector(state => state.themeToggle)
+  const dispatch = useDispatch()
+  const darkmode= useSelector(state => state.themeToggle)
   Appearance.addChangeListener((scheme) =>{
  
     dispatch(isDarkMode({scheme : scheme.colorScheme}))
@@ -58,26 +57,25 @@ const Home = () => {
     };
   }, []);
 const  [appState, setAppState] = useState(AppState.currentState)
-// console.log(appState)
+console.log(appState)
 
 
 
+  const [payAccounts, setPayAccounts] = useState([
+    {id: 1, name: 'Alloment Weal'},
+    {id: 2, name: 'Cian Byrne'},
+    {id: 3, name: 'Yike Gao'},
+    {id: 4, name: 'Tianyi Wang'},
+    {id: 5, name: 'Linghan Jing'},
+    {id: 6, name: 'Ryan Veale'},
+    {id: 7, name: 'Chetanya Kandhari'},
+    {id: 8, name: 'Yoeri Percy'},
+    {id: 9, name: 'Harry Potter'},
+    {id: 10, name: 'Zheng Sun'},
+    {id: 11, name: 'nyan tsabjnx'},
+  ]);
 
-const avatars:avatar[] = [    
-{id: 1, name: 'Alloment Weal'},
-{id: 2, name: 'Cian Byrne'},
-{id: 3, name: 'Yike Gao'},
-{id: 4, name: 'Tianyi Wang'},
-{id: 5, name: 'Linghan Jing'},
-{id: 6, name: 'Ryan Veale'},
-{id: 7, name: 'Chetanya Kandhari'},
-{id: 8, name: 'Yoeri Percy'},
-{id: 9, name: 'Harry Potter'},
-{id: 10, name: 'Zheng Sun'},
-{id: 11, name: 'nyan tsabjnx'},]
-  const [payAccounts, setPayAccounts] = useState(avatars);
-
-  const modalToggle = useAppSelector((state) => state.modalToggle);
+  const modalToggle = useSelector(state => state.modalToggle);
 
   return (
     <SafeAreaView style={darkmode.scheme == 'dark'? DarkModeStyle.container: styles.container}>

@@ -6,15 +6,13 @@ import NoneMessages from './components/NoneMessages'
 import {useDispatch, useSelector} from 'react-redux'
 import { toggleActive } from '../../store/modalToggleSlice'
 import ServiceMessagesStyle from './ServiceMessagesStyle'
-import { useAppSelector, useAppDispatch } from '../../store/hooks'
-
 
 
 const ServiceMessages = () => {
    
-  const messages = useAppSelector(state => state.mes)
-  const darkMode = useAppSelector(state => state.themeToggle)
-  const dispatch = useAppDispatch();
+  const messages = useSelector(state => state.mes)
+  const darkMode = useSelector(state => state.themeToggle)
+  const dispatch = useDispatch();
 
   return (
     <SafeAreaView style = {[ServiceMessagesStyle.modalContainer, {backgroundColor: darkMode.scheme== 'dark'?'#5A6168':'white'}]}>

@@ -1,14 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-interface App{
-    active:boolean
-}
-
-const initialState:App ={
-    active:false
-}
 export const AppState = createSlice({
     name:'AppState',
-    initialState,
+    initialState: {active: false},
     reducers:{
         AppStateActive:(state) => {state.active = !state.active}
     }
