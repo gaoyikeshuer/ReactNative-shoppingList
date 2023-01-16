@@ -1,17 +1,8 @@
 import React from 'react';
-import {
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  View,
-  Pressable,
-  FlatList,
-  BackHandler,
-} from 'react-native';
+import {Text, SafeAreaView, View, Pressable, FlatList} from 'react-native';
 import {IconX} from '../../assets/icons';
 import ListMessage from './components/ListMessages';
 import NoneMessages from './components/NoneMessages';
-import {useDispatch, useSelector} from 'react-redux';
 import {toggleActive} from '../../store/modalToggleSlice';
 import ServiceMessagesStyle from './ServiceMessagesStyle';
 import {useAppSelector, useAppDispatch} from '../../store/hooks';

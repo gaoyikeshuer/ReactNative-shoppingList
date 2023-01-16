@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  View,
-  Pressable,
-  FlatList,
-} from 'react-native';
+import {Text, SafeAreaView, View, Pressable, FlatList} from 'react-native';
 import ListAccounts from './components/ListAccounts';
 import AddAcounts from './components/AddAcounts';
 import QuickPayStyle from './QuickPayStyle';

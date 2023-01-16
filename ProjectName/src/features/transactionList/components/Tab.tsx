@@ -1,8 +1,6 @@
-import {Text, View, FlatList, Pressable, Animated} from 'react-native';
-import React, {useEffect, useRef} from 'react';
-
+import {Text, Pressable, Animated} from 'react-native';
+import React from 'react';
 import {changeMonth} from '../../../store/monthTabSlice';
-import {useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {useAppSelector, useAppDispatch} from '../../../store/hooks';
 import {MonthData, GroupData} from '../../../types/Data';
@@ -49,8 +47,6 @@ const Tab = ({
             <Pressable
               onPress={() => {
                 dispatch(changeMonth({item: item.month}));
-
-                //  setSelectedTab(item)
 
                 Ref.current.scrollToLocation({
                   sectionIndex: DATA.findIndex(object => {

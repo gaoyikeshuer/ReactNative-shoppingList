@@ -1,10 +1,8 @@
-import React from 'react';
 import {StyleSheet} from 'react-native';
 const ServiceMessagesStyle = StyleSheet.create({
   modalContainer: {
     marginTop: 40,
     backgroundColor: 'white',
-
     flex: 1,
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,

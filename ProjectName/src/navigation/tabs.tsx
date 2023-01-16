@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, Text, AppRegistry, Appearance, Platform} from 'react-native';
+import {View, Text, Appearance} from 'react-native';
 import {
   IconHome,
   IconArrowRight,
@@ -7,16 +7,10 @@ import {
   IconSettings,
 } from '../assets/icons';
 import {Home} from '../screens';
-import {
-  createBottomTabNavigator,
-  BottomTabBar,
-} from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import DimBackground from '../components/dimBackground/DimBackground';
-import {useDispatch, useSelector} from 'react-redux';
 import {isDarkMode} from '../store/themeToggleSlice';
-import {useEffect} from 'react';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
-import {useNavigation} from '@react-navigation/native';
 import {useAppSelector, useAppDispatch} from '../store/hooks';
 
 const Tab = createBottomTabNavigator();
@@ -38,7 +32,6 @@ const Tabs = () => {
         tabBarActiveTintColor: 'purple',
         tabBarInactiveTintColor: 'gray',
         headerShown: true,
-        // headerMode: 'screen',
       }}>
       <Tab.Screen
         name="Home"

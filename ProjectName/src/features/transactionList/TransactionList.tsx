@@ -1,17 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {
-  SafeAreaView,
-  SectionList,
-  View,
-  Text,
-  StyleSheet,
-  Pressable,
-  Animated,
-} from 'react-native';
-
+import {SafeAreaView, SectionList, View, Text, Animated} from 'react-native';
 import {db} from '../../../firebase';
 import {collection, getDocs, query, orderBy} from 'firebase/firestore';
-
 import Tab from './components/Tab';
 import TransactionListStyle from './TransactionListStyle';
 import {changeMonth} from '../../store/monthTabSlice';
@@ -27,7 +17,6 @@ const TransactionList = () => {
     async function getData() {
       const listRef = collection(db, 'TransactionList');
       const q = query(listRef, orderBy('date', 'desc'));
-
       const querySnapshot = await getDocs(q);
       const data: Array<TransactionData> = [];
       const dateFormat = new Intl.DateTimeFormat('en-US');
