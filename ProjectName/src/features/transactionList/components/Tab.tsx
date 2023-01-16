@@ -1,23 +1,24 @@
 import {Text, View, FlatList, Pressable, Animated} from 'react-native';
 import React, {useEffect, useRef} from 'react';
 
-import {useSelector, useDispatch} from 'react-redux';
-
 import {changeMonth} from '../../../store/monthTabSlice';
 import {useState} from 'react';
 import {StyleSheet} from 'react-native';
+import { useAppSelector, useAppDispatch } from '../../../store/hooks';
+import { MonthData,DATAtype } from '../../../../types';
 
-const Tab = ({monthData, Ref, DATA, scrollA}) => {
+const Tab = ({monthData, Ref, DATA, scrollA}:{monthData:MonthData[],Ref:any,DATA:DATAtype[],scrollA:any}) => {
   // const fadeAnim = useRef(new Animated.Value(0)).current;
-  const dispatch = useDispatch();
-  const monthTab = useSelector(state => state.monthTab);
+  const dispatch = useAppDispatch();
+  const monthTab = useAppSelector(state => state.monthTab);
+ 
   // const value = useState(new Animated.Value(0))[0];
 
   const scrollValue = scrollA.interpolate({
     inputRange: [0, 50],
     outputRange: [0, 1],
   });
- const darkMode = useSelector(state => state.themeToggle)
+ const darkMode = useAppSelector(state => state.themeToggle)
  
 
   return (
@@ -39,7 +40,7 @@ const Tab = ({monthData, Ref, DATA, scrollA}) => {
             <Pressable
               onPress={() => {
                
-                dispatch(changeMonth({item: item}));
+                dispatch(changeMonth({item: item.month}));
               
                 //  setSelectedTab(item)
            
@@ -51,7 +52,7 @@ const Tab = ({monthData, Ref, DATA, scrollA}) => {
                 });
               }}>
               <Text
-                style={item?.month == monthTab.item?.month  ?  styles.selectedTabText: [styles.tabText,{color: darkMode.scheme=='dark'?'#efefef':'black'}] }>
+                style={item?.month == monthTab.item  ?  styles.selectedTabText: [styles.tabText,{color: darkMode.scheme=='dark'?'#efefef':'black'}] }>
                 {item.monthName}
               </Text>
             </Pressable>

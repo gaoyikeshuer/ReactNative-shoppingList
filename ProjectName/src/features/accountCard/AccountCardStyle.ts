@@ -51,7 +51,7 @@ const AccountCardStyle = StyleSheet.create({
       textTitle:{
         fontSize:18,
        
-        fontFamily:'Aspira',
+   
         fontWeight:'500',
         color:'black',
         fontFamily:'Aspira-Medium',
@@ -69,7 +69,7 @@ const AccountCardStyle = StyleSheet.create({
       },
       moneyText:{
         fontSize:20,
-        fontFamily:'Aspira',
+  
         fontWeight:'500',
         lineHeight:24,
         fontFamily:'Aspira-Medium',
