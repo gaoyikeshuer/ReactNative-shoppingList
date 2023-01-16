@@ -18,24 +18,29 @@ import {collection, getDocs, query, orderBy} from 'firebase/firestore';
 import Tab from './components/Tab';
 import TransactionListStyle from './TransactionListStyle';
 import { changeMonth } from '../../store/monthTabSlice';
-
+import { useAppSelector, useAppDispatch } from '../../store/hooks';
+import { Data, DATAtype, MonthData } from '../../../types';
 
 const TransactionList = () => {
-  const darkMode = useSelector(state => state.themeToggle);
-  const [listData, setListData] = useState([]);
- const dispatch = useDispatch()
+ 
+
+ 
+  const darkMode = useAppSelector(state => state.themeToggle);
+  const [listData, setListData] = useState<Data[]>([]);
+ const dispatch = useAppDispatch()
   
 
 
 
+
   useEffect(() => {
-    async function myFunction() {
+    async function getData() {
       
       const listRef = collection(db, 'TransactionList');
       const q = query(listRef, orderBy('date', 'desc'));
       
       const querySnapshot = await getDocs(q);
-      const data = [];
+      const data:Array<Data> = [];
       const dateFormat = new Intl.DateTimeFormat('en-US');
       querySnapshot.forEach(doc => {
         const {date, currency, name, number, type} = doc.data();
@@ -52,13 +57,15 @@ const TransactionList = () => {
       });
 
       setListData(data);
+      
     }
 
-    myFunction();
+    getData();
   }, []);
 
-  const DATA = Object.values(
-    listData.reduce((acc, currentVal) => {
+
+  const DATA:DATAtype[] = Object.values(
+    listData.reduce((acc:any, currentVal:Data) => {
       if (!acc[currentVal.date])
         acc[currentVal.date] = {
           title: currentVal.date,
@@ -69,8 +76,9 @@ const TransactionList = () => {
       return acc;
     }, {}),
   );
-  const monthData = Object.values(
-    listData.reduce((acc, currentVal) =>{
+
+  const monthData:MonthData[] = Object.values(
+    listData.reduce((acc:any, currentVal:Data) =>{
       if(!acc[currentVal.month])
       acc[currentVal.month] ={
         month: currentVal.month,
@@ -91,7 +99,7 @@ const TransactionList = () => {
 
   const Ref = useRef(null);
 
-  function toMonthName(monthNumber) {
+  function toMonthName(monthNumber:number) {
     const date = new Date();
     date.setMonth(monthNumber - 1);
   
@@ -102,8 +110,10 @@ const TransactionList = () => {
   
   const scrollA = useRef(new Animated.Value(0)).current
 
-  const _onViewableItemsChanged = React.useCallback(({ viewableItems, changed }) => {
+
+  const _onViewableItemsChanged = React.useCallback(({ viewableItems, changed }:{viewableItems:any, changed:any}) => {
     // console.log("Visible items are", viewableItems);
+    //have question of the types here
 
    dispatch(changeMonth({item: viewableItems[1]?.item}))
     // console.log("Changed in this iteration, ", changed);
@@ -142,10 +152,10 @@ const TransactionList = () => {
       
       }
         ref={Ref}
-        sections={DATA}
+        sections={DATA}//must be {title:string, data:array}
         scrollEnabled={true}
         stickySectionHeadersEnabled={false}
-        keyExtractor={(item, index) => item + index}
+        keyExtractor={(item, index) => item.key + index}
         renderItem={({item}) => {
         
           return (
@@ -156,7 +166,7 @@ const TransactionList = () => {
                     style={TransactionListStyle.textName}>
                     {item.name}
                   </Text>
-                  <Text style={{color: darkMode.scheme == 'dark'?'black':'#6E6E6E', fontFamily:'Aspira', fontFamily:'Aspira-Regular'}}>{item.type}</Text>
+                  <Text style={{color: darkMode.scheme == 'dark'?'black':'#6E6E6E', fontFamily:'Aspira'}}>{item.type}</Text>
                 </View>
                 <View style={{alignItems: 'flex-end'}}>
                   <Text style={[TransactionListStyle.textCurrency,{color: darkMode.scheme == 'dark'? 'black':'#6E6E6E'}]}>
