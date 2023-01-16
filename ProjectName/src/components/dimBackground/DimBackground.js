@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { View,Text, StyleSheet,Pressable ,Animated } from 'react-native'
 import { Dimensions } from 'react-native'
-
-import { useAppSelector } from '../../store/hooks'
+import { useSelector } from 'react-redux'
 
 const DimBackground = () => {
     const windowWidth = Dimensions.get('window').width;
     const windowHeight = Dimensions.get('window').height;
 
-    const modalToggle = useAppSelector((state) => state.modalToggle)
+    const modalToggle = useSelector((state) => state.modalToggle)
   return (
-     <View style={modalToggle.active ?{width:windowWidth, backgroundColor:'rgba(0,0,0,0.5)', height:windowHeight, position:'absolute',zIndex:1000}:{}}> 
+     <View style={modalToggle.active ?{width:windowWidth, backgroundColor:'rgba(0,0,0,0.5)', height:windowHeight, position:'absolute',zIndex:1000}:''}> 
   
     </View>
 
@@ -18,6 +17,8 @@ const DimBackground = () => {
   
   )
 }
-
+const styles = StyleSheet.create({
+ 
+})
 
 export default DimBackground

@@ -25,15 +25,16 @@ const TransactionListStyle =StyleSheet.create({
         width: 224,
       },
       textNumber:{
-        fontSize: 16,fontWeight:'500', color:'black',  fontFamily:'Aspira-Medium'
+        fontSize: 16, fontFamily: 'Aspira', fontSize:16, fontWeight:'500', color:'black',  fontFamily:'Aspira-Medium'
       },
       textCurrency:{
-        color: '#6E6E6E', marginBottom:3, fontFamily:'Aspira-Regular'
+        color: '#6E6E6E', fontFamily: 'Aspira', marginBottom:3, fontFamily:'Aspira-Regular'
       },
       textName:{
         fontSize: 16,
         width: 224,
         marginBottom: 3,
+        fontFamily: 'Aspira',
         fontWeight: '500',
         color:'black',
         fontFamily:'Aspira-Medium'

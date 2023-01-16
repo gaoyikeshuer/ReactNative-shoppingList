@@ -17,13 +17,13 @@ import { isDarkMode } from '../store/themeToggleSlice';
 import { useEffect } from 'react';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
 import { useNavigation } from '@react-navigation/native';
-import { useAppSelector, useAppDispatch } from '../store/hooks';
+
 
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
-  const dispatch = useAppDispatch()
-  const darkmode= useAppSelector(state => state.themeToggle)
+  const dispatch = useDispatch()
+  const darkmode= useSelector(state => state.themeToggle)
   Appearance.addChangeListener((scheme) =>{
     dispatch(isDarkMode({scheme : scheme.colorScheme}))
 
@@ -43,7 +43,7 @@ const Tabs = () => {
         tabBarActiveTintColor: 'purple',
         tabBarInactiveTintColor: 'gray',
         headerShown: true,
-        // headerMode: 'screen',
+        headerMode: 'screen',
         
         
       
