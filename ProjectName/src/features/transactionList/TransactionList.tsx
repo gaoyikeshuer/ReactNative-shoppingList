@@ -42,12 +42,13 @@ const TransactionList = () => {
 
   const DATA: GroupData[] = Object.values(
     listData.reduce((acc: any, currentVal: TransactionData) => {
-      if (!acc[currentVal.date])
+      if (!acc[currentVal.date]) {
         acc[currentVal.date] = {
           title: currentVal.date,
           data: [],
           month: currentVal.month,
         };
+      }
       acc[currentVal.date].data.push(currentVal);
       return acc;
     }, {}),
@@ -55,12 +56,13 @@ const TransactionList = () => {
 
   const monthData: MonthData[] = Object.values(
     listData.reduce((acc: any, currentVal: TransactionData) => {
-      if (!acc[currentVal.month])
+      if (!acc[currentVal.month]) {
         acc[currentVal.month] = {
           month: currentVal.month,
           data: [],
           monthName: toMonthName(currentVal.month),
         };
+      }
       acc[currentVal.month].data.push(currentVal);
       return acc;
     }, {}),
@@ -114,7 +116,7 @@ const TransactionList = () => {
         </Text>
         <Text
           style={{color: '#7F2B7B', fontFamily: 'Aspira', fontWeight: '500'}}>
-          Show all {`>`}
+          Show all {'>'}
         </Text>
       </View>
       <Tab monthData={monthData} Ref={Ref} DATA={DATA} scrollA={scrollA} />
@@ -178,7 +180,8 @@ const TransactionList = () => {
                 borderBottomWidth: 1,
                 marginHorizontal: 12,
                 borderColor: '#C3C3C3',
-              }}></View>
+              }}
+            />
           );
         }}
         renderSectionHeader={({section}) => {

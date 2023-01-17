@@ -10,7 +10,7 @@ const QuickPay = ({payAccounts}: {payAccounts: Avatar[]}) => {
       <View style={QuickPayStyle.QuickPayTitle}>
         <Text style={QuickPayStyle.QuickPayText}>QUICK PAY</Text>
         <Pressable>
-          <Text style={QuickPayStyle.ShowAllText}>Show all {`>`} </Text>
+          <Text style={QuickPayStyle.ShowAllText}>Show all {'>'} </Text>
         </Pressable>
       </View>
 

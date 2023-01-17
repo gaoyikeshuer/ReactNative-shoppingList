@@ -20,7 +20,8 @@ const DimBackground = () => {
               zIndex: 1000,
             }
           : {}
-      }></View>
+      }
+    />
   );
 };
 

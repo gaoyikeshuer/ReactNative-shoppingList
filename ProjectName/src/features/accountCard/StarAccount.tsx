@@ -56,7 +56,7 @@ const StarAccount = () => {
           </View>
         </View>
       </SafeAreaView>
-      <View style={{width: 5, backgroundColor: 'green', height: '100%'}}></View>
+      <View style={{width: 5, backgroundColor: 'green', height: '100%'}} />
     </SafeAreaView>
   );
 };
