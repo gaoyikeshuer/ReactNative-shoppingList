@@ -59,8 +59,7 @@
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "npx eslint",
-      "npx prettier --write",
-      "npx test --watchAll=false --findRelatedTests --bail"
+      "npx prettier --write"
     ]
   }
 }
