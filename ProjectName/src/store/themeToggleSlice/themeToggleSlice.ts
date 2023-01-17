@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import { RootState } from '../store';
 
 interface ThemeState {
   scheme: string;
@@ -18,4 +19,5 @@ export const themeToggle = createSlice({
   },
 });
 export const {isDarkMode} = themeToggle.actions;
+export const isDarkModeSelector = (state:RootState) =>state.themeToggle.scheme
 export default themeToggle.reducer;

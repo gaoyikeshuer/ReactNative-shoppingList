@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, Pressable, Animated} from 'react-native';
 import {IconAlert} from '../../assets/icons';
-import {toggleActive} from '../../store/modalToggleSlice';
+import {toggleActive} from '../../store/modalToggleSlice/modalToggleSlice';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useAppSelector, useAppDispatch} from '../../store/hooks';
 

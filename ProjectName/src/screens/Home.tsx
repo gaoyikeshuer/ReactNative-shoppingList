@@ -4,7 +4,7 @@ import QuickPay from '../features/quickPay/QuickPay';
 import StarAccount from '../features/accountCard/StarAccount';
 import TransactionList from '../features/transactionList/TransactionList';
 import ServiceMessages from '../features/serviceMessages/ServiceMessages';
-import {isDarkMode} from '../store/themeToggleSlice';
+import {isDarkMode} from '../store/themeToggleSlice/themeToggleSlice';
 import DarkModeStyle from '../theme/DarkModeStyle';
 import {AppState} from 'react-native';
 import BlurScreen from '../components/BlurScreen/BlurScreen';

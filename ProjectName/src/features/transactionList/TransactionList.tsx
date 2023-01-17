@@ -4,7 +4,7 @@ import {db} from '../../../firebase';
 import {collection, getDocs, query, orderBy} from 'firebase/firestore';
 import Tab from './components/Tab';
 import TransactionListStyle from './TransactionListStyle';
-import {changeMonth} from '../../store/monthTabSlice';
+import {changeMonth} from '../../store/monthTabSlice/monthTabSlice';
 import {useAppSelector, useAppDispatch} from '../../store/hooks';
 import {TransactionData, MonthData, GroupData} from '../../types/Data';
 

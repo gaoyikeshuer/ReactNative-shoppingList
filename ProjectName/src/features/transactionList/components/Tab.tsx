@@ -1,6 +1,6 @@
 import {Text, Pressable, Animated} from 'react-native';
 import React from 'react';
-import {changeMonth} from '../../../store/monthTabSlice';
+import {changeMonth} from '../../../store/monthTabSlice/monthTabSlice';
 import {StyleSheet} from 'react-native';
 import {useAppSelector, useAppDispatch} from '../../../store/hooks';
 import {MonthData, GroupData} from '../../../types/Data';

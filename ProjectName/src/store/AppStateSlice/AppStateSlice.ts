@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import { RootState } from '../store';
 interface App {
   active: boolean;
 }
@@ -16,4 +17,5 @@ export const AppState = createSlice({
   },
 });
 export const {AppStateActive} = AppState.actions;
+export const isAppActiveSelector = (state: RootState) => state.AppState.active;
 export default AppState.reducer;

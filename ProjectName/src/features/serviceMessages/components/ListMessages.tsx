@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, StyleSheet, SafeAreaView, Pressable} from 'react-native';
 import {useAppDispatch} from '../../../store/hooks';
-import {deleteMes} from '../../../store/messagesSlice';
+import {deleteMes} from '../../../store/messagesSlice/messagesSlice';
 import {IconXCircle} from '../../../assets/icons';
 import {Message} from '../../../types/Message';
 

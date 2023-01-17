@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {RootState} from './store';
+import {RootState} from '../store';
 
 interface ModalState {
   active: boolean;
@@ -19,5 +19,5 @@ export const modalToggle = createSlice({
   },
 });
 export const {toggleActive} = modalToggle.actions;
-export const selectModal = (state: RootState) => state.modalToggle.active;
+export const isModalActiveSelector = (state: RootState) => state.modalToggle.active;
 export default modalToggle.reducer;

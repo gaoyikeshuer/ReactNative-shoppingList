@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import { RootState } from '../store';
 
 interface month {
   item: number | object;
@@ -16,4 +17,5 @@ export const monthTabSlice = createSlice({
   },
 });
 export const {changeMonth} = monthTabSlice.actions;
+export const monthSelector = (state: RootState) => state.monthTab.item
 export default monthTabSlice.reducer;

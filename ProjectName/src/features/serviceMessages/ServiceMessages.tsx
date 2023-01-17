@@ -3,7 +3,7 @@ import {Text, SafeAreaView, View, Pressable, FlatList} from 'react-native';
 import {IconX} from '../../assets/icons';
 import ListMessage from './components/ListMessages';
 import NoneMessages from './components/NoneMessages';
-import {toggleActive} from '../../store/modalToggleSlice';
+import {toggleActive} from '../../store/modalToggleSlice/modalToggleSlice';
 import ServiceMessagesStyle from './ServiceMessagesStyle';
 import {useAppSelector, useAppDispatch} from '../../store/hooks';
 

@@ -9,7 +9,7 @@ import {
 import {Home} from '../screens';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import DimBackground from '../components/dimBackground/DimBackground';
-import {isDarkMode} from '../store/themeToggleSlice';
+import {isDarkMode} from '../store/themeToggleSlice/themeToggleSlice';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
 import {useAppSelector, useAppDispatch} from '../store/hooks';
 
