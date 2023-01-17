@@ -11,7 +11,7 @@ import BlurScreen from '../components/BlurScreen/BlurScreen';
 import {useAppSelector, useAppDispatch} from '../store/hooks';
 import {Avatars} from '../constants/Avatars.constant';
 
-const Home = () => {
+const Home: React.FC = () => {
   const dispatch = useAppDispatch();
   const darkmode = useAppSelector(state => state.themeToggle);
   Appearance.addChangeListener(scheme => {
