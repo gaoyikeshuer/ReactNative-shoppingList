@@ -21,7 +21,7 @@ const TransactionList = () => {
       const data: Array<TransactionData> = [];
       const dateFormat = new Intl.DateTimeFormat('en-US');
       querySnapshot.forEach(doc => {
-        const {date, currency, name, number, type} = doc.data();
+        const {currency, name, number, type} = doc.data();
         const dateObj = new Date(doc.data().date.seconds * 1000);
         data.push({
           key: doc.id,
@@ -82,7 +82,7 @@ const TransactionList = () => {
   const scrollA = useRef(new Animated.Value(0)).current;
 
   const _onViewableItemsChanged = React.useCallback(
-    ({viewableItems, changed}: {viewableItems: any; changed: any}) => {
+    ({viewableItems}: {viewableItems: any}) => {
       // console.log("Visible items are", viewableItems);
       //have question of the types here
 
