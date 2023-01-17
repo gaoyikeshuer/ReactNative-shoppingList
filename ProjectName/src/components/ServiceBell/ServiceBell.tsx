@@ -2,12 +2,13 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet, Pressable, Animated} from 'react-native';
 import {IconAlert} from '../../assets/icons';
 import {toggleActive} from '../../store/modalToggleSlice';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useAppSelector, useAppDispatch} from '../../store/hooks';
 
 const ServiceBell = () => {
   const messages = useAppSelector(state => state.mes);
   const dispatch = useAppDispatch();
-  // const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
+  const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
   const spinValue = useState(new Animated.Value(0))[0];
 
   const spinBell = () => {
