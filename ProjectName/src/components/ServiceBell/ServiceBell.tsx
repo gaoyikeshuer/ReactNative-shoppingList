@@ -8,7 +8,7 @@ import {useAppSelector, useAppDispatch} from '../../store/hooks';
 const ServiceBell = () => {
   const messages = useAppSelector(state => state.mes);
   const dispatch = useAppDispatch();
-  const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
+
   const spinValue = useState(new Animated.Value(0))[0];
 
   const spinBell = () => {
