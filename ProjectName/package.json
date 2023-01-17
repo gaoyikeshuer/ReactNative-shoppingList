@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "lint": "eslint .",
     "postinstall": "jetifier -r",
     "prepare": "husky install"
   },
@@ -58,7 +58,7 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "npx eslint",
+      "npx eslint --fix --quiet",
       "npx prettier --write",
       "npx test --watchAll=false --findRelatedTests --bail"
     ]

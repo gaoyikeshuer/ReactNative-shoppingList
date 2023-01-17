@@ -1,37 +1,42 @@
 [
-    {   "id":1,
-        "name":"Australia Bank Code Payee",
-        "type":"Trade related services",
-        "currency":"EUR",
-        "number":1033.2,
-        "date":"30/09/2022"
-    },
-    {   "id" :2,
-        "name":"New Zealand Payee with AcNu and BC",
-        "type":"Transportation",
-        "currency":"EUR",
-        "number":253.21,
-        "date":"30/09/2022"
-    },
-    {   "id":3,
-            "name":"HLB Ryan Ltd",
-        "type":"Accountancy Services",
-        "currency":"EUR",
-        "number": 189,
-        "date":"30/09/2022" 
-    },
-    {   "id":4,
-        "name":"Dropbox Ltd",
-        "type":"Subscription renewal",
-        "currency":"EUR",
-        "number": 9.99,
-        "date":"27/09/2022" 
-    },
-    {   "id":5,
-        "name":"Sep Quarterly Fees",
-        "type":"bank charges",
-        "currency":"EUR",
-        "number": 8.93,
-        "date":"24/09/2022" 
-    }
-]
+  {
+    'id': 1,
+    'name': 'Australia Bank Code Payee',
+    'type': 'Trade related services',
+    'currency': 'EUR',
+    'number': 1033.2,
+    'date': '30/09/2022',
+  },
+  {
+    'id': 2,
+    'name': 'New Zealand Payee with AcNu and BC',
+    'type': 'Transportation',
+    'currency': 'EUR',
+    'number': 253.21,
+    'date': '30/09/2022',
+  },
+  {
+    'id': 3,
+    'name': 'HLB Ryan Ltd',
+    'type': 'Accountancy Services',
+    'currency': 'EUR',
+    'number': 189,
+    'date': '30/09/2022',
+  },
+  {
+    'id': 4,
+    'name': 'Dropbox Ltd',
+    'type': 'Subscription renewal',
+    'currency': 'EUR',
+    'number': 9.99,
+    'date': '27/09/2022',
+  },
+  {
+    'id': 5,
+    'name': 'Sep Quarterly Fees',
+    'type': 'bank charges',
+    'currency': 'EUR',
+    'number': 8.93,
+    'date': '24/09/2022',
+  },
+];

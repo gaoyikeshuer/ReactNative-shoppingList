@@ -1,5 +1,5 @@
-module.exports ={
-    "replaceAttrValues": {
-      "red": "currentColor"
-    }
-  }
+module.exports = {
+  replaceAttrValues: {
+    red: 'currentColor',
+  },
+};
