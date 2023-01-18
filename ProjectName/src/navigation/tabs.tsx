@@ -12,7 +12,7 @@ import DimBackground from '../components/dimBackground/DimBackground';
 import {isDarkMode} from '../store/themeToggleSlice/themeToggleSlice';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
 import {useAppDispatch} from '../store/hooks';
-import { useThemeToggle } from '../store/themeToggleSlice';
+import {useThemeToggle} from '../store/themeToggleSlice';
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
@@ -61,8 +61,7 @@ const Tabs = () => {
             </View>
           ),
           headerStyle: {
-            backgroundColor:
-              darkmode == 'dark' ? '#212529' : 'transparent',
+            backgroundColor: darkmode == 'dark' ? '#212529' : 'transparent',
           },
 
           headerLeft: () => <DimBackground />,

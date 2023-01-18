@@ -7,9 +7,9 @@ import TransactionListStyle from './TransactionListStyle';
 import {changeMonth} from '../../store/monthTabSlice/monthTabSlice';
 import {useAppSelector, useAppDispatch} from '../../store/hooks';
 import {TransactionData, MonthData, GroupData} from '../../types/Data';
-import { useThemeToggle } from '../../store/themeToggleSlice';
+import {useThemeToggle} from '../../store/themeToggleSlice';
 const TransactionList = () => {
-  const darkMode = useThemeToggle().isDarkModeState
+  const darkMode = useThemeToggle().isDarkModeState;
   const [listData, setListData] = useState<TransactionData[]>([]);
   const dispatch = useAppDispatch();
 
@@ -138,8 +138,7 @@ const TransactionList = () => {
               style={[
                 TransactionListStyle.listContainer,
                 {
-                  backgroundColor:
-                    darkMode == 'dark' ? '#5A6168' : 'white',
+                  backgroundColor: darkMode == 'dark' ? '#5A6168' : 'white',
                 },
               ]}>
               <View style={TransactionListStyle.textContainer}>

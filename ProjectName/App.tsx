@@ -12,15 +12,12 @@ import {useEffect} from 'react';
 import {Provider} from 'react-redux';
 import {store} from './src/store/store';
 
-
 import 'intl';
 import 'intl/locale-data/jsonp/en';
-
 
 const Stack = createNativeStackNavigator();
 
 function App() {
- 
   useEffect(() => {
     LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
   }, []);

@@ -6,7 +6,7 @@ import NoneMessages from './components/NoneMessages';
 import {toggleActive} from '../../store/modalToggleSlice/modalToggleSlice';
 import ServiceMessagesStyle from './ServiceMessagesStyle';
 import {useAppSelector, useAppDispatch} from '../../store/hooks';
-import { useMessages } from '../../store/messagesSlice';
+import {useMessages} from '../../store/messagesSlice';
 
 const ServiceMessages = () => {
   const messages = useMessages().MessagesState;

@@ -4,8 +4,8 @@ import {changeMonth} from '../../../store/monthTabSlice/monthTabSlice';
 import {StyleSheet} from 'react-native';
 import {useAppSelector, useAppDispatch} from '../../../store/hooks';
 import {MonthData, GroupData} from '../../../types/Data';
-import { useMonthTab } from '../../../store/monthTabSlice';
-import { useThemeToggle } from '../../../store/themeToggleSlice';
+import {useMonthTab} from '../../../store/monthTabSlice';
+import {useThemeToggle} from '../../../store/themeToggleSlice';
 
 const Tab = ({
   monthData,
@@ -18,11 +18,8 @@ const Tab = ({
   DATA: GroupData[];
   scrollA: any;
 }) => {
- 
   const dispatch = useAppDispatch();
   const monthTab = useMonthTab().monthState;
-
- 
 
   const scrollValue = scrollA.interpolate({
     inputRange: [0, 50],
@@ -64,8 +61,7 @@ const Tab = ({
                     : [
                         styles.tabText,
                         {
-                          color:
-                            darkMode == 'dark' ? '#efefef' : 'black',
+                          color: darkMode == 'dark' ? '#efefef' : 'black',
                         },
                       ]
                 }>

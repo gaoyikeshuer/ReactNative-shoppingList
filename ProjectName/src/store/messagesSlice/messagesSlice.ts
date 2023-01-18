@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {Message} from '../../types/Message';
-import { RootState } from '../store';
+import {RootState} from '../store';
 
 const initialState: Message[] = [
   {
@@ -24,5 +24,5 @@ export const messageSlice = createSlice({
   },
 });
 export const {deleteMes} = messageSlice.actions;
-export const MessagesSelector = (state: RootState) => state.mes
+export const MessagesSelector = (state: RootState) => state.mes;
 export default messageSlice.reducer;

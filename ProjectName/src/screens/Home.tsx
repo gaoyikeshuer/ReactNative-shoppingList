@@ -10,7 +10,7 @@ import {AppState} from 'react-native';
 import BlurScreen from '../components/BlurScreen/BlurScreen';
 import {useAppSelector, useAppDispatch} from '../store/hooks';
 import {Avatars} from '../constants/Avatars.constant';
-import { useThemeToggle } from '../store/themeToggleSlice';
+import {useThemeToggle} from '../store/themeToggleSlice';
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -37,9 +37,7 @@ const Home: React.FC = () => {
 
   return (
     <SafeAreaView
-      style={
-        darkmode == 'dark' ? DarkModeStyle.container : styles.container
-      }>
+      style={darkmode == 'dark' ? DarkModeStyle.container : styles.container}>
       <Modal
         animationType="slide"
         visible={modalToggle.active}

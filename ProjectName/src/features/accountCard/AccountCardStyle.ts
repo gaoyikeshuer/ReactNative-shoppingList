@@ -1,4 +1,3 @@
-
 import {StyleSheet} from 'react-native';
 
 const AccountCardStyle = StyleSheet.create({
