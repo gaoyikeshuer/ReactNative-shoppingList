@@ -36,9 +36,6 @@ function App() {
           <Stack.Group>
             <Stack.Screen name="Home" component={Tabs} />
           </Stack.Group>
-          {/* <Stack.Group screenOptions={{presentation: 'modal' }}>
-         <Stack.Screen name='BlurScreen' component={BlurScreen} />
-        </Stack.Group> */}
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>
