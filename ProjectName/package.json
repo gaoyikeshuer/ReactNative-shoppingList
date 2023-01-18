@@ -58,8 +58,8 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "npx eslint --quiet",
-      "npx prettier --write"
+      "yarn eslint --quiet",
+      "yarn prettier --write"
     ]
   }
 }
