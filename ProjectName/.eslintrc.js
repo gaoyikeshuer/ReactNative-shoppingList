@@ -23,9 +23,10 @@ module.exports = {
     'plugin:react-native/all',
   ],
   parserOptions: {
-    project: 'react-native/tsconfig.eslint.json',
+    project: 'tsconfig.json',
     createDefaultProgram: true,
     tsconfigRootDir: __dirname,
+    sourceType: "module",
   },
   settings: {
     react: {
@@ -96,4 +97,5 @@ module.exports = {
       },
     ],
   },
+
 };

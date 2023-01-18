@@ -6,7 +6,9 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "lint": "eslint src",
+    "lint": "eslint --fix",
+    "prettier:fix":"prettier --write .",
+    "prettier:check":"prettier --check",
     "postinstall": "jetifier -r",
     "prepare": "husky install"
   },
@@ -55,6 +57,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^8.0.0",
+    "jest": "^29.3.1",
     "jetifier": "^1.6.8",
     "lint-staged": "^13.1.0",
     "metro-react-native-babel-preset": "0.67.0",
@@ -66,9 +69,9 @@
     "preset": "react-native"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
-      "npx eslint --quiet",
-      "npx prettier --write"
+    "src/**/*.{ts,tsx}": [
+      "yarn prettier:fix",
+      "yarn eslint --quiet --fix"
     ]
   }
 }
