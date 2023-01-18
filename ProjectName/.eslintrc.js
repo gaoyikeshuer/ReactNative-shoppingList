@@ -25,6 +25,7 @@ module.exports = {
   parserOptions: {
     project: 'react-native/tsconfig.eslint.json',
     createDefaultProgram: true,
+    tsconfigRootDir: __dirname,
   },
   settings: {
     react: {
