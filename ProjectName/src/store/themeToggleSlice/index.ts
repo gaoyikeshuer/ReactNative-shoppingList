@@ -1,12 +1,12 @@
-import {useAppDispatch, useAppSelector} from '../hooks';
-import {isDarkMode, isDarkModeSelector} from './themeToggleSlice';
+import {useAppDispatch, useAppSelector} from "../hooks"
+import {isDarkMode, isDarkModeSelector} from "./themeToggleSlice"
 
 export const useThemeToggle = () => {
-  const isDarkModeState = useAppSelector(isDarkModeSelector);
-  const dispatch = useAppDispatch();
-  const isDarkModeAction = dispatch(isDarkMode);
-  return {
-    isDarkModeState,
-    isDarkModeAction,
-  };
-};
+    const isDarkModeState = useAppSelector(isDarkModeSelector)
+    const dispatch = useAppDispatch()
+    const isDarkModeAction = dispatch(isDarkMode)
+    return {
+        isDarkModeState,
+        isDarkModeAction,
+    }
+}
