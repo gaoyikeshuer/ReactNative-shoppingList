@@ -17,20 +17,6 @@ import 'intl/locale-data/jsonp/en';
 
 const Stack = createNativeStackNavigator();
 function App() {
-  //   useEffect(() => {
-  //     const appStateListener = AppState.addEventListener(
-  //       'change',
-  //       nextAppState => {
-  //         // console.log('Next AppState is: ', nextAppState);
-  //         setAppState(nextAppState);
-
-  //       },
-  //     );
-  //     return () => {
-  //       appStateListener?.remove();
-  //     };
-  //   }, []);
-  // const  [appState, setAppState] = useState(AppState.currentState)
   useEffect(() => {
     LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
   }, []);
@@ -46,9 +32,6 @@ function App() {
           <Stack.Group>
             <Stack.Screen name="Home" component={Tabs} />
           </Stack.Group>
-          {/* <Stack.Group screenOptions={{presentation: 'modal' }}>
-         <Stack.Screen name='BlurScreen' component={BlurScreen} />
-        </Stack.Group> */}
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>

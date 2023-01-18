@@ -9,7 +9,7 @@ import DarkModeStyle from '../theme/DarkModeStyle';
 import {AppState} from 'react-native';
 import BlurScreen from '../components/BlurScreen/BlurScreen';
 import {useAppSelector, useAppDispatch} from '../store/hooks';
-import {Avatars} from '../constants/Avatars.constant';
+import {UsersInfo} from '../constants/Users.constant';
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
     };
   }, []);
   const [appState, setAppState] = useState(AppState.currentState);
-  const [payAccounts, setPayAccounts] = useState(Avatars);
+  const [payAccounts, setPayAccounts] = useState(UsersInfo);
   const modalToggle = useAppSelector(state => state.modalToggle);
 
   return (

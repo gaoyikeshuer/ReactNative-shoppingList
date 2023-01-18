@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import AvatarGenerator from './AvatarGenerator';
-import {Avatar} from '../../../types/Avatar';
+import {Users} from '../../../types/Users';
 import {useAppSelector} from '../../../store/hooks';
 
-const ListAccounts = ({item}: {item: Avatar}) => {
+const ListAccounts = ({item}: {item: Users}) => {
   const darkMode = useAppSelector(state => state.themeToggle);
   return (
     <View style={styles.avatarWrap}>
