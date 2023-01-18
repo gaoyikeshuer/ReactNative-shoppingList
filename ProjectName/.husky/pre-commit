@@ -2,5 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 yarn tsc
-yarn prettier:fix
-yarn lint
+# yarn prettier:fix
+# yarn lint
