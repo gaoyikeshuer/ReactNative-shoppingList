@@ -20,20 +20,7 @@ import 'intl/locale-data/jsonp/en';
 const Stack = createNativeStackNavigator();
 
 function App() {
-  //   useEffect(() => {
-  //     const appStateListener = AppState.addEventListener(
-  //       'change',
-  //       nextAppState => {
-  //         // console.log('Next AppState is: ', nextAppState);
-  //         setAppState(nextAppState);
-
-  //       },
-  //     );
-  //     return () => {
-  //       appStateListener?.remove();
-  //     };
-  //   }, []);
-  // const  [appState, setAppState] = useState(AppState.currentState)
+ 
   useEffect(() => {
     LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
   }, []);
