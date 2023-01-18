@@ -4,6 +4,8 @@ import {changeMonth} from '../../../store/monthTabSlice/monthTabSlice';
 import {StyleSheet} from 'react-native';
 import {useAppSelector, useAppDispatch} from '../../../store/hooks';
 import {MonthData, GroupData} from '../../../types/Data';
+import { useMonthTab } from '../../../store/monthTabSlice';
+import { useThemeToggle } from '../../../store/themeToggleSlice';
 
 const Tab = ({
   monthData,
@@ -16,17 +18,17 @@ const Tab = ({
   DATA: GroupData[];
   scrollA: any;
 }) => {
-  // const fadeAnim = useRef(new Animated.Value(0)).current;
+ 
   const dispatch = useAppDispatch();
-  const monthTab = useAppSelector(state => state.monthTab);
+  const monthTab = useMonthTab().monthState;
 
-  // const value = useState(new Animated.Value(0))[0];
+ 
 
   const scrollValue = scrollA.interpolate({
     inputRange: [0, 50],
     outputRange: [0, 1],
   });
-  const darkMode = useAppSelector(state => state.themeToggle);
+  const darkMode = useThemeToggle().isDarkModeState;
 
   return (
     <Animated.View
@@ -35,7 +37,7 @@ const Tab = ({
         position: 'absolute',
         top: 24,
         zIndex: 15,
-        backgroundColor: darkMode.scheme == 'dark' ? '#212529' : '#efefef',
+        backgroundColor: darkMode == 'dark' ? '#212529' : '#efefef',
 
         width: '100%',
       }}>
@@ -57,13 +59,13 @@ const Tab = ({
               }}>
               <Text
                 style={
-                  item?.month == monthTab.item
+                  item?.month == monthTab
                     ? styles.selectedTabText
                     : [
                         styles.tabText,
                         {
                           color:
-                            darkMode.scheme == 'dark' ? '#efefef' : 'black',
+                            darkMode == 'dark' ? '#efefef' : 'black',
                         },
                       ]
                 }>

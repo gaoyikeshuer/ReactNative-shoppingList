@@ -10,10 +10,11 @@ import {AppState} from 'react-native';
 import BlurScreen from '../components/BlurScreen/BlurScreen';
 import {useAppSelector, useAppDispatch} from '../store/hooks';
 import {Avatars} from '../constants/Avatars.constant';
+import { useThemeToggle } from '../store/themeToggleSlice';
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
-  const darkmode = useAppSelector(state => state.themeToggle);
+  const darkmode = useThemeToggle().isDarkModeState;
   Appearance.addChangeListener(scheme => {
     dispatch(isDarkMode({scheme: scheme.colorScheme}));
   });
@@ -37,7 +38,7 @@ const Home: React.FC = () => {
   return (
     <SafeAreaView
       style={
-        darkmode.scheme == 'dark' ? DarkModeStyle.container : styles.container
+        darkmode == 'dark' ? DarkModeStyle.container : styles.container
       }>
       <Modal
         animationType="slide"

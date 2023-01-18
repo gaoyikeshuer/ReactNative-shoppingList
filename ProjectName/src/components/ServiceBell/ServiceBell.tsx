@@ -2,13 +2,15 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet, Pressable, Animated} from 'react-native';
 import {IconAlert} from '../../assets/icons';
 import {toggleActive} from '../../store/modalToggleSlice/modalToggleSlice';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {useAppSelector, useAppDispatch} from '../../store/hooks';
+import {useAppDispatch} from '../../store/hooks';
+import {useModalToggle} from '../../store/modalToggleSlice/index'
+import { useMessages } from '../../store/messagesSlice';
 
 const ServiceBell = () => {
-  const messages = useAppSelector(state => state.mes);
-  const dispatch = useAppDispatch();
+  console.log(useModalToggle().toggleActiveAction) //How to use dispatch in this way?
 
+  const messages = useMessages().MessagesState;
+  const dispatch = useAppDispatch();
   const spinValue = useState(new Animated.Value(0))[0];
 
   const spinBell = () => {

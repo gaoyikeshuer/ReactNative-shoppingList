@@ -11,13 +11,13 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import DimBackground from '../components/dimBackground/DimBackground';
 import {isDarkMode} from '../store/themeToggleSlice/themeToggleSlice';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
-import {useAppSelector, useAppDispatch} from '../store/hooks';
-
+import {useAppDispatch} from '../store/hooks';
+import { useThemeToggle } from '../store/themeToggleSlice';
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
   const dispatch = useAppDispatch();
-  const darkmode = useAppSelector(state => state.themeToggle);
+  const darkmode = useThemeToggle().isDarkModeState;
   Appearance.addChangeListener(scheme => {
     dispatch(isDarkMode({scheme: scheme.colorScheme}));
   });
@@ -27,7 +27,7 @@ const Tabs = () => {
       screenOptions={{
         tabBarStyle: {
           paddingHorizontal: 0,
-          backgroundColor: darkmode.scheme == 'dark' ? '#212529' : 'white',
+          backgroundColor: darkmode == 'dark' ? '#212529' : 'white',
         },
         tabBarActiveTintColor: 'purple',
         tabBarInactiveTintColor: 'gray',
@@ -62,7 +62,7 @@ const Tabs = () => {
           ),
           headerStyle: {
             backgroundColor:
-              darkmode.scheme == 'dark' ? '#212529' : 'transparent',
+              darkmode == 'dark' ? '#212529' : 'transparent',
           },
 
           headerLeft: () => <DimBackground />,

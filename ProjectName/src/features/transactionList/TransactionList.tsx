@@ -7,9 +7,9 @@ import TransactionListStyle from './TransactionListStyle';
 import {changeMonth} from '../../store/monthTabSlice/monthTabSlice';
 import {useAppSelector, useAppDispatch} from '../../store/hooks';
 import {TransactionData, MonthData, GroupData} from '../../types/Data';
-
+import { useThemeToggle } from '../../store/themeToggleSlice';
 const TransactionList = () => {
-  const darkMode = useAppSelector(state => state.themeToggle);
+  const darkMode = useThemeToggle().isDarkModeState
   const [listData, setListData] = useState<TransactionData[]>([]);
   const dispatch = useAppDispatch();
 
@@ -87,7 +87,6 @@ const TransactionList = () => {
       //have question of the types here
 
       dispatch(changeMonth({item: viewableItems[1]?.item}));
-      // console.log("Changed in this iteration, ", changed);
     },
     [],
   );
@@ -140,7 +139,7 @@ const TransactionList = () => {
                 TransactionListStyle.listContainer,
                 {
                   backgroundColor:
-                    darkMode.scheme == 'dark' ? '#5A6168' : 'white',
+                    darkMode == 'dark' ? '#5A6168' : 'white',
                 },
               ]}>
               <View style={TransactionListStyle.textContainer}>
@@ -148,7 +147,7 @@ const TransactionList = () => {
                   <Text style={TransactionListStyle.textName}>{item.name}</Text>
                   <Text
                     style={{
-                      color: darkMode.scheme == 'dark' ? 'black' : '#6E6E6E',
+                      color: darkMode == 'dark' ? 'black' : '#6E6E6E',
                       fontFamily: 'Aspira',
                     }}>
                     {item.type}
@@ -158,7 +157,7 @@ const TransactionList = () => {
                   <Text
                     style={[
                       TransactionListStyle.textCurrency,
-                      {color: darkMode.scheme == 'dark' ? 'black' : '#6E6E6E'},
+                      {color: darkMode == 'dark' ? 'black' : '#6E6E6E'},
                     ]}>
                     {item.currency}
                   </Text>

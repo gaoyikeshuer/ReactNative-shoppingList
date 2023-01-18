@@ -1,6 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { deleteMes, MessagesSelector } from "./messagesSlice";
-import { Message } from "../../types/Message";
 
 export const useMessages = () =>{
     const MessagesState = useAppSelector(MessagesSelector)
