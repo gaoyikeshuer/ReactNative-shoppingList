@@ -3,8 +3,8 @@ import {Text, SafeAreaView, View, Pressable, FlatList} from "react-native"
 import ListAccounts from "./components/ListAccounts"
 import AddAcounts from "./components/AddAcounts"
 import QuickPayStyle from "./QuickPayStyle"
-import {Avatar} from "../../types/Avatar"
-const QuickPay = ({payAccounts}: {payAccounts: Avatar[]}) => {
+import {User} from "../../types/User"
+const QuickPay = ({payAccounts}: {payAccounts: User[]}) => {
     return (
         <SafeAreaView>
             <View style={QuickPayStyle.QuickPayTitle}>

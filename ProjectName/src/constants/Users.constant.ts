@@ -1,5 +1,5 @@
-import {Avatar} from "../types/Avatar"
-export const Avatars: Avatar[] = [
+import {User} from "../types/User"
+export const Users: User[] = [
     {id: 1, name: "Alloment Weal"},
     {id: 2, name: "Cian Byrne"},
     {id: 3, name: "Yike Gao"},

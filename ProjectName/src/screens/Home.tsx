@@ -9,7 +9,7 @@ import DarkModeStyle from "../theme/DarkModeStyle"
 import {AppState} from "react-native"
 import BlurScreen from "../components/BlurScreen/BlurScreen"
 import {useAppSelector, useAppDispatch} from "../store/hooks"
-import {Avatars} from "../constants/Avatars.constant"
+import {Users} from "../constants/Users.constant"
 import {useThemeToggle} from "../store/themeToggleSlice"
 
 const Home: React.FC = () => {
@@ -44,7 +44,7 @@ const Home: React.FC = () => {
                 transparent={true}>
                 <ServiceMessages />
             </Modal>
-            <QuickPay payAccounts={Avatars} />
+            <QuickPay payAccounts={Users} />
             <StarAccount />
             <View style={{flex: 1}}>
                 <TransactionList />

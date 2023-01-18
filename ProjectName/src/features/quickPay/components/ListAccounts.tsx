@@ -1,7 +1,7 @@
 import React from "react"
 import {View, Text, StyleSheet} from "react-native"
 import AvatarGenerator from "./AvatarGenerator"
-import {Avatar} from "../../../types/Avatar"
+import {Avatar} from "../../../types/User"
 import {useAppSelector} from "../../../store/hooks"
 
 const ListAccounts = ({item}: {item: Avatar}) => {
