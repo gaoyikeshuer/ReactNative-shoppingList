@@ -29,7 +29,9 @@
     "baseUrl": ".",
     "typeRoots": ["types", "node_modules/@types"],
     "paths": {},
-    "types": ["node"]
+    "types": ["node"],
+    "noEmit": true
+
   },
   "exclude": [
     ".vscode",
