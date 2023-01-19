@@ -1,7 +1,7 @@
 import React from "react"
 import {View, Text, SafeAreaView} from "react-native"
 import {IconFavouriteFill} from "../../assets/icons"
-import AccountCardStyle from "./AccountCardStyle"
+import AccountCardStyle from "./StarAccount.style"
 import {useAppSelector} from "../../store/hooks"
 
 const StarAccount = () => {

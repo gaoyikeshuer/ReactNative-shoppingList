@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import {View, StyleSheet, SafeAreaView, Modal, Appearance} from "react-native"
+import {View, SafeAreaView, Modal, Appearance} from "react-native"
 import QuickPay from "../features/quickPay/QuickPay"
 import StarAccount from "../features/accountCard/StarAccount"
 import TransactionList from "../features/transactionList/TransactionList"
@@ -11,7 +11,7 @@ import BlurScreen from "../components/BlurScreen/BlurScreen"
 import {useAppSelector, useAppDispatch} from "../store/hooks"
 import {Users} from "../constants/Users.constant"
 import {useThemeToggle} from "../store/themeToggleSlice"
-
+import {styles} from "./Home.style"
 const Home: React.FC = () => {
     const dispatch = useAppDispatch()
     const darkmode = useThemeToggle().isDarkModeState
@@ -23,7 +23,6 @@ const Home: React.FC = () => {
         const appStateListener = AppState.addEventListener(
             "change",
             nextAppState => {
-                // console.log('Next AppState is: ', nextAppState);
                 setAppState(nextAppState)
             },
         )
@@ -54,22 +53,5 @@ const Home: React.FC = () => {
         </SafeAreaView>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        position: "relative",
-        paddingVertical: 14,
-        display: "flex",
-        flex: 1,
-    },
-    darkContainer: {
-        backgroundColor: "rgba(0,0,0,0.5)",
-        flex: 1,
-    },
-    absolute: {
-        position: "absolute",
-        top: 0,
-    },
-})
 
 export default Home

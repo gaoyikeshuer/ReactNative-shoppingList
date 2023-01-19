@@ -1,10 +1,10 @@
 import React from "react"
 import {View, Text, StyleSheet} from "react-native"
 import AvatarGenerator from "./AvatarGenerator"
-import {Avatar} from "../../../types/User"
+import {User} from "../../../types/User"
 import {useAppSelector} from "../../../store/hooks"
 
-const ListAccounts = ({item}: {item: Avatar}) => {
+const ListAccounts = ({item}: {item: User}) => {
     const darkMode = useAppSelector(state => state.themeToggle)
     return (
         <View style={styles.avatarWrap}>
@@ -25,9 +25,6 @@ const styles = StyleSheet.create({
         flex: 0.2,
         alignItems: "center",
         marginTop: 15,
-    },
-    avatar: {
-        width: 52,
     },
     avatarName: {
         fontSize: 11,

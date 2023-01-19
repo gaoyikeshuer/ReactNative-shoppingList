@@ -3,12 +3,9 @@ import {View, Text, StyleSheet, Pressable, Animated} from "react-native"
 import {IconAlert} from "../../assets/icons"
 import {toggleActive} from "../../store/modalToggleSlice/modalToggleSlice"
 import {useAppDispatch} from "../../store/hooks"
-import {useModalToggle} from "../../store/modalToggleSlice/index"
 import {useMessages} from "../../store/messagesSlice"
 
 const ServiceBell = () => {
-    console.log(useModalToggle().toggleActiveAction) //How to use dispatch in this way?
-
     const messages = useMessages().MessagesState
     const dispatch = useAppDispatch()
     const spinValue = useState(new Animated.Value(0))[0]

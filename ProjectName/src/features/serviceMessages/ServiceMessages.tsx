@@ -4,7 +4,7 @@ import {IconX} from "../../assets/icons"
 import ListMessage from "./components/ListMessages"
 import NoneMessages from "./components/NoneMessages"
 import {toggleActive} from "../../store/modalToggleSlice/modalToggleSlice"
-import ServiceMessagesStyle from "./ServiceMessagesStyle"
+import ServiceMessagesStyle from "./ServiceMessages.style"
 import {useAppSelector, useAppDispatch} from "../../store/hooks"
 import {useMessages} from "../../store/messagesSlice"
 
