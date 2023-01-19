@@ -18,24 +18,24 @@ import 'intl/locale-data/jsonp/en';
 const Stack = createNativeStackNavigator();
 function App() {
   useEffect(() => {
-    LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
-  }, []);
+    LogBox.ignoreLogs(["VirtualizedLists should never be nested"])
+}, [])
 
-  return (
+return (
     <NavigationContainer>
-      <Provider store={store}>
-        <Stack.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}
-          initialRouteName={'Home'}>
-          <Stack.Group>
-            <Stack.Screen name="Home" component={Tabs} />
-          </Stack.Group>
-        </Stack.Navigator>
-      </Provider>
+        <Provider store={store}>
+            <Stack.Navigator
+                screenOptions={{
+                    headerShown: false,
+                }}
+                initialRouteName={"Home"}>
+                <Stack.Group>
+                    <Stack.Screen name="Home" component={Tabs} />
+                </Stack.Group>
+            </Stack.Navigator>
+        </Provider>
     </NavigationContainer>
-  );
+)
 }
 
 export default App;
