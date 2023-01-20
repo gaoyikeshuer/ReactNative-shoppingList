@@ -1,25 +1,25 @@
-import {StyleSheet} from "react-native"
+import {StyleSheet} from 'react-native';
 const QuickPayStyle = StyleSheet.create({
-    QuickPayTitle: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginHorizontal: 12,
-    },
-    avatarContainer: {
-        marginHorizontal: 12,
-    },
-    QuickPayText: {
-        color: "#6E6E6E",
-        fontWeight: "500",
-        letterSpacing: 1.5,
-        fontSize: 12,
-        fontFamily: "Aspira-Regular",
-    },
-    ShowAllText: {
-        color: "#7F2B7B",
-        fontWeight: "500",
-        fontSize: 14,
-        fontFamily: "Aspira-Medium",
-    },
-})
-export default QuickPayStyle
+  QuickPayText: {
+    color: '#6E6E6E',
+    fontFamily: 'Aspira-Regular',
+    fontSize: 12,
+    fontWeight: '500',
+    letterSpacing: 1.5,
+  },
+  QuickPayTitle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: 12,
+  },
+  ShowAllText: {
+    color: '#7F2B7B',
+    fontFamily: 'Aspira-Medium',
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  avatarContainer: {
+    marginHorizontal: 12,
+  },
+});
+export default QuickPayStyle;

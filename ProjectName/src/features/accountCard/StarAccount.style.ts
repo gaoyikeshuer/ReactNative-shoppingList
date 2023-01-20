@@ -1,69 +1,69 @@
-import {StyleSheet} from "react-native"
+import {StyleSheet} from 'react-native';
 
 const AccountCardStyle = StyleSheet.create({
-    accountCardContainer: {
-        marginHorizontal: 12,
-        backgroundColor: "white",
-        marginVertical: 12,
-        borderRadius: 4,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        overflow: "hidden",
-        marginTop: 31,
-        marginBottom: 17,
-    },
-    starContainer: {
-        flexDirection: "column",
-        paddingHorizontal: 16,
-        flex: 1,
-    },
-    starTitle: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        paddingTop: 11,
-        paddingBottom: 4,
-    },
-    bankNum: {
-        color: "#6E6E6E",
-        fontSize: 14,
-        fontFamily: "Aspira",
-        marginBottom: 4,
-    },
-    bankInfo: {
-        color: "#6E6E6E",
-        fontSize: 14,
-        fontFamily: "Aspira",
-    },
-    bankContainer: {
-        marginTop: 16,
-        justifyContent: "space-between",
-    },
-    textTitle: {
-        fontSize: 18,
+  accountCardContainer: {
+    backgroundColor: 'white',
+    borderRadius: 4,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 17,
+    marginHorizontal: 12,
+    marginTop: 31,
+    marginVertical: 12,
+    overflow: 'hidden',
+  },
+  bankContainer: {
+    justifyContent: 'space-between',
+    marginTop: 16,
+  },
+  bankInfo: {
+    color: '#6E6E6E',
+    fontFamily: 'Aspira',
+    fontSize: 14,
+  },
+  bankNum: {
+    color: '#6E6E6E',
+    fontFamily: 'Aspira',
+    fontSize: 14,
+    marginBottom: 4,
+  },
+  bankTitle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  money: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  moneyText: {
+    color: 'black',
 
-        fontWeight: "500",
-        color: "black",
-        fontFamily: "Aspira-Medium",
-    },
+    fontFamily: 'Aspira-Medium',
+    fontSize: 20,
+    fontWeight: '500',
+    lineHeight: 24,
+    marginBottom: 14,
+  },
 
-    bankTitle: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-    },
-    money: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-    },
-    moneyText: {
-        fontSize: 20,
+  starContainer: {
+    flexDirection: 'column',
+    flex: 1,
+    paddingHorizontal: 16,
+  },
+  starTitle: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingBottom: 4,
+    paddingTop: 11,
+  },
+  textTitle: {
+    color: 'black',
 
-        fontWeight: "500",
-        lineHeight: 24,
-        fontFamily: "Aspira-Medium",
-        color: "black",
-        marginBottom: 14,
-    },
-})
+    fontFamily: 'Aspira-Medium',
+    fontSize: 18,
+    fontWeight: '500',
+  },
+});
 
-export default AccountCardStyle
+export default AccountCardStyle;
