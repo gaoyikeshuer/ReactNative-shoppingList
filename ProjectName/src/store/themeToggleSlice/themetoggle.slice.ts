@@ -18,6 +18,7 @@ export const themeToggle = createSlice({
     },
   },
 });
+
 export const {isDarkMode} = themeToggle.actions;
 export const isDarkModeSelector = (state: RootState) =>
   state.themeToggle.scheme;

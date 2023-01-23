@@ -18,11 +18,12 @@ export const messageSlice = createSlice({
   name: 'mes',
   initialState,
   reducers: {
-    deleteMes: (state, action) => {
+    deleteMessage: (state, action) => {
       return state.filter(item => item.id !== action.payload.id);
     },
   },
 });
-export const {deleteMes} = messageSlice.actions;
-export const MessagesSelector = (state: RootState) => state.mes;
+
+export const {deleteMessage} = messageSlice.actions;
+export const messagesSelector = (state: RootState) => state.mes;
 export default messageSlice.reducer;

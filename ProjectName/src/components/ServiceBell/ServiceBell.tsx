@@ -5,8 +5,9 @@ import {toggleActive} from '../../store/modalToggleSlice/modaltoggle.slice';
 import {useAppDispatch} from '../../store/hooks';
 import {useMessages} from '../../store/messagesSlice';
 import {styles} from './servicebell.styles';
+
 const ServiceBell = () => {
-  const {MessagesState: messages} = useMessages();
+  const {messages: messages} = useMessages();
   const dispatch = useAppDispatch();
   const spinValue = useState(new Animated.Value(0))[0];
 

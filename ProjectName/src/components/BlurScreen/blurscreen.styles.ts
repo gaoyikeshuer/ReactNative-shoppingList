@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+
 export const BlurScreenStyle = StyleSheet.create({
   absolute: {
     bottom: 0,

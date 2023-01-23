@@ -4,6 +4,7 @@ import modalToggleReducer from './modalToggleSlice/modaltoggle.slice';
 import monthTabSlice from './monthTabSlice/monthtab.slice';
 import themeToggleReducer from './themeToggleSlice/themetoggle.slice';
 import AppStateReducer from './AppStateSlice/appstate.slice';
+
 export const store = configureStore({
   reducer: {
     mes: mesReducer,

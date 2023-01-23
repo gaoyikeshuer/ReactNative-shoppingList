@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+
 const theme = {
   light: {
     color: 'black',
@@ -24,4 +25,5 @@ const listAccountsStyle = (isDark: string) => {
     },
   });
 };
+
 export default listAccountsStyle;

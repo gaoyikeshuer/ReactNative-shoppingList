@@ -16,6 +16,7 @@ export const monthTabSlice = createSlice({
     },
   },
 });
+
 export const {changeMonth} = monthTabSlice.actions;
 export const monthSelector = (state: RootState) => state.monthTab.item;
 export default monthTabSlice.reducer;

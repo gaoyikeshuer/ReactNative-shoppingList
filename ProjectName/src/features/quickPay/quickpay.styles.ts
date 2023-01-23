@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+
 const QuickPayStyle = StyleSheet.create({
   QuickPayText: {
     color: '#6E6E6E',
@@ -27,4 +28,5 @@ const QuickPayStyle = StyleSheet.create({
     flex: 0.2,
   },
 });
+
 export default QuickPayStyle;

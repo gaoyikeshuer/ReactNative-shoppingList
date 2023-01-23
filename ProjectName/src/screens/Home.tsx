@@ -11,6 +11,7 @@ import {useAppSelector, useAppDispatch} from '../store/hooks';
 import {Users} from '../constants/users.constants';
 import {useThemeToggle} from '../store/themeToggleSlice';
 import {styles} from './home.styles';
+
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
   const darkmode = useThemeToggle().isDarkModeState;

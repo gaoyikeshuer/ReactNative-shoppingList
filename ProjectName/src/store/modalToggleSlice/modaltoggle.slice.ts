@@ -18,6 +18,7 @@ export const modalToggle = createSlice({
     },
   },
 });
+
 export const {toggleActive} = modalToggle.actions;
 export const isModalActiveSelector = (state: RootState) =>
   state.modalToggle.active;

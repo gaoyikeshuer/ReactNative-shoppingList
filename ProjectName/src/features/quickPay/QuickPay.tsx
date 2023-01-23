@@ -4,6 +4,7 @@ import ListAccounts from './components/ListAccounts';
 import AddAcounts from './components/AddAcounts';
 import QuickPayStyle from './quickpay.styles';
 import {User} from '../../types/user.interface';
+
 const QuickPay = ({payAccounts}: {payAccounts: User[]}) => {
   return (
     <SafeAreaView>

@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+
 const noneMessagesStyle = StyleSheet.create({
   NoneMessageContainer: {
     alignItems: 'center',

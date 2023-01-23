@@ -1,12 +1,13 @@
 import {useAppDispatch, useAppSelector} from '../hooks';
-import {deleteMes, MessagesSelector} from './messages.slice';
+import {deleteMessage, messagesSelector} from './messages.slice';
 
 export const useMessages = () => {
-  const MessagesState = useAppSelector(MessagesSelector);
+  const messages = useAppSelector(messagesSelector);
   const dispatch = useAppDispatch();
-  const deleteMesAction = dispatch(deleteMes);
+  const deleteMesAction = dispatch(deleteMessage);
+  
   return {
-    MessagesState,
+    messages,
     deleteMesAction,
   };
 };

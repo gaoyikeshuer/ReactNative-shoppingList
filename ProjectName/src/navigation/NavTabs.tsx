@@ -14,6 +14,7 @@ import ServiceBell from '../components/ServiceBell/ServiceBell';
 import {useAppDispatch} from '../store/hooks';
 import {useThemeToggle} from '../store/themeToggleSlice';
 import navTabsStyle from './navtabs.styles';
+
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
@@ -110,4 +111,5 @@ const Tabs = () => {
     </Tab.Navigator>
   );
 };
+
 export default Tabs;

@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+
 const listMessagesStyle = StyleSheet.create({
   messageList: {
     alignItems: 'center',
@@ -16,4 +17,5 @@ const listMessagesStyle = StyleSheet.create({
     paddingTop: 12,
   },
 });
+
 export default listMessagesStyle;

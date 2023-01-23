@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+
 const theme = {
   light: {
     backgroundColor: 'white',
@@ -36,4 +37,5 @@ const addAcountStyles = (isDark: string) => {
     },
   });
 };
+
 export default addAcountStyles;

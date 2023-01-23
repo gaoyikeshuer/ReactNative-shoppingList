@@ -53,7 +53,6 @@ const AccountCardStyle = (isDark: string) => {
       flexDirection: 'row',
       justifyContent: 'space-between',
     },
-
     moneyText: {
       color: 'black',
       fontFamily: 'Aspira-Medium',

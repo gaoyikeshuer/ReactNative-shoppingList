@@ -87,4 +87,5 @@ const TransactionListStyle = (isDark: string) => {
     },
   });
 };
+
 export default TransactionListStyle;

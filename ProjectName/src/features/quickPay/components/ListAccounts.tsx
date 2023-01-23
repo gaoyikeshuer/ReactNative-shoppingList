@@ -4,6 +4,7 @@ import AvatarGenerator from './AvatarGenerator';
 import {User} from '../../../types/user.interface';
 import listAccountsStyle from './listaccounts.styles';
 import {useThemeToggle} from '../../../store/themeToggleSlice';
+
 const ListAccounts = ({item}: {item: User}) => {
   const {isDarkModeState: isDarkMode} = useThemeToggle();
   return (

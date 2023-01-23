@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+
 export const styles = StyleSheet.create({
   alertNum: {
     alignItems: 'center',
@@ -6,7 +7,6 @@ export const styles = StyleSheet.create({
     borderColor: '#efefef',
     borderRadius: 12,
     borderWidth: 2,
-
     left: -13,
     position: 'absolute',
     top: 5,

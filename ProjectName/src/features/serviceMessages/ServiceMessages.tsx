@@ -10,7 +10,7 @@ import {useMessages} from '../../store/messagesSlice';
 import {useThemeToggle} from '../../store/themeToggleSlice';
 
 const ServiceMessages = () => {
-  const {MessagesState: messages} = useMessages();
+  const {messages: messages} = useMessages();
   const {isDarkModeState: isDarkMode} = useThemeToggle();
   const dispatch = useAppDispatch();
 
