@@ -22,8 +22,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:react-native/all',
     'plugin:import/recommended',
-    'plugin:import/typescript'
-
+    'plugin:import/typescript',
   ],
   parserOptions: {
     project: 'tsconfig.json',
@@ -34,7 +33,7 @@ module.exports = {
       pragma: 'React',
       version: 'detect',
     },
-    'import/ignore': ['node_modules/react-native/index\\.js$']
+    'import/ignore': ['node_modules/react-native/index\\.js$'],
   },
   env: {
     browser: true,

@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {Message} from '../../types/Message';
+import {Message} from '../../types/message.interface';
 import {RootState} from '../store';
 
 const initialState: Message[] = [

@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Pressable, Animated} from 'react-native';
+import {View, Text, Pressable, Animated} from 'react-native';
 import {IconAlert} from '../../assets/icons';
-import {toggleActive} from '../../store/modalToggleSlice/modalToggleSlice';
+import {toggleActive} from '../../store/modalToggleSlice/modaltoggle.slice';
 import {useAppDispatch} from '../../store/hooks';
 import {useMessages} from '../../store/messagesSlice';
-
+import {styles} from './servicebell.styles';
 const ServiceBell = () => {
-  const messages = useMessages().MessagesState;
+  const {MessagesState: messages} = useMessages();
   const dispatch = useAppDispatch();
   const spinValue = useState(new Animated.Value(0))[0];
 
@@ -59,25 +59,5 @@ const ServiceBell = () => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  alertNum: {
-    alignItems: 'center',
-    backgroundColor: '#E00885',
-    borderColor: '#efefef',
-    borderRadius: 12,
-    borderWidth: 2,
-
-    left: -13,
-    position: 'absolute',
-    top: 5,
-    width: 21,
-    zIndex: 13,
-  },
-  messagesNum: {
-    color: 'white',
-    fontFamily: 'Aspira-Regular',
-    fontSize: 11,
-  },
-});
 
 export default ServiceBell;

@@ -1,5 +1,5 @@
 import {useAppDispatch, useAppSelector} from '../hooks';
-import {AppStateActive, isAppActiveSelector} from './AppStateSlice';
+import {AppStateActive, isAppActiveSelector} from './appstate.slice';
 
 export const useAppState = () => {
   const isAppActiveState = useAppSelector(isAppActiveSelector);

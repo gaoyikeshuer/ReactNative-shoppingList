@@ -1,24 +1,16 @@
 import React from 'react';
 import {BlurView} from '@react-native-community/blur';
-import {StyleSheet} from 'react-native';
+import {BlurScreenStyle} from './blurscreen.styles';
 
 const BlurScreen = () => {
   return (
     <BlurView
-      style={styles.absolute}
+      style={BlurScreenStyle.absolute}
       blurType="light"
       blurAmount={10}
       blurRadius={5}
     />
   );
 };
-const styles = StyleSheet.create({
-  absolute: {
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-    right: 0,
-    top: 0,
-  },
-});
+
 export default BlurScreen;

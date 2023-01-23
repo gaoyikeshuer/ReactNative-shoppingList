@@ -21,5 +21,10 @@ const QuickPayStyle = StyleSheet.create({
   avatarContainer: {
     marginHorizontal: 12,
   },
+  flatlistStyle: {
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    flex: 0.2,
+  },
 });
 export default QuickPayStyle;

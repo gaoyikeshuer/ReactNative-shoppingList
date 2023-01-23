@@ -3,26 +3,25 @@ import {Text, SafeAreaView, View, Pressable, FlatList} from 'react-native';
 import {IconX} from '../../assets/icons';
 import ListMessage from './components/ListMessages';
 import NoneMessages from './components/NoneMessages';
-import {toggleActive} from '../../store/modalToggleSlice/modalToggleSlice';
-import ServiceMessagesStyle from './ServiceMessages.style';
-import {useAppSelector, useAppDispatch} from '../../store/hooks';
+import {toggleActive} from '../../store/modalToggleSlice/modaltoggle.slice';
+import ServiceMessagesStyle from './servicemessages.styles';
+import {useAppDispatch} from '../../store/hooks';
 import {useMessages} from '../../store/messagesSlice';
+import {useThemeToggle} from '../../store/themeToggleSlice';
 
 const ServiceMessages = () => {
-  const messages = useMessages().MessagesState;
-  const darkMode = useAppSelector(state => state.themeToggle);
+  const {MessagesState: messages} = useMessages();
+  const {isDarkModeState: isDarkMode} = useThemeToggle();
   const dispatch = useAppDispatch();
 
   return (
-    <SafeAreaView
-      style={[
-        ServiceMessagesStyle.modalContainer,
-        {backgroundColor: darkMode.scheme == 'dark' ? '#5A6168' : 'white'},
-      ]}>
-      <View style={ServiceMessagesStyle.modalHeader}>
-        <Text style={ServiceMessagesStyle.modalText}>Service Message</Text>
+    <SafeAreaView style={ServiceMessagesStyle(isDarkMode).modalContainer}>
+      <View style={ServiceMessagesStyle(isDarkMode).modalHeader}>
+        <Text style={ServiceMessagesStyle(isDarkMode).modalText}>
+          Service Message
+        </Text>
         <Pressable
-          style={ServiceMessagesStyle.modalClose}
+          style={ServiceMessagesStyle(isDarkMode).modalClose}
           onPress={() => dispatch(toggleActive())}>
           <IconX />
         </Pressable>

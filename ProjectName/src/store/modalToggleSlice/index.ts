@@ -1,5 +1,5 @@
 import {useAppDispatch, useAppSelector} from '../hooks';
-import {isModalActiveSelector, toggleActive} from './modalToggleSlice';
+import {isModalActiveSelector, toggleActive} from './modaltoggle.slice';
 
 export const useModalToggle = () => {
   const isModalActiveState = useAppSelector(isModalActiveSelector);

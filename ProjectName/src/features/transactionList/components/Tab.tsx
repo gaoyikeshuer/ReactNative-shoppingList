@@ -1,10 +1,11 @@
-import {Text, Pressable, Animated, StyleSheet} from 'react-native';
+import {Text, Pressable, Animated} from 'react-native';
 import React from 'react';
-import {changeMonth} from '../../../store/monthTabSlice/monthTabSlice';
+import {changeMonth} from '../../../store/monthTabSlice/monthtab.slice';
 import {useAppDispatch} from '../../../store/hooks';
-import {MonthData, GroupData} from '../../../types/Data';
+import {MonthData, GroupData} from '../../../types/data.interface';
 import {useMonthTab} from '../../../store/monthTabSlice';
 import {useThemeToggle} from '../../../store/themeToggleSlice';
+import tabStyle from './tab.styles';
 
 const Tab = ({
   monthData,
@@ -24,19 +25,10 @@ const Tab = ({
     inputRange: [0, 50],
     outputRange: [0, 1],
   });
-  const darkMode = useThemeToggle().isDarkModeState;
+  const {isDarkModeState: isDark} = useThemeToggle();
 
   return (
-    <Animated.View
-      style={{
-        opacity: scrollValue,
-        position: 'absolute',
-        top: 24,
-        zIndex: 15,
-        backgroundColor: darkMode == 'dark' ? '#212529' : '#efefef',
-
-        width: '100%',
-      }}>
+    <Animated.View style={tabStyle(isDark, scrollValue).tabContainer}>
       <Animated.FlatList
         data={monthData}
         horizontal={true}
@@ -56,13 +48,8 @@ const Tab = ({
               <Text
                 style={
                   item?.month == monthTab
-                    ? styles.selectedTabText
-                    : [
-                        styles.tabText,
-                        {
-                          color: darkMode == 'dark' ? '#efefef' : 'black',
-                        },
-                      ]
+                    ? tabStyle(isDark, scrollValue).selectedTabText
+                    : tabStyle(isDark, scrollValue).tabText
                 }>
                 {item.monthName}
               </Text>
@@ -73,23 +60,5 @@ const Tab = ({
     </Animated.View>
   );
 };
-
-const styles = StyleSheet.create({
-  selectedTabText: {
-    color: 'purple',
-    fontFamily: 'Aspira',
-    fontWeight: '500',
-    marginHorizontal: 12,
-    paddingVertical: 10,
-  },
-
-  tabText: {
-    color: 'black',
-    fontFamily: 'Aspira',
-    fontWeight: '500',
-    marginHorizontal: 12,
-    paddingVertical: 10,
-  },
-});
 
 export default Tab;

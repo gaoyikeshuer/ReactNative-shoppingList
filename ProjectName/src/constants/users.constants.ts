@@ -1,4 +1,4 @@
-import {User} from '../types/User';
+import {User} from '../types/user.interface';
 export const Users: User[] = [
   {id: 1, name: 'Alloment Weal'},
   {id: 2, name: 'Cian Byrne'},

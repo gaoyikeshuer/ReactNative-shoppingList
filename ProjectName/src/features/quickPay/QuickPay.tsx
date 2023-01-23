@@ -2,8 +2,8 @@ import React from 'react';
 import {Text, SafeAreaView, View, Pressable, FlatList} from 'react-native';
 import ListAccounts from './components/ListAccounts';
 import AddAcounts from './components/AddAcounts';
-import QuickPayStyle from './QuickPay.style';
-import {User} from '../../types/User';
+import QuickPayStyle from './quickpay.styles';
+import {User} from '../../types/user.interface';
 const QuickPay = ({payAccounts}: {payAccounts: User[]}) => {
   return (
     <SafeAreaView>
@@ -16,11 +16,7 @@ const QuickPay = ({payAccounts}: {payAccounts: User[]}) => {
 
       <FlatList
         numColumns={5}
-        columnWrapperStyle={{
-          alignItems: 'flex-start',
-          flexDirection: 'row',
-          flex: 0.2,
-        }}
+        columnWrapperStyle={QuickPayStyle.flatlistStyle}
         style={QuickPayStyle.avatarContainer}
         data={[...payAccounts.slice(0, 9), {plusImage: true}]}
         renderItem={({item}: {item: User | any}) => {

@@ -1,10 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {RootState} from '../store';
 
-interface month {
+interface MonthTab {
   item: number | object;
 }
-const initialState: month = {
+const initialState: MonthTab = {
   item: 0,
 };
 export const monthTabSlice = createSlice({

@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, Text} from 'react-native';
+import {styles} from './avatargenerator.styles';
 
 const AvatarGenerator = ({name}: {name: string}) => {
   const initials =
@@ -12,23 +13,5 @@ const AvatarGenerator = ({name}: {name: string}) => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  avatarCircle: {
-    alignItems: 'center',
-    backgroundColor: '#7F2B7B',
-    borderRadius: 52,
-    height: 52,
-    justifyContent: 'center',
-    width: 52,
-  },
-  avatarText: {
-    color: 'white',
-    fontFamily: 'Aspira-Medium',
-    fontSize: 24,
-    fontWeight: '500',
-    paddingTop: 2,
-    textAlign: 'center',
-  },
-});
 
 export default AvatarGenerator;

@@ -6,13 +6,14 @@ import {
   IconList,
   IconSettings,
 } from '../assets/icons';
-import {Home} from '../screens';
+import {Home} from '../screens/index';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import DimBackground from '../components/dimBackground/DimBackground';
-import {isDarkMode} from '../store/themeToggleSlice/themeToggleSlice';
+import {isDarkMode} from '../store/themeToggleSlice/themetoggle.slice';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
 import {useAppDispatch} from '../store/hooks';
 import {useThemeToggle} from '../store/themeToggleSlice';
+import navTabsStyle from './navtabs.styles';
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
@@ -44,19 +45,9 @@ const Tabs = () => {
               color={focused ? 'purple' : 'gray'}
             />
           ),
-          headerTitle: () => (
-            <Text
-              style={{
-                fontSize: 18,
-                fontFamily: 'Aspira',
-                fontWeight: '500',
-                color: '#7F2B7B',
-              }}>
-              Home
-            </Text>
-          ),
+          headerTitle: () => <Text style={navTabsStyle.HomeStyle}>Home</Text>,
           headerRight: () => (
-            <View style={{paddingRight: 12}}>
+            <View style={navTabsStyle.BellContainer}>
               <ServiceBell />
             </View>
           ),

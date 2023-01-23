@@ -15,4 +15,7 @@ export const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.5)',
     flex: 1,
   },
+  transactionContainer: {
+    flex: 1,
+  },
 });

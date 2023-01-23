@@ -1,28 +1,16 @@
 import React from 'react';
-import {Text, StyleSheet, View} from 'react-native';
+import {Text, View} from 'react-native';
 import {IconInbox} from '../../../assets/icons';
+import noneMessagesStyle from './nonemessages.styles';
 
 const NoneMessages = () => {
   return (
-    <View style={styles.NoneMessageContainer}>
+    <View style={noneMessagesStyle.NoneMessageContainer}>
       <IconInbox />
-      <Text style={styles.NoneMessageTitle}>No Messages</Text>
-      <Text>You don't have any messages at this time.</Text>
+      <Text style={noneMessagesStyle.NoneMessageTitle}>No Messages</Text>
+      <Text>You dont have any messages at this time.</Text>
     </View>
   );
 };
-const styles = StyleSheet.create({
-  NoneMessageContainer: {
-    alignItems: 'center',
-    flex: 1,
-    marginTop: 45,
-    paddingTop: 29,
-  },
-  NoneMessageTitle: {
-    fontFamily: 'Aspira',
-    fontSize: 16,
-    marginVertical: 3,
-  },
-});
 
 export default NoneMessages;

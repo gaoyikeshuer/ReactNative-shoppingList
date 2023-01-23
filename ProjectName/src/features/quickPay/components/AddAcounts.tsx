@@ -1,27 +1,17 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {IconPlus} from '../../../assets/icons';
-import {useAppSelector} from '../../../store/hooks';
-import addAcountStyles from './AddAcount.style';
+import addAcountStyles from './addacounts.styles';
+import {useThemeToggle} from '../../../store/themeToggleSlice';
 
 const AddAcounts = () => {
-  const darkMode = useAppSelector(state => state.themeToggle);
+  const {isDarkModeState: isDarkMode} = useThemeToggle();
   return (
-    <View style={addAcountStyles.addContainer}>
-      <View
-        style={[
-          addAcountStyles.addCircle,
-          {backgroundColor: darkMode.scheme == 'dark' ? '#5A6168' : 'white'},
-        ]}>
+    <View style={addAcountStyles(isDarkMode).addContainer}>
+      <View style={addAcountStyles(isDarkMode).addCircle}>
         <IconPlus color="green" />
       </View>
-      <Text
-        style={[
-          addAcountStyles.addText,
-          {color: darkMode.scheme == 'dark' ? '#6E6E6E' : 'black'},
-        ]}>
-        Add new
-      </Text>
+      <Text style={addAcountStyles(isDarkMode).addText}>Add new</Text>
     </View>
   );
 };
