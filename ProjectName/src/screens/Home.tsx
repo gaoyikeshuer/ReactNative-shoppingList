@@ -14,7 +14,7 @@ import {styles} from './home.styles';
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
-  const darkmode = useThemeToggle().isDarkModeState;
+  const {isDarkModeState: isDark} = useThemeToggle();
   Appearance.addChangeListener(scheme => {
     dispatch(isDarkMode({scheme: scheme.colorScheme}));
   });
@@ -35,7 +35,7 @@ const Home: React.FC = () => {
 
   return (
     <SafeAreaView
-      style={darkmode == 'dark' ? DarkModeStyle.container : styles.container}>
+      style={isDark == 'dark' ? DarkModeStyle.container : styles.container}>
       <Modal
         animationType="slide"
         visible={modalToggle.active}

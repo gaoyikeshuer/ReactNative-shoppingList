@@ -19,7 +19,7 @@ const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
   const dispatch = useAppDispatch();
-  const darkmode = useThemeToggle().isDarkModeState;
+  const {isDarkModeState: darkmode} = useThemeToggle();
   Appearance.addChangeListener(scheme => {
     dispatch(isDarkMode({scheme: scheme.colorScheme}));
   });
