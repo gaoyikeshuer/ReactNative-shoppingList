@@ -13,10 +13,10 @@ const Stack = createNativeStackNavigator();
 
 function App() {
   useEffect(() => {
-    LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
-  }, []);
+    LogBox.ignoreLogs(["VirtualizedLists should never be nested"])
+}, [])
 
-  return (
+return (
     <NavigationContainer>
       <Provider store={store}>
         <Stack.Navigator
@@ -30,7 +30,7 @@ function App() {
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>
-  );
+)
 }
 
 export default App;
