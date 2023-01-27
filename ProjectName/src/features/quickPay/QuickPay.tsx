@@ -1,7 +1,8 @@
 import React from 'react';
 import {Text, SafeAreaView, View, Pressable, FlatList} from 'react-native';
-import ListAccounts from './components/ListAccounts';
+
 import AddAcounts from './components/AddAcounts';
+import ListAccounts from './components/ListAccounts';
 import QuickPayStyle from './quickpay.styles';
 import {User} from '../../types/user.interface';
 

@@ -1,19 +1,20 @@
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import {View, Text, Appearance} from 'react-native';
+
+import navTabsStyle from './navtabs.styles';
 import {
   IconHome,
   IconArrowRight,
   IconList,
   IconSettings,
 } from '../assets/icons';
-import {Home} from '../screens/index';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import DimBackground from '../components/dimBackground/DimBackground';
-import {isDarkMode} from '../store/themeToggleSlice/themetoggle.slice';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
+import {Home} from '../screens/index';
 import {useAppDispatch} from '../store/hooks';
 import {useThemeToggle} from '../store/themeToggleSlice';
-import navTabsStyle from './navtabs.styles';
+import {isDarkMode} from '../store/themeToggleSlice/themetoggle.slice';
 
 const Tab = createBottomTabNavigator();
 

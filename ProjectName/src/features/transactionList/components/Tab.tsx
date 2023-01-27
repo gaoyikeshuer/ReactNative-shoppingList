@@ -1,11 +1,12 @@
-import {Text, Pressable, Animated} from 'react-native';
 import React from 'react';
-import {changeMonth} from '../../../store/monthTabSlice/monthtab.slice';
-import {useAppDispatch} from '../../../store/hooks';
-import {MonthData, GroupData} from '../../../types/data.interface';
-import {useMonthTab} from '../../../store/monthTabSlice';
-import {useThemeToggle} from '../../../store/themeToggleSlice';
+import {Text, Pressable, Animated} from 'react-native';
+
 import tabStyle from './tab.styles';
+import {useAppDispatch} from '../../../store/hooks';
+import {useMonthTab} from '../../../store/monthTabSlice';
+import {changeMonth} from '../../../store/monthTabSlice/monthtab.slice';
+import {useThemeToggle} from '../../../store/themeToggleSlice';
+import {MonthData, GroupData} from '../../../types/data.interface';
 
 const Tab = ({
   monthData,

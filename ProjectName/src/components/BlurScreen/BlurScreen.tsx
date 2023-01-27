@@ -1,5 +1,6 @@
-import React from 'react';
 import {BlurView} from '@react-native-community/blur';
+import React from 'react';
+
 import {BlurScreenStyle} from './blurscreen.styles';
 
 const BlurScreen = () => {

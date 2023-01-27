@@ -1,7 +1,8 @@
 import React from 'react';
 import {View} from 'react-native';
-import {useAppSelector} from '../../store/hooks';
+
 import {DimBackgroundStyle} from './dimbackground.styles';
+import {useAppSelector} from '../../store/hooks';
 
 const DimBackground = () => {
   const modalToggle = useAppSelector(state => state.modalToggle);

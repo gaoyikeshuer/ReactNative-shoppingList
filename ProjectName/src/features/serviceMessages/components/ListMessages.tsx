@@ -1,10 +1,11 @@
 import React from 'react';
 import {Text, SafeAreaView, Pressable} from 'react-native';
+
+import listMessagesStyle from './listmessages.styles';
+import {IconXCircle} from '../../../assets/icons';
 import {useAppDispatch} from '../../../store/hooks';
 import {deleteMessage} from '../../../store/messagesSlice/messages.slice';
-import {IconXCircle} from '../../../assets/icons';
 import {Message} from '../../../types/message.interface';
-import listMessagesStyle from './listmessages.styles';
 
 const ListMessage = ({item}: {item: Message}) => {
   const dispatch = useAppDispatch();

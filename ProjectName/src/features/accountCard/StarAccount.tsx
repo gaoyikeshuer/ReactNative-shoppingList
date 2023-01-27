@@ -1,11 +1,12 @@
 import React from 'react';
 import {View, Text, SafeAreaView} from 'react-native';
-import {IconFavouriteFill} from '../../assets/icons';
+import {useThemeToggle} from 'src/store/themeToggleSlice';
+
 import AccountCardStyle from './staraccount.styles';
-import { useThemeToggle } from 'src/store/themeToggleSlice';
+import {IconFavouriteFill} from '../../assets/icons';
 
 const StarAccount = () => {
-  const {isDarkModeState:isDark} = useThemeToggle()
+  const {isDarkModeState: isDark} = useThemeToggle();
   return (
     <SafeAreaView style={AccountCardStyle(isDark).accountCardContainer}>
       <SafeAreaView style={AccountCardStyle(isDark).starContainer}>
@@ -23,20 +24,14 @@ const StarAccount = () => {
         </Text>
         <View style={AccountCardStyle(isDark).bankContainer}>
           <View style={AccountCardStyle(isDark).bankTitle}>
-            <Text style={AccountCardStyle(isDark).bankTitleText}>
-              Balance
-            </Text>
+            <Text style={AccountCardStyle(isDark).bankTitleText}>Balance</Text>
             <Text style={AccountCardStyle(isDark).bankTitleText}>
               Avaliable funds
             </Text>
           </View>
           <View style={AccountCardStyle(isDark).money}>
-            <Text style={AccountCardStyle(isDark).moneyText}>
-              15,678.89
-            </Text>
-            <Text style={AccountCardStyle(isDark).moneyText}>
-              14,768.12
-            </Text>
+            <Text style={AccountCardStyle(isDark).moneyText}>15,678.89</Text>
+            <Text style={AccountCardStyle(isDark).moneyText}>14,768.12</Text>
           </View>
         </View>
       </SafeAreaView>

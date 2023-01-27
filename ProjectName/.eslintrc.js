@@ -34,6 +34,7 @@ module.exports = {
       version: 'detect',
     },
     'import/ignore': ['node_modules/react-native/index\\.js$'],
+    
   },
   env: {
     browser: true,
@@ -97,5 +98,29 @@ module.exports = {
         ignoreStyleProperties: false,
       },
     ],
+    'import/order':[
+      "error",
+      {
+        "groups":[
+          ["builtin","external"],
+          ["internal"],
+          ["parent","sibling","index"]
+        ]
+        ,
+        "pathGroups":[
+          {"pattern":"@aib/**",
+           "group":"internal",
+        }
+        ],
+        "pathGroupsExcludedImportTypes": 
+   ["builtin","object"],
+        "newlines-between":"always",
+        "alphabetize":{
+          "order":"asc",
+          "caseInsensitive":true
+        }
+      }
+    ]
+
   },
 };

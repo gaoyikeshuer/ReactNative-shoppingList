@@ -1,7 +1,8 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import {IconPlus} from '../../../assets/icons';
+
 import addAcountStyles from './addacounts.styles';
+import {IconPlus} from '../../../assets/icons';
 import {useThemeToggle} from '../../../store/themeToggleSlice';
 
 const AddAcounts = () => {

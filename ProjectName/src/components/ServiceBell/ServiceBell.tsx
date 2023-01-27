@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import {View, Text, Pressable, Animated} from 'react-native';
+
+import {styles} from './servicebell.styles';
 import {IconAlert} from '../../assets/icons';
-import {toggleActive} from '../../store/modalToggleSlice/modaltoggle.slice';
 import {useAppDispatch} from '../../store/hooks';
 import {useMessages} from '../../store/messagesSlice';
-import {styles} from './servicebell.styles';
+import {toggleActive} from '../../store/modalToggleSlice/modaltoggle.slice';
 
 const ServiceBell = () => {
   const {messages: messages} = useMessages();

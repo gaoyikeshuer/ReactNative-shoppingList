@@ -1,17 +1,18 @@
+import {collection, getDocs, query, orderBy} from 'firebase/firestore';
 import React, {useState, useEffect, useRef} from 'react';
 import {SafeAreaView, SectionList, View, Text, Animated} from 'react-native';
-import {db} from '../../../firebase';
-import {collection, getDocs, query, orderBy} from 'firebase/firestore';
+
 import Tab from './components/Tab';
 import TransactionListStyle from './transactionlist.styles';
-import {changeMonth} from '../../store/monthTabSlice/monthtab.slice';
+import {db} from '../../../firebase';
 import {useAppDispatch} from '../../store/hooks';
+import {changeMonth} from '../../store/monthTabSlice/monthtab.slice';
+import {useThemeToggle} from '../../store/themeToggleSlice';
 import {
   TransactionData,
   MonthData,
   GroupData,
 } from '../../types/data.interface';
-import {useThemeToggle} from '../../store/themeToggleSlice';
 
 const TransactionList = () => {
   const {isDarkModeState: isDark} = useThemeToggle();

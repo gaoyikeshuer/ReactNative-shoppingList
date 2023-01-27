@@ -1,7 +1,8 @@
 import React from 'react';
 import {Text, View} from 'react-native';
-import {IconInbox} from '../../../assets/icons';
+
 import noneMessagesStyle from './nonemessages.styles';
+import {IconInbox} from '../../../assets/icons';
 
 const NoneMessages = () => {
   return (

@@ -1,12 +1,13 @@
 import React from 'react';
 import {Text, SafeAreaView, View, Pressable, FlatList} from 'react-native';
-import {IconX} from '../../assets/icons';
+
 import ListMessage from './components/ListMessages';
 import NoneMessages from './components/NoneMessages';
-import {toggleActive} from '../../store/modalToggleSlice/modaltoggle.slice';
 import ServiceMessagesStyle from './servicemessages.styles';
+import {IconX} from '../../assets/icons';
 import {useAppDispatch} from '../../store/hooks';
 import {useMessages} from '../../store/messagesSlice';
+import {toggleActive} from '../../store/modalToggleSlice/modaltoggle.slice';
 import {useThemeToggle} from '../../store/themeToggleSlice';
 
 const ServiceMessages = () => {
