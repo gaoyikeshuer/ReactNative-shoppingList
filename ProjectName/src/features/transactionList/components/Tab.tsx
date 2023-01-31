@@ -1,9 +1,12 @@
-import {Text, Pressable, Animated} from 'react-native';
 import React from 'react';
-import {changeMonth} from '../../../store/monthTabSlice';
-import {StyleSheet} from 'react-native';
-import {useAppSelector, useAppDispatch} from '../../../store/hooks';
-import {MonthData, GroupData} from '../../../types/Data';
+import {Text, Pressable, Animated} from 'react-native';
+
+import tabStyle from './tab.styles';
+import {useAppDispatch} from '../../../store/hooks';
+import {useMonthTab} from '../../../store/monthTabSlice';
+import {changeMonth} from '../../../store/monthTabSlice/monthtab.slice';
+import {useThemeToggle} from '../../../store/themeToggleSlice';
+import {MonthData, GroupData} from '../../../types/data.interface';
 
 const Tab = ({
   monthData,
@@ -16,29 +19,17 @@ const Tab = ({
   DATA: GroupData[];
   scrollA: any;
 }) => {
-  // const fadeAnim = useRef(new Animated.Value(0)).current;
   const dispatch = useAppDispatch();
-  const monthTab = useAppSelector(state => state.monthTab);
-
-  // const value = useState(new Animated.Value(0))[0];
+  const monthTab = useMonthTab().monthState;
 
   const scrollValue = scrollA.interpolate({
     inputRange: [0, 50],
     outputRange: [0, 1],
   });
-  const darkMode = useAppSelector(state => state.themeToggle);
+  const {isDarkModeState: isDark} = useThemeToggle();
 
   return (
-    <Animated.View
-      style={{
-        opacity: scrollValue,
-        position: 'absolute',
-        top: 24,
-        zIndex: 15,
-        backgroundColor: darkMode.scheme == 'dark' ? '#212529' : '#efefef',
-
-        width: '100%',
-      }}>
+    <Animated.View style={tabStyle(isDark, scrollValue).tabContainer}>
       <Animated.FlatList
         data={monthData}
         horizontal={true}
@@ -57,15 +48,9 @@ const Tab = ({
               }}>
               <Text
                 style={
-                  item?.month == monthTab.item
-                    ? styles.selectedTabText
-                    : [
-                        styles.tabText,
-                        {
-                          color:
-                            darkMode.scheme == 'dark' ? '#efefef' : 'black',
-                        },
-                      ]
+                  item?.month == monthTab
+                    ? tabStyle(isDark, scrollValue).selectedTabText
+                    : tabStyle(isDark, scrollValue).tabText
                 }>
                 {item.monthName}
               </Text>
@@ -76,23 +61,5 @@ const Tab = ({
     </Animated.View>
   );
 };
-
-const styles = StyleSheet.create({
-  tabText: {
-    marginHorizontal: 12,
-    paddingVertical: 10,
-    fontFamily: 'Aspira',
-    fontWeight: '500',
-    color: 'black',
-  },
-
-  selectedTabText: {
-    marginHorizontal: 12,
-    paddingVertical: 10,
-    fontFamily: 'Aspira',
-    fontWeight: '500',
-    color: 'purple',
-  },
-});
 
 export default Tab;

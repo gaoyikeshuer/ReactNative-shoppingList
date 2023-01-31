@@ -1,38 +1,23 @@
 import React from 'react';
-import {Text, StyleSheet, SafeAreaView, Pressable} from 'react-native';
-import {useAppDispatch} from '../../../store/hooks';
-import {deleteMes} from '../../../store/messagesSlice';
+import {Text, SafeAreaView, Pressable} from 'react-native';
+
+import listMessagesStyle from './listmessages.styles';
 import {IconXCircle} from '../../../assets/icons';
-import {Message} from '../../../types/Message';
+import {useAppDispatch} from '../../../store/hooks';
+import {deleteMessage} from '../../../store/messagesSlice/messages.slice';
+import {Message} from '../../../types/message.interface';
 
 const ListMessage = ({item}: {item: Message}) => {
   const dispatch = useAppDispatch();
 
   return (
-    <SafeAreaView style={styles.messageList}>
-      <Pressable onPress={() => dispatch(deleteMes({id: item.id}))}>
+    <SafeAreaView style={listMessagesStyle.messageList}>
+      <Pressable onPress={() => dispatch(deleteMessage({id: item.id}))}>
         <IconXCircle />
       </Pressable>
-      <Text style={styles.messageText}>{item.text}</Text>
+      <Text style={listMessagesStyle.messageText}>{item.text}</Text>
     </SafeAreaView>
   );
 };
-const styles = StyleSheet.create({
-  messageList: {
-    marginHorizontal: 14,
-    flexDirection: 'row',
-    borderBottomWidth: 1,
-    borderBottomColor: '#D0D0D0',
-    alignItems: 'center',
-  },
-  messageText: {
-    flexWrap: 'wrap',
-    paddingLeft: 14,
-    flex: 1,
-    paddingBottom: 18,
-    paddingTop: 12,
-    fontFamily: 'Aspira',
-  },
-});
 
 export default ListMessage;

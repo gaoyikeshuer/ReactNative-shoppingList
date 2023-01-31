@@ -1,9 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit';
-import mesReducer from './messagesSlice';
-import modalToggleReducer from './modalToggleSlice';
-import monthTabSlice from './monthTabSlice';
-import themeToggleReducer from './themeToggleSlice';
-import AppStateReducer from './AppStateSlice';
+
+import AppStateReducer from './AppStateSlice/appstate.slice';
+import mesReducer from './messagesSlice/messages.slice';
+import modalToggleReducer from './modalToggleSlice/modaltoggle.slice';
+import monthTabSlice from './monthTabSlice/monthtab.slice';
+import themeToggleReducer from './themeToggleSlice/themetoggle.slice';
+
 export const store = configureStore({
   reducer: {
     mes: mesReducer,

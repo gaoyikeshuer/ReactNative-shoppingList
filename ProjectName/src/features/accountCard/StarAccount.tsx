@@ -1,62 +1,41 @@
 import React from 'react';
 import {View, Text, SafeAreaView} from 'react-native';
+import {useThemeToggle} from 'src/store/themeToggleSlice';
+
+import AccountCardStyle from './staraccount.styles';
 import {IconFavouriteFill} from '../../assets/icons';
-import AccountCardStyle from './AccountCardStyle';
-import {useAppSelector} from '../../store/hooks';
 
 const StarAccount = () => {
-  const darkMode = useAppSelector(state => state.themeToggle);
+  const {isDarkModeState: isDark} = useThemeToggle();
   return (
-    <SafeAreaView style={AccountCardStyle.accountCardContainer}>
-      <SafeAreaView
-        style={[
-          AccountCardStyle.starContainer,
-          {backgroundColor: darkMode.scheme == 'dark' ? '#5A6168' : 'white'},
-        ]}>
-        <View style={AccountCardStyle.starTitle}>
-          <Text style={AccountCardStyle.textTitle}>
+    <SafeAreaView style={AccountCardStyle(isDark).accountCardContainer}>
+      <SafeAreaView style={AccountCardStyle(isDark).starContainer}>
+        <View style={AccountCardStyle(isDark).starTitle}>
+          <Text style={AccountCardStyle(isDark).textTitle}>
             Office Supplies / Expenses
           </Text>
           <IconFavouriteFill width={18} color={'purple'} />
         </View>
-        <Text
-          style={[
-            AccountCardStyle.bankNum,
-            {color: darkMode.scheme == 'dark' ? 'black' : '#6E6E6E'},
-          ]}>
+        <Text style={AccountCardStyle(isDark).bankNum}>
           IE67AIBK93132200031333
         </Text>
-        <Text
-          style={[
-            AccountCardStyle.bankInfo,
-            {color: darkMode.scheme == 'dark' ? 'black' : '#6E6E6E'},
-          ]}>
+        <Text style={AccountCardStyle(isDark).bankInfo}>
           Current Account | EUR
         </Text>
-        <View style={AccountCardStyle.bankContainer}>
-          <View style={AccountCardStyle.bankTitle}>
-            <Text
-              style={{
-                color: darkMode.scheme == 'dark' ? 'black' : '#6E6E6E',
-                fontFamily: 'Aspira',
-              }}>
-              Balance
-            </Text>
-            <Text
-              style={{
-                color: darkMode.scheme == 'dark' ? 'black' : '#6E6E6E',
-                fontFamily: 'Aspira',
-              }}>
+        <View style={AccountCardStyle(isDark).bankContainer}>
+          <View style={AccountCardStyle(isDark).bankTitle}>
+            <Text style={AccountCardStyle(isDark).bankTitleText}>Balance</Text>
+            <Text style={AccountCardStyle(isDark).bankTitleText}>
               Avaliable funds
             </Text>
           </View>
-          <View style={AccountCardStyle.money}>
-            <Text style={AccountCardStyle.moneyText}>15,678.89</Text>
-            <Text style={AccountCardStyle.moneyText}>14,768.12</Text>
+          <View style={AccountCardStyle(isDark).money}>
+            <Text style={AccountCardStyle(isDark).moneyText}>15,678.89</Text>
+            <Text style={AccountCardStyle(isDark).moneyText}>14,768.12</Text>
           </View>
         </View>
       </SafeAreaView>
-      <View style={{width: 5, backgroundColor: 'green', height: '100%'}} />
+      <View style={AccountCardStyle(isDark).greenStrip} />
     </SafeAreaView>
   );
 };

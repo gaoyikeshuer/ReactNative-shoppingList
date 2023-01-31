@@ -1,23 +1,26 @@
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import {View, Text, Appearance} from 'react-native';
+
+import navTabsStyle from './navtabs.styles';
 import {
   IconHome,
   IconArrowRight,
   IconList,
   IconSettings,
 } from '../assets/icons';
-import {Home} from '../screens';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import DimBackground from '../components/dimBackground/DimBackground';
-import {isDarkMode} from '../store/themeToggleSlice';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
-import {useAppSelector, useAppDispatch} from '../store/hooks';
+import {Home} from '../screens/index';
+import {useAppDispatch} from '../store/hooks';
+import {useThemeToggle} from '../store/themeToggleSlice';
+import {isDarkMode} from '../store/themeToggleSlice/themetoggle.slice';
 
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
   const dispatch = useAppDispatch();
-  const darkmode = useAppSelector(state => state.themeToggle);
+  const {isDarkModeState: darkmode} = useThemeToggle();
   Appearance.addChangeListener(scheme => {
     dispatch(isDarkMode({scheme: scheme.colorScheme}));
   });
@@ -27,7 +30,7 @@ const Tabs = () => {
       screenOptions={{
         tabBarStyle: {
           paddingHorizontal: 0,
-          backgroundColor: darkmode.scheme == 'dark' ? '#212529' : 'white',
+          backgroundColor: darkmode == 'dark' ? '#212529' : 'white',
         },
         tabBarActiveTintColor: 'purple',
         tabBarInactiveTintColor: 'gray',
@@ -44,25 +47,14 @@ const Tabs = () => {
               color={focused ? 'purple' : 'gray'}
             />
           ),
-          headerTitle: () => (
-            <Text
-              style={{
-                fontSize: 18,
-                fontFamily: 'Aspira',
-                fontWeight: '500',
-                color: '#7F2B7B',
-              }}>
-              Home
-            </Text>
-          ),
+          headerTitle: () => <Text style={navTabsStyle.HomeStyle}>Home</Text>,
           headerRight: () => (
-            <View style={{paddingRight: 12}}>
+            <View style={navTabsStyle.BellContainer}>
               <ServiceBell />
             </View>
           ),
           headerStyle: {
-            backgroundColor:
-              darkmode.scheme == 'dark' ? '#212529' : 'transparent',
+            backgroundColor: darkmode == 'dark' ? '#212529' : 'transparent',
           },
 
           headerLeft: () => <DimBackground />,
@@ -120,4 +112,5 @@ const Tabs = () => {
     </Tab.Navigator>
   );
 };
+
 export default Tabs;

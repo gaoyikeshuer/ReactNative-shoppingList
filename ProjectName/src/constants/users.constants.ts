@@ -1,5 +1,6 @@
-import {Users} from '../types/Users';
-export const UsersInfo: Users[] = [
+import {User} from '../types/user.interface';
+
+export const Users: User[] = [
   {id: 1, name: 'Alloment Weal'},
   {id: 2, name: 'Cian Byrne'},
   {id: 3, name: 'Yike Gao'},

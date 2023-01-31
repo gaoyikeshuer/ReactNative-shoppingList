@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Pressable, Animated} from 'react-native';
+import {View, Text, Pressable, Animated} from 'react-native';
+
+import {styles} from './servicebell.styles';
 import {IconAlert} from '../../assets/icons';
-import {toggleActive} from '../../store/modalToggleSlice';
-import {useAppSelector, useAppDispatch} from '../../store/hooks';
+import {useAppDispatch} from '../../store/hooks';
+import {useMessages} from '../../store/messagesSlice';
+import {toggleActive} from '../../store/modalToggleSlice/modaltoggle.slice';
 
 const ServiceBell = () => {
-  const messages = useAppSelector(state => state.mes);
+  const {messages: messages} = useMessages();
   const dispatch = useAppDispatch();
-  // const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
   const spinValue = useState(new Animated.Value(0))[0];
 
   const spinBell = () => {
@@ -46,9 +48,9 @@ const ServiceBell = () => {
         onPress={() => {
           dispatch(toggleActive());
         }}>
-        {messages.length !== 0 && (
+        {messages.length != 0 && (
           <View style={styles.alertNum}>
-            <Text style={[styles.messagesNum]}>{messages.length}</Text>
+            <Text style={styles.messagesNum}>{messages.length}</Text>
           </View>
         )}
 
@@ -59,25 +61,5 @@ const ServiceBell = () => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  alertNum: {
-    position: 'absolute',
-    alignItems: 'center',
-    left: -13,
-    top: 5,
-    width: 21,
-
-    backgroundColor: '#E00885',
-    zIndex: 13,
-    borderRadius: 12,
-    borderColor: '#efefef',
-    borderWidth: 2,
-  },
-  messagesNum: {
-    color: 'white',
-    fontSize: 11,
-    fontFamily: 'Aspira-Regular',
-  },
-});
 
 export default ServiceBell;
