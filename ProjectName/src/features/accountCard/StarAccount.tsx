@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, SafeAreaView} from 'react-native';
-import {useThemeToggle} from 'src/store/themeToggleSlice';
+import { useThemeToggle } from '../../store/themeToggleSlice';
 
 import AccountCardStyle from './staraccount.styles';
 import {IconFavouriteFill} from '../../assets/icons';

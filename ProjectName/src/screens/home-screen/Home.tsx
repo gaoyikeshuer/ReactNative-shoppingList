@@ -1,18 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import {View, SafeAreaView, Modal, Appearance, AppState} from 'react-native';
 
-import {Users} from '@aib/constants/users.constants';
-import {useAppSelector, useAppDispatch} from '@aib/store/hooks';
-import {isDarkMode} from '@aib/store/themeToggleSlice/themetoggle.slice';
+import {Users} from '../../constants/users.constants';
+import {useAppSelector, useAppDispatch} from '../../store/hooks'
+
 
 import {styles} from './home.styles';
-import BlurScreen from '../components/BlurScreen/BlurScreen';
-import StarAccount from '../features/accountCard/StarAccount';
-import QuickPay from '../features/quickPay/QuickPay';
-import ServiceMessages from '../features/serviceMessages/ServiceMessages';
-import TransactionList from '../features/transactionList/TransactionList';
-import {useThemeToggle} from '../store/themeToggleSlice';
-import DarkModeStyle from '../theme/darkmode.styles';
+import BlurScreen from '../../components/BlurScreen/BlurScreen';
+import StarAccount from '../../features/accountCard/StarAccount';
+import QuickPay from '../../features/quickPay/QuickPay';
+import ServiceMessages from '../../features/serviceMessages/ServiceMessages';
+import TransactionList from '../../features/transactionList/TransactionList';
+import {useThemeToggle} from '../../store/themeToggleSlice';
+import DarkModeStyle from '../../theme/darkmode.styles';
+import { isDarkMode } from '../../store/themeToggleSlice/themetoggle.slice';
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();

@@ -48,7 +48,11 @@ const AccountCardStyle = (isDark: string) => {
       color: currentTheme.color,
       fontFamily: 'Aspira',
     },
-    greenStrip: {},
+    greenStrip: {
+      width: 5,
+       backgroundColor: 'green',
+        height: '100%'
+    },
     money: {
       flexDirection: 'row',
       justifyContent: 'space-between',
