@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {View, SafeAreaView, Modal, Appearance, AppState} from 'react-native';
 
-import {Users} from '@aib/constants/users.constants';
-import {useAppSelector, useAppDispatch} from '@aib/store/hooks';
-import {isDarkMode} from '@aib/store/themeToggleSlice/themetoggle.slice';
+import { Users } from '../constants/users.constants';
+import { useAppSelector,useAppDispatch } from '../store/hooks';
 
+import { isDarkMode } from '../store/themeToggleSlice/themetoggle.slice';
 import {styles} from './home.styles';
 import BlurScreen from '../components/BlurScreen/BlurScreen';
 import StarAccount from '../features/accountCard/StarAccount';

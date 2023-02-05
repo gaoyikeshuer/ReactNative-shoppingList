@@ -28,9 +28,7 @@
     "rootDirs": ["."],
     "baseUrl": ".",
     "typeRoots": ["types", "node_modules/@types"],
-    "paths": {
-      "@aib/*":["./src/*"]
-    },
+    "paths": {},
     "types": ["node"],
     "noEmit": true
   },

@@ -11,7 +11,7 @@ import {
 } from '../assets/icons';
 import DimBackground from '../components/dimBackground/DimBackground';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
-import {Home} from '../screens/index';
+import {Home, PaymentDetails} from '../screens/index';
 import {useAppDispatch} from '../store/hooks';
 import {useThemeToggle} from '../store/themeToggleSlice';
 import {isDarkMode} from '../store/themeToggleSlice/themetoggle.slice';
@@ -85,7 +85,7 @@ const Tabs = () => {
       />
       <Tab.Screen
         name="Payments"
-        component={Home}
+        component={PaymentDetails}
         options={{
           tabBarIcon: ({focused}) => (
             <IconArrowRight
@@ -94,6 +94,10 @@ const Tabs = () => {
               color={focused ? 'purple' : 'gray'}
             />
           ),
+          headerStyle: {
+            backgroundColor: darkmode == 'dark' ? '#212529' : 'transparent',
+          },
+          headerTitle: () => <Text style={navTabsStyle.PaymentStyle}>Payment details</Text>
         }}
       />
       <Tab.Screen
