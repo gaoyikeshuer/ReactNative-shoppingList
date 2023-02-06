@@ -97,7 +97,9 @@ const Tabs = () => {
           headerStyle: {
             backgroundColor: darkmode == 'dark' ? '#212529' : 'transparent',
           },
-          headerTitle: () => <Text style={navTabsStyle.PaymentStyle}>Payment details</Text>
+          headerTitle: () => (
+            <Text style={navTabsStyle.PaymentStyle}>Payment details</Text>
+          ),
         }}
       />
       <Tab.Screen

@@ -5,7 +5,6 @@ const theme = {
     backgroundColor: 'white',
   },
   dark: {
-  
     backgroundColor: '#5A6168',
   },
 };

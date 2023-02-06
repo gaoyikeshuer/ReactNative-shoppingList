@@ -10,12 +10,12 @@ const navTabsStyle = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
   },
-  PaymentStyle:{
+  PaymentStyle: {
     color: '#4D4D4D',
+    fontFamily: 'Aspira',
     fontSize: 20,
-    fontFamily:'Aspira',
-    fontWeight:'bold'
-  }
+    fontWeight: 'bold',
+  },
 });
 
 export default navTabsStyle;

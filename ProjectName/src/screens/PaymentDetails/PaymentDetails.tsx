@@ -1,17 +1,17 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import PaymentDetailsForm from './PaymentDetailsForm/PaymentDetailsForm'
-import { styles } from './payment-details.styles'
-import PaymentDetailsFooter from './PaymentDetailsFooter/PaymentDetailsFooter'
+import React from 'react';
+import {View, Text} from 'react-native';
 
+import {styles} from './payment-details.styles';
+import PaymentDetailsFooter from './PaymentDetailsFooter/PaymentDetailsFooter';
+import PaymentDetailsForm from './PaymentDetailsForm/PaymentDetailsForm';
 
 const PaymentDetails = () => {
   return (
     <View style={styles.container}>
-      <PaymentDetailsForm/>
-      <PaymentDetailsFooter/>
+      <PaymentDetailsForm />
+      <PaymentDetailsFooter />
     </View>
-  )
-}
+  );
+};
 
-export default PaymentDetails
+export default PaymentDetails;

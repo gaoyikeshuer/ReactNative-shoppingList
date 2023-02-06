@@ -1,17 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import {View, SafeAreaView, Modal, Appearance, AppState} from 'react-native';
 
-import { Users } from '../constants/users.constants';
-import { useAppSelector,useAppDispatch } from '../store/hooks';
-
-import { isDarkMode } from '../store/themeToggleSlice/themetoggle.slice';
 import {styles} from './home.styles';
 import BlurScreen from '../components/BlurScreen/BlurScreen';
+import {Users} from '../constants/users.constants';
 import StarAccount from '../features/accountCard/StarAccount';
 import QuickPay from '../features/quickPay/QuickPay';
 import ServiceMessages from '../features/serviceMessages/ServiceMessages';
 import TransactionList from '../features/transactionList/TransactionList';
+import {useAppSelector, useAppDispatch} from '../store/hooks';
 import {useThemeToggle} from '../store/themeToggleSlice';
+import {isDarkMode} from '../store/themeToggleSlice/themetoggle.slice';
 import DarkModeStyle from '../theme/darkmode.styles';
 
 const Home: React.FC = () => {

@@ -1,18 +1,14 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { Pressable } from 'react-native'
-import { styles } from './custom-button.styles'
+import React, {FC} from 'react';
+import {View, Text, Pressable} from 'react-native';
 
-const CustomButton = ({title,onPressFunction}) => {
+import {styles} from './custom-button.styles';
+import {CustomButtonType} from './custom-button.types';
+const CustomButton: FC<CustomButtonType> = ({title, onPressFunction}) => {
   return (
+    <Pressable style={styles.button} onPress={onPressFunction}>
+      <Text style={styles.buttonText}>{title}</Text>
+    </Pressable>
+  );
+};
 
-      <Pressable style={styles.button} onPress={onPressFunction}>
-      <Text style={styles.buttonText} >
-        {title}
-      </Text>
-      </Pressable>
-
-  )
-}
-
-export default CustomButton
+export default CustomButton;
