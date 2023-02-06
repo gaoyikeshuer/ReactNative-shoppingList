@@ -6,9 +6,13 @@ import CustomInput from "./components/customInput/CustomInput";
 import {styles} from './payment-details-form.styles'
 import CustomAmountInput from "./components/customAmountInput/CustomAmountInput";
 import CustomMessageInput from "./components/customMessageInput/customMessageInput";
+import CustomButton from "./components/customButton/CustomButton";
+import { Pressable } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 
 const PaymentDetailsForm:React.FC = () =>{
+  const navigation = useNavigation();
   
   const { control, handleSubmit, formState: { errors } } = useForm<PaymentDetailsFormData>({
     defaultValues: {
@@ -54,10 +58,14 @@ const PaymentDetailsForm:React.FC = () =>{
    title="Payee message"
    placeholder="none"
    control={control}
-   maxLength={16}
+   maxLength={18}
    />
-
-      <Button  title="Continue" onPress={handleSubmit(onSubmit)} />
+   <View style={styles.buttonContainer}>
+   <CustomButton title="Continue" onPressFunction={handleSubmit(onSubmit)}/>
+   </View>
+   <Pressable style={styles.textButtonContainer} onPress={()=>navigation.navigate('Home')}>
+<Text style={styles.textButton} >Back</Text>
+   </Pressable>
     </View>
   );
 }

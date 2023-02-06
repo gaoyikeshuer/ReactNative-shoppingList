@@ -20,6 +20,7 @@ const CustomMessageInput= ({ control,name, title, placeholder, maxLength}) => {
         onChangeText={
             (text)=>{
                 setInput(text)
+                onChange(text)
             }
         }
         onBlur={onBlur}

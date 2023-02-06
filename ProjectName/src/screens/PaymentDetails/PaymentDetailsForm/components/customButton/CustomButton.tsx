@@ -1,16 +1,17 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { Pressable } from 'react-native'
+import { styles } from './custom-button.styles'
 
-const CustomButton = ({title}) => {
+const CustomButton = ({title,onPressFunction}) => {
   return (
-    <View>
-      <Pressable onPress={}>
-      <Text>
+
+      <Pressable style={styles.button} onPress={onPressFunction}>
+      <Text style={styles.buttonText} >
         {title}
       </Text>
       </Pressable>
-    </View>
+
   )
 }
 

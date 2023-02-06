@@ -7,6 +7,7 @@ import { Image } from 'react-native';
 
 
 const CustomAmountInput = ({control,name, title, placeholder}) => {
+  
   const decimalRegex = /^\d+(\.\d{0,2})?$/;
   
   return (

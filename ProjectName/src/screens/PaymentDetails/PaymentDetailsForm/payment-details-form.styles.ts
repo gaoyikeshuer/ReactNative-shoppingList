@@ -2,7 +2,9 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container:{
         paddingHorizontal:16,
-        backgroundColor:'white'
+        backgroundColor:'white',
+        flexGrow:1
+    
     },
     paymentMessages:{
         color: '#7F2B7B',
@@ -20,5 +22,21 @@ export const styles = StyleSheet.create({
     },
     inputBox2:{
         marginTop:18
+    },
+    buttonContainer:{
+        marginTop:22
+    },
+    textButtonContainer:{
+        marginTop:29,
+        marginBottom:34,
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    textButton:{
+        color:'#4D4D4D',
+        fontSize:18,
+        fontFamily:'Aspira',
+        letterSpacing:0,
+    
     }
 })

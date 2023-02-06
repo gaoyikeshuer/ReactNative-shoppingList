@@ -1,6 +1,6 @@
 export type PaymentDetailsFormData ={
     ToPayee: string;
     amountToSend:number;
+    payeeMessage:string;
     statementMessage:string;
-    payeeMessage:string
 }
