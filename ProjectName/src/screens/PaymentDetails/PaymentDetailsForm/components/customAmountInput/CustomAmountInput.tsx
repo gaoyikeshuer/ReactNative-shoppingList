@@ -26,8 +26,6 @@ const CustomAmountInput: FC<CustomMessageInputTypes> = ({
               onChangeText={text => {
                 if (DECIMAL_REGEX.test(text)) {
                   const formattedValue = text;
-
-                  // setVal(formattedValue);
                   onChange(formattedValue);
                 }
               }}
@@ -35,8 +33,6 @@ const CustomAmountInput: FC<CustomMessageInputTypes> = ({
               placeholder={placeholder}
               maxLength={12}
               style={styles.textAmountInput}
-
-              // selection={{ start: val.indexOf('.') , end: val.indexOf('.') }}
             />
             <View style={styles.currencyIconContainer}>
               <View style={styles.currencyIcon}>
