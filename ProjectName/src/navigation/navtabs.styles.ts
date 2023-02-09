@@ -1,16 +1,16 @@
 import {StyleSheet} from 'react-native';
 
 const navTabsStyle = StyleSheet.create({
-  BellContainer: {
+  bellContainer: {
     paddingRight: 12,
   },
-  HomeStyle: {
+  homeBlock: {
     color: '#7F2B7B',
     fontFamily: 'Aspira',
     fontSize: 18,
     fontWeight: '500',
   },
-  PaymentStyle: {
+  paymentBlock: {
     color: '#4D4D4D',
     fontFamily: 'Aspira',
     fontSize: 20,

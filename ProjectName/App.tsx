@@ -2,7 +2,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import * as React from 'react';
 import {useEffect} from 'react';
-import {LogBox} from 'react-native';
+import {LogBox, useColorScheme} from 'react-native';
 import {Provider} from 'react-redux';
 
 import Tabs from './src/navigation/NavTabs';
@@ -11,6 +11,9 @@ import {store} from './src/store/store';
 import 'intl';
 import 'intl/locale-data/jsonp/en';
 
+
+import { DarkTheme, DefaultTheme, ThemeProvider } from './src/components/theming';
+
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -18,8 +21,14 @@ function App() {
     LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
   }, []);
 
+const colorScheme = useColorScheme()
+const theme = colorScheme === 'dark'? DarkTheme : DefaultTheme
+
+
+
   return (
-    <NavigationContainer>
+    <ThemeProvider value={theme}>
+          <NavigationContainer>
       <Provider store={store}>
         <Stack.Navigator
           screenOptions={{
@@ -32,6 +41,8 @@ function App() {
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>
+    </ThemeProvider>
+
   );
 }
 

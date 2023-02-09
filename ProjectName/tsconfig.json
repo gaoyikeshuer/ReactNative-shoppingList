@@ -32,6 +32,7 @@
     "types": ["node"],
     "noEmit": true
   },
+  "include": ["src","src/ts"],
   "exclude": [
     ".vscode",
     "generated",

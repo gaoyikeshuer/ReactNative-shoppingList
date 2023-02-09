@@ -2,8 +2,8 @@ import React, {FC, useState} from 'react';
 import {Controller} from 'react-hook-form';
 import {View, Text, TextInput} from 'react-native';
 
-import {styles} from './custom-message-input.styles';
-import {CustomMessageInputTypes} from './custom-message-input.types';
+import {styles} from './message-input.styles';
+import {CustomMessageInputTypes} from './message-input.types';
 
 const CustomMessageInput: FC<CustomMessageInputTypes> = ({
   control,

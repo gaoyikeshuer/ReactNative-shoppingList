@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as React from 'react';
-import {View, Text, Appearance} from 'react-native';
+import {View, Text} from 'react-native';
 
 import navTabsStyle from './navtabs.styles';
 import {
@@ -12,25 +12,23 @@ import {
 import DimBackground from '../components/dimBackground/DimBackground';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
 import {Home, PaymentDetails} from '../screens/index';
-import {useAppDispatch} from '../store/hooks';
-import {useThemeToggle} from '../store/themeToggleSlice';
-import {isDarkMode} from '../store/themeToggleSlice/themetoggle.slice';
+import { StackParamList } from './navigation.types';
+import { useTheme } from '../components/theming';
 
-const Tab = createBottomTabNavigator();
+
+
+const Tab = createBottomTabNavigator<StackParamList>();
 
 const Tabs = () => {
-  const dispatch = useAppDispatch();
-  const {isDarkModeState: darkmode} = useThemeToggle();
-  Appearance.addChangeListener(scheme => {
-    dispatch(isDarkMode({scheme: scheme.colorScheme}));
-  });
+
+  const {colors} = useTheme()
 
   return (
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
           paddingHorizontal: 0,
-          backgroundColor: darkmode == 'dark' ? '#212529' : 'white',
+          backgroundColor: colors.background,
         },
         tabBarActiveTintColor: 'purple',
         tabBarInactiveTintColor: 'gray',
@@ -40,21 +38,21 @@ const Tabs = () => {
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({color}) => (
             <IconHome
               width={15}
               height={15}
-              color={focused ? 'purple' : 'gray'}
+              color={color}
             />
           ),
-          headerTitle: () => <Text style={navTabsStyle.HomeStyle}>Home</Text>,
+          headerTitle: () => <Text style={navTabsStyle.homeBlock}>Home</Text>,
           headerRight: () => (
-            <View style={navTabsStyle.BellContainer}>
+            <View style={navTabsStyle.bellContainer}>
               <ServiceBell />
             </View>
           ),
           headerStyle: {
-            backgroundColor: darkmode == 'dark' ? '#212529' : 'transparent',
+            backgroundColor: colors.backgroundSecondary,
           },
 
           headerLeft: () => <DimBackground />,
@@ -66,7 +64,7 @@ const Tabs = () => {
             flex: 1,
             alignItems: 'center',
           },
-          headerTitleAlign: 'center', // ios defalt center but android deflaut left
+          headerTitleAlign: 'center', // ios defalt center but android default left
         }}
       />
 
@@ -74,11 +72,11 @@ const Tabs = () => {
         name="Accounts"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({color}) => (
             <IconList
               width={18}
               height={18}
-              color={focused ? 'purple' : 'gray'}
+              color={color}
             />
           ),
         }}
@@ -87,18 +85,18 @@ const Tabs = () => {
         name="Payments"
         component={PaymentDetails}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({color}) => (
             <IconArrowRight
               width={18}
               height={18}
-              color={focused ? 'purple' : 'gray'}
+              color={color}
             />
           ),
           headerStyle: {
-            backgroundColor: darkmode == 'dark' ? '#212529' : 'transparent',
+            backgroundColor: colors.backgroundSecondary,
           },
           headerTitle: () => (
-            <Text style={navTabsStyle.PaymentStyle}>Payment details</Text>
+            <Text style={navTabsStyle.paymentBlock}>Payment details</Text>
           ),
         }}
       />
@@ -106,11 +104,11 @@ const Tabs = () => {
         name="Settings"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({color}) => (
             <IconSettings
               width={18}
               height={18}
-              color={focused ? 'purple' : 'gray'}
+              color={color}
             />
           ),
         }}

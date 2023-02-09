@@ -1,18 +1,28 @@
-import {useNavigation} from '@react-navigation/native';
+import {RouteProp, useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {useForm, SubmitHandler} from 'react-hook-form';
 import {Text, View, Pressable} from 'react-native';
 
-import CustomAmountInput from './components/customAmountInput/CustomAmountInput';
+import CustomAmountInput from './components/amount-input/AmountInput';
 import CustomButton from './components/customButton/CustomButton';
-import CustomInput from './components/customInput/CustomInput';
-import CustomMessageInput from './components/customMessageInput/CustomMessageInput';
+import CustomInput from './components/base-Input/BaseInput';
+import CustomMessageInput from './components/message-Input/MessageInput';
 import {styles} from './payment-details-form.styles';
 import {PaymentDetailsFormData} from './payment-details-form.types';
 import {NavigationType} from '../../../navigation/navigation.types';
+// import { useRoute } from '@react-navigation/native';
+import { useTheme } from '../../../components/theming';
 
-const PaymentDetailsForm: React.FC = () => {
+
+
+const PaymentDetailsForm: React.FC= () => {
   const navigation = useNavigation<NavigationType>();
+  // let route: RouteProp<{Payments:{payeeName:string}},'Payments'> = useRoute()
+ 
+  //   const {payeeName} = route.params
+  
+  // console.log(payeeName)
+  const {colors} = useTheme()
 
   const {
     control,
@@ -20,7 +30,7 @@ const PaymentDetailsForm: React.FC = () => {
     formState: {errors},
   } = useForm<PaymentDetailsFormData>({
     defaultValues: {
-      ToPayee: 'John McCabe',
+      ToPayee: "Jack" ,
       statementMessage: '',
       payeeMessage: '',
     },
@@ -30,8 +40,8 @@ const PaymentDetailsForm: React.FC = () => {
     console.log(data);
 
   return (
-    <View style={styles.container}>
-      <View style={styles.inputBox1}>
+    <View style={[styles.container, {backgroundColor:colors.background}]}>
+      <View style={styles.toPayeeContainer}>
         <CustomInput
           name="ToPayee"
           title="To"
@@ -39,7 +49,7 @@ const PaymentDetailsForm: React.FC = () => {
           control={control}
         />
       </View>
-      <View style={styles.inputBox2}>
+      <View style={styles.amountContainer}>
         <CustomAmountInput
           name="amountToSend"
           title="Amount to send"

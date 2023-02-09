@@ -4,14 +4,13 @@ export const styles = StyleSheet.create({
     marginTop: 22,
   },
   container: {
-    backgroundColor: 'white',
     flexGrow: 1,
     paddingHorizontal: 16,
   },
-  inputBox1: {
+  toPayeeContainer: {
     marginTop: 14,
   },
-  inputBox2: {
+  amountContainer: {
     marginTop: 18,
   },
   paymentMessages: {

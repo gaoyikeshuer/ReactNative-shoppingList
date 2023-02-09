@@ -2,9 +2,9 @@ import React, {FC} from 'react';
 import {Controller} from 'react-hook-form';
 import {View, Text, TextInput, Image} from 'react-native';
 
-import {DECIMAL_REGEX} from './custom-amount-input.constants';
-import {styles} from './custom-amount-input.styles';
-import {CustomMessageInputTypes} from '../customMessageInput/custom-message-input.types';
+import {DECIMAL_REGEX} from './amount-input.constants';
+import {styles} from './amount-input.styles';
+import {CustomMessageInputTypes} from '../message-Input/message-input.types';
 
 const CustomAmountInput: FC<CustomMessageInputTypes> = ({
   control,
