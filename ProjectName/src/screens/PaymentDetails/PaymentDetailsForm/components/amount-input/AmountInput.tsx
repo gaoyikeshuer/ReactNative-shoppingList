@@ -5,6 +5,7 @@ import {View, Text, TextInput, Image} from 'react-native';
 import {DECIMAL_REGEX} from './amount-input.constants';
 import {styles} from './amount-input.styles';
 import {CustomMessageInputTypes} from '../message-Input/message-input.types';
+import { EU } from '../../../../../assets/pictures';
 
 const CustomAmountInput: FC<CustomMessageInputTypes> = ({
   control,
@@ -37,7 +38,7 @@ const CustomAmountInput: FC<CustomMessageInputTypes> = ({
             <View style={styles.currencyIconContainer}>
               <View style={styles.currencyIcon}>
                 <Image
-                  source={require('../../../../../assets/pictures/FlagofEurope.png')}
+                  source={EU}
                   style={styles.flag}
                 />
                 <Text style={styles.currency}>EUR</Text>

@@ -1,17 +1,15 @@
 import {StyleSheet} from 'react-native';
+
 export const styles = StyleSheet.create({
+  amountContainer: {
+    marginTop: 18,
+  },
   buttonContainer: {
     marginTop: 22,
   },
   container: {
     flexGrow: 1,
     paddingHorizontal: 16,
-  },
-  toPayeeContainer: {
-    marginTop: 14,
-  },
-  amountContainer: {
-    marginTop: 18,
   },
   paymentMessages: {
     color: '#7F2B7B',
@@ -35,5 +33,8 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 34,
     marginTop: 29,
+  },
+  toPayeeContainer: {
+    marginTop: 14,
   },
 });

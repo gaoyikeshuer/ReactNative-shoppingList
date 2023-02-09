@@ -73,12 +73,12 @@ export const size160 = {
   decimal: 1.6,
   scale: 2560,
 };
-export const size000 = { original: '0', number: 0, decimal: 0, scale: 0 };
-export const size001 = { original: '1', number: 1, decimal: 0.01, scale: 16 };
-export const size002 = { original: '2', number: 2, decimal: 0.02, scale: 32 };
-export const size004 = { original: '4', number: 4, decimal: 0.04, scale: 64 };
-export const size006 = { original: '6', number: 6, decimal: 0.06, scale: 96 };
-export const size008 = { original: '8', number: 8, decimal: 0.08, scale: 128 };
+export const size000 = {original: '0', number: 0, decimal: 0, scale: 0};
+export const size001 = {original: '1', number: 1, decimal: 0.01, scale: 16};
+export const size002 = {original: '2', number: 2, decimal: 0.02, scale: 32};
+export const size004 = {original: '4', number: 4, decimal: 0.04, scale: 64};
+export const size006 = {original: '6', number: 6, decimal: 0.06, scale: 96};
+export const size008 = {original: '8', number: 8, decimal: 0.08, scale: 128};
 export const size012 = {
   original: '12',
   number: 12,
@@ -103,7 +103,7 @@ export const size018 = {
   decimal: 0.18,
   scale: 288,
 };
-export const size020 = { original: '20', number: 20, decimal: 0.2, scale: 320 };
+export const size020 = {original: '20', number: 20, decimal: 0.2, scale: 320};
 export const size022 = {
   original: '22',
   number: 22,

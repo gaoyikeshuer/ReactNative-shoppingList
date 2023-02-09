@@ -1,5 +1,5 @@
-import { TextColor } from '../text/text.types';
-import { ContactItemPresets } from '../contact-list-item/contact-list-item.types';
+import {ContactItemPresets} from '../contact-list-item/contact-list-item.types';
+import {TextColor} from '../text/text.types';
 
 export type IconVariants =
   | 'name'

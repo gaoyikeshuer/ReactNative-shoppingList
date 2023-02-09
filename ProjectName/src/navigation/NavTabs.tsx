@@ -2,6 +2,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import {View, Text} from 'react-native';
 
+import {StackParamList} from './navigation.types';
 import navTabsStyle from './navtabs.styles';
 import {
   IconHome,
@@ -11,17 +12,13 @@ import {
 } from '../assets/icons';
 import DimBackground from '../components/dimBackground/DimBackground';
 import ServiceBell from '../components/ServiceBell/ServiceBell';
+import {useTheme} from '../components/theming';
 import {Home, PaymentDetails} from '../screens/index';
-import { StackParamList } from './navigation.types';
-import { useTheme } from '../components/theming';
-
-
 
 const Tab = createBottomTabNavigator<StackParamList>();
 
 const Tabs = () => {
-
-  const {colors} = useTheme()
+  const {colors} = useTheme();
 
   return (
     <Tab.Navigator
@@ -39,11 +36,7 @@ const Tabs = () => {
         component={Home}
         options={{
           tabBarIcon: ({color}) => (
-            <IconHome
-              width={15}
-              height={15}
-              color={color}
-            />
+            <IconHome width={15} height={15} color={color} />
           ),
           headerTitle: () => <Text style={navTabsStyle.homeBlock}>Home</Text>,
           headerRight: () => (
@@ -73,11 +66,7 @@ const Tabs = () => {
         component={Home}
         options={{
           tabBarIcon: ({color}) => (
-            <IconList
-              width={18}
-              height={18}
-              color={color}
-            />
+            <IconList width={18} height={18} color={color} />
           ),
         }}
       />
@@ -86,11 +75,7 @@ const Tabs = () => {
         component={PaymentDetails}
         options={{
           tabBarIcon: ({color}) => (
-            <IconArrowRight
-              width={18}
-              height={18}
-              color={color}
-            />
+            <IconArrowRight width={18} height={18} color={color} />
           ),
           headerStyle: {
             backgroundColor: colors.backgroundSecondary,
@@ -105,11 +90,7 @@ const Tabs = () => {
         component={Home}
         options={{
           tabBarIcon: ({color}) => (
-            <IconSettings
-              width={18}
-              height={18}
-              color={color}
-            />
+            <IconSettings width={18} height={18} color={color} />
           ),
         }}
       />

@@ -1,6 +1,6 @@
-import { AIB_COLORS } from '../styles'
-import { TOKENS } from '../ads/dist';
-import type { Theme } from './theme.types';
+import type {Theme} from './theme.types';
+import {TOKENS} from '../ads/dist';
+import {AIB_COLORS} from '../styles';
 
 const DefaultTheme: Theme = {
   isDark: false,
