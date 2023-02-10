@@ -1,31 +1,23 @@
 import React, {FC} from 'react';
-import {Controller} from 'react-hook-form';
+import {Controller, useController} from 'react-hook-form';
 import {View, Text, TextInput} from 'react-native';
 
 import {styles} from './base-input.styles';
 import {CustomMessageInputTypes} from '../message-Input/message-input.types';
 
-const BaseInput: FC<CustomMessageInputTypes> = ({
-  control,
-  name,
-  title,
-  placeholder,
-}) => {
+const BaseInput: FC<CustomMessageInputTypes> = ({name, title, placeholder}) => {
+  const {field, fieldState} = useController({
+    name,
+  });
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <Controller
-        control={control}
-        name={name}
-        render={({field: {value, onChange, onBlur}}) => (
-          <TextInput
-            value={value}
-            onChangeText={onChange}
-            onBlur={onBlur}
-            placeholder={placeholder}
-            style={styles.textInput}
-          />
-        )}
+      <TextInput
+        value={field.value}
+        onChangeText={field.onChange}
+        onBlur={field.onBlur}
+        placeholder={placeholder}
+        style={styles.textInput}
       />
     </View>
   );

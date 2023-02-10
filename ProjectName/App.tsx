@@ -10,6 +10,7 @@ import Tabs from './src/navigation/NavTabs';
 import {store} from './src/store/store';
 
 import 'intl';
+
 import 'intl/locale-data/jsonp/en';
 
 const Stack = createNativeStackNavigator();

@@ -1,12 +1,12 @@
 import {RouteProp, useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {useForm, SubmitHandler} from 'react-hook-form';
+import {useForm, SubmitHandler, FormProvider} from 'react-hook-form';
 import {Text, View, Pressable} from 'react-native';
 
-import CustomAmountInput from './components/amount-input/AmountInput';
-import CustomInput from './components/base-Input/BaseInput';
+import AmountInput from './components/amount-input/AmountInput';
+import BaseInput from './components/base-Input/BaseInput';
 import CustomButton from './components/customButton/CustomButton';
-import CustomMessageInput from './components/message-Input/MessageInput';
+import MessageInput from './components/message-Input/MessageInput';
 import {styles} from './payment-details-form.styles';
 import {PaymentDetailsFormData} from './payment-details-form.types';
 import {useTheme} from '../../../components/theming';
@@ -16,17 +16,11 @@ import {NavigationType} from '../../../navigation/navigation.types';
 const PaymentDetailsForm: React.FC = () => {
   const navigation = useNavigation<NavigationType>();
   // let route: RouteProp<{Payments:{payeeName:string}},'Payments'> = useRoute()
-
   //   const {payeeName} = route.params
-
   // console.log(payeeName)
   const {colors} = useTheme();
 
-  const {
-    control,
-    handleSubmit,
-    formState: {errors},
-  } = useForm<PaymentDetailsFormData>({
+  const form = useForm<PaymentDetailsFormData>({
     defaultValues: {
       ToPayee: 'Jack',
       statementMessage: '',
@@ -34,46 +28,42 @@ const PaymentDetailsForm: React.FC = () => {
     },
   });
 
+  const {formState, handleSubmit} = form;
+
   const onSubmit: SubmitHandler<PaymentDetailsFormData> = data =>
     console.log(data);
 
   return (
     <View style={[styles.container, {backgroundColor: colors.background}]}>
-      <View style={styles.toPayeeContainer}>
-        <CustomInput
-          name="ToPayee"
-          title="To"
-          placeholder="Jack"
-          control={control}
-        />
-      </View>
-      <View style={styles.amountContainer}>
-        <CustomAmountInput
-          name="amountToSend"
-          title="Amount to send"
-          placeholder="0.00"
-          control={control}
-        />
-      </View>
+      <FormProvider {...form}>
+        <View style={styles.toPayeeContainer}>
+          <BaseInput name="ToPayee" title="To" placeholder="Jack" />
+        </View>
+        <View style={styles.amountContainer}>
+          <AmountInput
+            name="amountToSend"
+            title="Amount to send"
+            placeholder="0.00"
+          />
+        </View>
 
-      <View>
-        <Text style={styles.paymentMessages}>Payment messages</Text>
-      </View>
+        <View>
+          <Text style={styles.paymentMessages}>Payment messages</Text>
+        </View>
 
-      <CustomMessageInput
-        name="statementMessage"
-        title="Your statement message"
-        placeholder="none"
-        control={control}
-        maxLength={12}
-      />
-      <CustomMessageInput
-        name="payeeMessage"
-        title="Payee message"
-        placeholder="none"
-        control={control}
-        maxLength={18}
-      />
+        <MessageInput
+          name="statementMessage"
+          title="Your statement message"
+          placeholder="none"
+          maxLength={12}
+        />
+        <MessageInput
+          name="payeeMessage"
+          title="Payee message"
+          placeholder="none"
+          maxLength={18}
+        />
+      </FormProvider>
       <View style={styles.buttonContainer}>
         <CustomButton
           title="Continue"
