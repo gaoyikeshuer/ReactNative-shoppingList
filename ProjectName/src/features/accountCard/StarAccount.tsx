@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text, SafeAreaView} from 'react-native';
-import {useThemeToggle} from 'src/store/themeToggleSlice';
 
 import AccountCardStyle from './staraccount.styles';
 import {IconFavouriteFill} from '../../assets/icons';
+import {useThemeToggle} from '../../store/themeToggleSlice';
 
 const StarAccount = () => {
   const {isDarkModeState: isDark} = useThemeToggle();

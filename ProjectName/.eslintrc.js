@@ -120,6 +120,14 @@ module.exports = {
           "caseInsensitive":true
         }
       }
+    ],
+    "padding-line-between-statements":[
+      0,
+      {
+        "blankLine":"always",
+        "prev":"import",
+        "next":"*"
+      }
     ]
 
   },

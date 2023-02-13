@@ -2,10 +2,10 @@ import {StyleSheet} from 'react-native';
 
 const theme = {
   light: {
-    backgroundColor: '#5A6168',
+    backgroundColor: 'white',
   },
   dark: {
-    backgroundColor: 'white',
+    backgroundColor: '#5A6168',
   },
 };
 const ServiceMessagesStyle = (isDark: string) => {
