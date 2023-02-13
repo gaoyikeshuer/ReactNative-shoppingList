@@ -14,21 +14,10 @@ import {PaymentDetailsFormData} from './payment-details-form.types';
 import {useTheme} from '../../../components/theming';
 import {NavigationType} from '../../../navigation/navigation.types';
 import { useRoute } from '@react-navigation/native';
+import { ValidationSchema, validationSchema } from './payment-details-form.types';
 
 const PaymentDetailsForm: React.FC = () => {
-  const validationSchema = z.object({
-    toPayee: z.string().min(1, {message: 'to payee name is required'}),
-    statementMessage: z
-      .string()
-      .min(1, {message: 'statement messages are required'}),
-    payeeMessage: z
-      .string()
-      .min(1, {message: 'statement messages are required'}),
-    amountToSend: z.string().min(1).max(6),
-  });
-
-  type ValidationSchema = z.infer<typeof validationSchema>;
-
+  
   const navigation = useNavigation<NavigationType>();
   let route: RouteProp<{Payments:{payeeName:string}},'Payments'> = useRoute()
     const {payeeName} = route.params
