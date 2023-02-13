@@ -5,7 +5,12 @@ import {View, Text, TextInput} from 'react-native';
 import {styles} from './base-input.styles';
 import {CustomMessageInputTypes} from '../message-Input/message-input.types';
 
-const BaseInput: FC<CustomMessageInputTypes> = ({name, title, placeholder}) => {
+const BaseInput: FC<CustomMessageInputTypes> = ({
+  name,
+  title,
+  placeholder,
+  maxLength,
+}) => {
   const {field, fieldState} = useController({
     name,
   });
@@ -18,6 +23,7 @@ const BaseInput: FC<CustomMessageInputTypes> = ({name, title, placeholder}) => {
         onBlur={field.onBlur}
         placeholder={placeholder}
         style={styles.textInput}
+        maxLength={maxLength}
       />
     </View>
   );

@@ -1,39 +1,40 @@
 import {zodResolver} from '@hookform/resolvers/zod';
-import {RouteProp, useNavigation} from '@react-navigation/native';
+import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import React from 'react';
 import {useForm, SubmitHandler, FormProvider} from 'react-hook-form';
 import {Text, View, Pressable} from 'react-native';
-import {z} from 'zod';
 
-import AmountInput from './components/amount-input/AmountInput';
-import BaseInput from './components/base-Input/BaseInput';
-import Button from './components/Button/Button';
-import MessageInput from './components/message-Input/MessageInput';
+import {validationSchema} from './payment-details-form.constants';
 import {styles} from './payment-details-form.styles';
-import {PaymentDetailsFormData} from './payment-details-form.types';
+import {ValidationSchema} from './payment-details-form.types';
+import Button from '../../../components/Button/Button';
+import AmountInput from '../../../components/input/amount-input/AmountInput';
+import BaseInput from '../../../components/input/base-Input/BaseInput';
+import MessageInput from '../../../components/input/message-Input/MessageInput';
 import {useTheme} from '../../../components/theming';
 import {NavigationType} from '../../../navigation/navigation.types';
-import { useRoute } from '@react-navigation/native';
-import { ValidationSchema, validationSchema } from './payment-details-form.types';
 
 const PaymentDetailsForm: React.FC = () => {
-  
   const navigation = useNavigation<NavigationType>();
-  let route: RouteProp<{Payments:{payeeName:string}},'Payments'> = useRoute()
-    const {payeeName} = route.params
-  console.log(payeeName)
+  const route: RouteProp<{Payments: {payeeName: string}}, 'Payments'> =
+    useRoute();
+  const {payeeName} = route.params;
   const {colors} = useTheme();
 
   const form = useForm<ValidationSchema>({
     defaultValues: {
-      toPayee: 'Jack',
+      toPayee: payeeName,
       statementMessage: '',
       payeeMessage: '',
+      amountToSend: 0,
     },
     resolver: zodResolver(validationSchema),
   });
 
-  const {formState, handleSubmit} = form;
+  const {
+    formState: {errors},
+    handleSubmit,
+  } = form;
 
   const onSubmit: SubmitHandler<ValidationSchema> = data => console.log(data);
 
@@ -41,13 +42,19 @@ const PaymentDetailsForm: React.FC = () => {
     <View style={[styles.container, {backgroundColor: colors.background}]}>
       <FormProvider {...form}>
         <View style={styles.toPayeeContainer}>
-          <BaseInput name="toPayee" title="To" placeholder="Jack" />
+          <BaseInput
+            name="toPayee"
+            title="To"
+            placeholder="Jack"
+            maxLength={18}
+          />
         </View>
         <View style={styles.amountContainer}>
           <AmountInput
             name="amountToSend"
             title="Amount to send"
             placeholder="0.00"
+            message={errors.amountToSend?.message}
           />
         </View>
 

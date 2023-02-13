@@ -31,7 +31,6 @@ const CustomMessageInput: FC<CustomMessageInputTypes> = ({
 
       <View style={styles.inputAmountContainer}>
         <Text style={styles.inputAmount}>
-          {' '}
           {input.length}/{maxLength}
         </Text>
       </View>

@@ -1,6 +1,6 @@
 import {TextStyle} from 'react-native';
 
-import {PressabelTypes} from '../../../../../components/buttons/pressable/pressable.types';
+import {PressabelTypes} from '../buttons/pressable/pressable.types';
 
 export type ButtonVariants = 'default' | 'text';
 

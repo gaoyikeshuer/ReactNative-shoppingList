@@ -1,11 +1,11 @@
 import {useTheme} from '@react-navigation/native';
 import React, {FC} from 'react';
-import {View, Text, Pressable} from 'react-native';
+import {Pressable} from 'react-native';
 
 import {styles} from './button.presets';
 import {ButtonTypes} from './button.types';
-import {ButtonTextPreset} from '../../../../../components/typography/button-text/button-text.types';
-import ButtonText from '../../../../../components/typography/button-text/ButtonText';
+import {ButtonTextPreset} from '../typography/button-text/button-text.types';
+import ButtonText from '../typography/button-text/ButtonText';
 
 const Button: FC<ButtonTypes> = ({
   label,

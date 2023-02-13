@@ -1,6 +1,6 @@
 import {StyleSheet, ViewStyle} from 'react-native';
 
-import {TOKENS} from '../../../../../components/ads/dist';
+import {TOKENS} from '../ads/dist';
 
 const BASE: ViewStyle = {
   width: undefined,
