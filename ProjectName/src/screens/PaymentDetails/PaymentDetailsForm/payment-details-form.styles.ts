@@ -7,6 +7,12 @@ export const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 22,
   },
+  buttonText: {
+    color: 'white',
+    fontFamily: 'Aspira',
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
   container: {
     flexGrow: 1,
     paddingHorizontal: 16,

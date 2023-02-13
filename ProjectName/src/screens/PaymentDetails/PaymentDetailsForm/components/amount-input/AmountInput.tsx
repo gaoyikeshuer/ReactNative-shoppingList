@@ -16,7 +16,7 @@ const CustomAmountInput: FC<CustomMessageInputTypes> = ({
     name,
   });
   return (
-    <View>
+    <>
       <Text style={styles.title}>{title}</Text>
 
       <View style={styles.container}>
@@ -25,8 +25,7 @@ const CustomAmountInput: FC<CustomMessageInputTypes> = ({
           value={field.value}
           onChangeText={text => {
             if (DECIMAL_REGEX.test(text)) {
-              const formattedValue = text;
-              field.onChange(formattedValue);
+              field.onChange(text);
             }
           }}
           onBlur={field.onBlur}
@@ -41,7 +40,7 @@ const CustomAmountInput: FC<CustomMessageInputTypes> = ({
           </View>
         </View>
       </View>
-    </View>
+    </>
   );
 };
 
